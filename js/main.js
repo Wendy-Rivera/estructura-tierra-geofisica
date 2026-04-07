@@ -1,35 +1,30 @@
 /**
  * main.js
- * Estructura Interna de la Tierra — Interactive behaviours
+ * Geociencias: Estructura, Tiempo y Campos de la Tierra
+ * "Deep Earth Abyss" Interactive Behaviours
  *
  * • Vertical parallax scrolling (index.html)
  * • Mobile navigation toggle
  * • Scroll-reveal for .reveal elements
  * • Active nav-link highlighting
+ * • 3D card tilt effect (gallery & blog items)
+ * • Video play button interaction
  */
 
 'use strict';
 
 // ── Helpers ────────────────────────────────────────────────
-/**
- * Safely query a selector; returns null without throwing if
- * the element is absent on a given page.
- */
 const qs  = (sel, ctx = document) => ctx.querySelector(sel);
 const qsa = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
 
+// Keep in sync with CSS @media (max-width: 768px)
+const MOBILE_BREAKPOINT = 768;
+
 // ── Parallax ───────────────────────────────────────────────
-/**
- * Applies a CSS transform to each `.parallax-bg` element based
- * on how far the user has scrolled through its parent section.
- * A depth factor < 1 makes the layer move slower than the viewport
- * (classic parallax effect — simulating depth into the Earth).
- */
 function initParallax() {
   const sections = qsa('.parallax-section');
   if (!sections.length) return;
 
-  // Depth factors per layer (deeper = slower movement)
   const depthMap = {
     'parallax-section--surface':   0.55,
     'parallax-section--crust':     0.45,
@@ -45,16 +40,15 @@ function initParallax() {
       const bg = qs('.parallax-bg', section);
       if (!bg) return;
 
-      // Determine depth factor from the section's modifier class
       let factor = 0.4;
       for (const [cls, val] of Object.entries(depthMap)) {
         if (section.classList.contains(cls)) { factor = val; break; }
       }
 
-      const sectionTop    = section.offsetTop;
-      const sectionHeight = section.offsetHeight;
+      const sectionTop     = section.offsetTop;
+      const sectionHeight  = section.offsetHeight;
       const relativeScroll = scrollY - sectionTop + window.innerHeight;
-      const pct = relativeScroll / (sectionHeight + window.innerHeight);
+      const pct    = relativeScroll / (sectionHeight + window.innerHeight);
       const offset = (pct - 0.5) * sectionHeight * factor;
 
       bg.style.transform = `translateY(${offset.toFixed(2)}px)`;
@@ -62,7 +56,7 @@ function initParallax() {
   }
 
   window.addEventListener('scroll', updateParallax, { passive: true });
-  updateParallax(); // run once on load
+  updateParallax();
 }
 
 // ── Mobile Nav Toggle ──────────────────────────────────────
@@ -75,7 +69,6 @@ function initMobileNav() {
     const isOpen = links.classList.toggle('open');
     toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
 
-    // Animate hamburger → X
     const bars = qsa('span', toggle);
     if (isOpen) {
       bars[0].style.transform = 'translateY(7px) rotate(45deg)';
@@ -88,7 +81,6 @@ function initMobileNav() {
     }
   });
 
-  // Close menu when a link is clicked (single-page nav)
   qsa('a', links).forEach(a => {
     a.addEventListener('click', () => {
       links.classList.remove('open');
@@ -106,16 +98,23 @@ function initScrollReveal() {
   const items = qsa('.reveal');
   if (!items.length) return;
 
+  // Counter for staggering items as they enter the viewport
+  let revealCount = 0;
+
   const observer = new IntersectionObserver(
     entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target); // animate once
+          const delay = (revealCount % 4) * 80;
+          revealCount++;
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, delay);
+          observer.unobserve(entry.target);
         }
       });
     },
-    { threshold: 0.15 }
+    { threshold: 0.12 }
   );
 
   items.forEach(el => observer.observe(el));
@@ -132,10 +131,74 @@ function initActiveNav() {
   });
 }
 
+// ── 3D Card Tilt Effect ────────────────────────────────────
+/**
+ * Adds a subtle 3D perspective tilt on mouse move
+ * for .glass-card, .gallery-item, and .video-card elements.
+ * Resets smoothly on mouse leave.
+ */
+function initCardTilt() {
+  const cards = qsa('.glass-card, .gallery-item, .video-card');
+  if (!cards.length || window.matchMedia(`(max-width: ${MOBILE_BREAKPOINT}px)`).matches) return;
+
+  cards.forEach(card => {
+    card.addEventListener('mousemove', e => {
+      const rect   = card.getBoundingClientRect();
+      const x      = e.clientX - rect.left;
+      const y      = e.clientY - rect.top;
+      const cx     = rect.width  / 2;
+      const cy     = rect.height / 2;
+      const rotX   = ((y - cy) / cy) * -6;   // ±6deg vertical
+      const rotY   = ((x - cx) / cx) *  6;   // ±6deg horizontal
+      card.style.transform = `perspective(800px) rotateX(${rotX.toFixed(2)}deg) rotateY(${rotY.toFixed(2)}deg) translateY(-4px) scale(1.01)`;
+    });
+
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = '';
+    });
+  });
+}
+
+// ── Video Play Button ──────────────────────────────────────
+function initVideoPlayButtons() {
+  const playBtns = qsa('.play-btn');
+  playBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const card = btn.closest('.video-card');
+      if (!card) return;
+      const title = card.querySelector('h3');
+      if (title) {
+        // Visual feedback — pulse the button
+        btn.style.transform = 'scale(1.3)';
+        btn.style.background = 'var(--clr-core)';
+        setTimeout(() => {
+          btn.style.transform = '';
+          btn.style.background = '';
+        }, 400);
+      }
+    });
+  });
+}
+
+// ── Smooth Hero Scroll ─────────────────────────────────────
+function initHeroScroll() {
+  const heroBtn = qs('a[href="#presentation"]');
+  if (!heroBtn) return;
+  heroBtn.addEventListener('click', e => {
+    e.preventDefault();
+    const target = qs('#presentation');
+    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+}
+
 // ── Init ───────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
   initParallax();
   initMobileNav();
   initScrollReveal();
   initActiveNav();
+  initCardTilt();
+  initVideoPlayButtons();
+  initHeroScroll();
 });
+

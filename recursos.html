@@ -3,73 +3,34 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Recursos educativos sobre geofísica: libros, enlaces, herramientas y datos abiertos." />
-  <title>Recursos — Geo&amp;Tierra</title>
+  <meta name="description" content="Recursos educativos sobre geofísica: herramientas interactivas (Genially, Kahoot, Nearpod), resúmenes Wakelet, libros y datos abiertos." />
+  <title>Recursos Educativos — Geo&amp;Tierra</title>
   <link rel="stylesheet" href="css/styles.css" />
-
-  <style>
-    /* ── Resources-specific styles ── */
-    .resource-list {
-      list-style: none;
-      margin-top: 1.25rem;
-    }
-
-    .resource-list li {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.75rem;
-      padding: 0.85rem 0;
-      border-bottom: 1px solid rgba(255,255,255,0.07);
-    }
-
-    .resource-list li:last-child {
-      border-bottom: none;
-    }
-
-    .resource-list .res-icon {
-      font-size: 1.4rem;
-      flex-shrink: 0;
-      margin-top: 0.1rem;
-    }
-
-    .resource-list .res-info strong {
-      display: block;
-      color: var(--clr-text);
-      margin-bottom: 0.2rem;
-      font-size: 0.97rem;
-    }
-
-    .resource-list .res-info p {
-      font-size: 0.88rem;
-      color: var(--clr-text-muted);
-      margin: 0 0 0.3rem;
-    }
-  </style>
 </head>
 <body>
 
   <!-- ── Navigation ───────────────────────────────────────── -->
   <nav class="site-nav" aria-label="Navegación principal">
     <span class="site-nav__logo">🌍 Geo&amp;Tierra</span>
-
     <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
-
     <ul class="site-nav__links" role="list">
       <li><a href="index.html">Inicio</a></li>
       <li><a href="blog.html">Blog</a></li>
       <li><a href="hemeroteca.html">Hemeroteca</a></li>
-      <li><a href="multimedia.html">Multimedia</a></li>
       <li><a href="recursos.html" class="active">Recursos</a></li>
+      <li><a href="audioteca.html">Audioteca</a></li>
+      <li><a href="galeria.html">Galería</a></li>
+      <li><a href="videoteca.html">Videoteca</a></li>
     </ul>
   </nav>
 
   <!-- ── Page Hero ─────────────────────────────────────────── -->
   <header class="page-hero">
     <div class="page-hero__inner">
-      <h1>Recursos</h1>
-      <p>Libros, herramientas online, conjuntos de datos y enlaces de interés para el estudio de la geofísica.</p>
+      <h1>Recursos Educativos</h1>
+      <p>Herramientas interactivas, evaluaciones, resúmenes curados y datos abiertos para el estudio de las geociencias.</p>
     </div>
   </header>
 
@@ -77,12 +38,143 @@
   <main id="main-content">
     <div class="container">
 
+      <!-- ── Sección: Herramientas Interactivas ─────────────── -->
+      <h2 class="section-heading">Herramientas Interactivas</h2>
       <div class="cards-grid">
 
-        <!-- Libros recomendados -->
+        <!-- Genially -->
+        <div class="glass-card reveal">
+          <span class="layer-badge">Genially</span>
+          <h3>Presentación: Capas de la Tierra</h3>
+          <p>Infografía interactiva sobre las capas internas de la Tierra, sus propiedades físicas y las discontinuidades sísmicas que las separan.</p>
+          <div class="tool-frame">
+            <iframe
+              src="https://view.genial.ly/example-placeholder"
+              height="420"
+              title="Genially: Capas de la Tierra"
+              allowfullscreen
+              loading="lazy"
+            ></iframe>
+          </div>
+        </div>
+
+        <!-- Genially 2 -->
+        <div class="glass-card reveal">
+          <span class="layer-badge">Genially</span>
+          <h3>Línea del Tiempo Geológico</h3>
+          <p>Recorrido interactivo por los principales hitos de la historia geológica de la Tierra, desde la formación del planeta hasta el Cuaternario.</p>
+          <div class="tool-frame">
+            <iframe
+              src="https://view.genial.ly/example-placeholder-2"
+              height="420"
+              title="Genially: Tiempo Geológico"
+              allowfullscreen
+              loading="lazy"
+            ></iframe>
+          </div>
+        </div>
+
+        <!-- Kahoot -->
+        <div class="glass-card reveal">
+          <span class="layer-badge">Kahoot</span>
+          <h3>Quiz: Estructura Interna de la Tierra</h3>
+          <p>Evaluación gamificada con 15 preguntas sobre corteza, manto y núcleo, ondas sísmicas y discontinuidades. Ideal para repasar los conceptos fundamentales.</p>
+          <div class="tool-frame">
+            <iframe
+              src="https://kahoot.it/challenge/placeholder"
+              height="420"
+              title="Kahoot: Estructura Interna"
+              allowfullscreen
+              loading="lazy"
+            ></iframe>
+          </div>
+        </div>
+
+        <!-- Nearpod -->
+        <div class="glass-card reveal">
+          <span class="layer-badge">Nearpod</span>
+          <h3>Lección: El Campo Geomagnético</h3>
+          <p>Lección interactiva con diapositivas, video integrado y preguntas formativas sobre el origen, propiedades y variaciones del campo magnético terrestre.</p>
+          <div class="tool-frame">
+            <iframe
+              src="https://nearpod.com/student/placeholder"
+              height="420"
+              title="Nearpod: Campo Geomagnético"
+              allowfullscreen
+              loading="lazy"
+            ></iframe>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ── Sección: Wakelet ────────────────────────────────── -->
+      <section class="wakelet-section">
+        <h2 class="section-heading">Resúmenes Wakelet</h2>
+        <p style="color:var(--clr-text-muted);margin-bottom:1.5rem;max-width:680px;">
+          Colecciones curadas de artículos, vídeos y recursos web organizados por tema,
+          compiladas por los miembros del equipo como síntesis de investigación.
+        </p>
+        <div class="wakelet-grid">
+
+          <div class="glass-card reveal">
+            <span class="layer-badge">Wakelet</span>
+            <h3>Sismología Global</h3>
+            <p>Colección de artículos, animaciones y datos sobre ondas sísmicas, terremotos y la red de monitoreo IRIS.</p>
+            <div class="tool-frame" style="margin-top:1rem;">
+              <iframe
+                class="wakeletEmbed"
+                src="https://embed.wakelet.com/wakes/placeholder-sismologia"
+                height="400"
+                title="Wakelet: Sismología Global"
+                allowfullscreen
+                loading="lazy"
+              ></iframe>
+            </div>
+          </div>
+
+          <div class="glass-card reveal">
+            <span class="layer-badge">Wakelet</span>
+            <h3>Tectónica de Placas y Geodinámica</h3>
+            <p>Recursos seleccionados sobre el movimiento de placas, dorsales oceánicas, zonas de subducción y la historia de Pangea.</p>
+            <div class="tool-frame" style="margin-top:1rem;">
+              <iframe
+                class="wakeletEmbed"
+                src="https://embed.wakelet.com/wakes/placeholder-tectonica"
+                height="400"
+                title="Wakelet: Tectónica"
+                allowfullscreen
+                loading="lazy"
+              ></iframe>
+            </div>
+          </div>
+
+          <div class="glass-card reveal">
+            <span class="layer-badge">Wakelet</span>
+            <h3>Tiempo Geológico y Paleontología</h3>
+            <p>Síntesis de contenidos sobre la escala temporal geológica, métodos de datación radiométrica y grandes eventos evolutivos.</p>
+            <div class="tool-frame" style="margin-top:1rem;">
+              <iframe
+                class="wakeletEmbed"
+                src="https://embed.wakelet.com/wakes/placeholder-tiempo"
+                height="400"
+                title="Wakelet: Tiempo Geológico"
+                allowfullscreen
+                loading="lazy"
+              ></iframe>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ── Sección: Bibliografía y Datos ──────────────────── -->
+      <h2 class="section-heading" style="margin-top:4rem;">Bibliografía y Datos Abiertos</h2>
+      <div class="cards-grid">
+
         <div class="glass-card reveal">
           <span class="layer-badge">Libros</span>
-          <h3>Bibliografía esencial</h3>
+          <h3>Bibliografía Esencial</h3>
           <ul class="resource-list">
             <li>
               <span class="res-icon">📖</span>
@@ -108,10 +200,9 @@
           </ul>
         </div>
 
-        <!-- Herramientas online -->
         <div class="glass-card reveal">
           <span class="layer-badge">Herramientas</span>
-          <h3>Herramientas en línea</h3>
+          <h3>Herramientas en Línea</h3>
           <ul class="resource-list">
             <li>
               <span class="res-icon">🌐</span>
@@ -140,10 +231,9 @@
           </ul>
         </div>
 
-        <!-- Datos abiertos -->
         <div class="glass-card reveal">
           <span class="layer-badge">Datos</span>
-          <h3>Conjuntos de datos abiertos</h3>
+          <h3>Conjuntos de Datos Abiertos</h3>
           <ul class="resource-list">
             <li>
               <span class="res-icon">📊</span>
@@ -172,10 +262,9 @@
           </ul>
         </div>
 
-        <!-- Glosario -->
         <div class="glass-card reveal">
           <span class="layer-badge">Glosario</span>
-          <h3>Términos clave</h3>
+          <h3>Términos Clave</h3>
           <ul class="resource-list">
             <li>
               <span class="res-icon">🔑</span>
@@ -187,15 +276,15 @@
             <li>
               <span class="res-icon">🔑</span>
               <div class="res-info">
-                <strong>Geotermia</strong>
-                <p>Gradiente de temperatura que aumenta con la profundidad en la Tierra (~25–30 °C/km en la corteza).</p>
+                <strong>Gradiente geotérmico</strong>
+                <p>Aumento de temperatura con la profundidad en la Tierra (~25–30 °C/km en la corteza).</p>
               </div>
             </li>
             <li>
               <span class="res-icon">🔑</span>
               <div class="res-info">
-                <strong>Onda de Rayleigh / Love</strong>
-                <p>Tipos de ondas sísmicas superficiales que viajan a lo largo de la superficie terrestre.</p>
+                <strong>Bridgmanita</strong>
+                <p>Silicato de magnesio de alta presión, mineral más abundante de la Tierra (manto inferior).</p>
               </div>
             </li>
             <li>
@@ -214,11 +303,19 @@
 
   <!-- ── Footer ─────────────────────────────────────────────── -->
   <footer class="site-footer">
-    <p>
-      &copy; 2024 Geo&amp;Tierra — Estructura Interna de la Tierra, Tiempo Geológico y Campos Geofísicos.
-      <br>
-      Material de divulgación científica con fines educativos.
-    </p>
+    <div class="site-footer__inner">
+      <div class="site-footer__logo">🌍 Geo&amp;Tierra</div>
+      <ul class="site-footer__links">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="hemeroteca.html">Hemeroteca</a></li>
+        <li><a href="recursos.html">Recursos</a></li>
+        <li><a href="audioteca.html">Audioteca</a></li>
+        <li><a href="galeria.html">Galería</a></li>
+        <li><a href="videoteca.html">Videoteca</a></li>
+      </ul>
+      <p>&copy; 2024 Geociencias: Estructura, Tiempo y Campos de la Tierra &mdash; Material de divulgación científica con fines educativos.</p>
+    </div>
   </footer>
 
   <script src="js/main.js"></script>

@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Estructura interna de la Tierra, tiempo geológico y campos geofísicos — página principal con efecto parallax." />
-  <title>Estructura Interna de la Tierra</title>
+  <meta name="description" content="Geociencias: Estructura, Tiempo y Campos de la Tierra — plataforma académica de divulgación científica sobre el interior terrestre, el tiempo geológico y los campos geofísicos." />
+  <title>Geociencias: Estructura, Tiempo y Campos de la Tierra</title>
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
@@ -21,15 +21,88 @@
       <li><a href="index.html" class="active">Inicio</a></li>
       <li><a href="blog.html">Blog</a></li>
       <li><a href="hemeroteca.html">Hemeroteca</a></li>
-      <li><a href="multimedia.html">Multimedia</a></li>
       <li><a href="recursos.html">Recursos</a></li>
+      <li><a href="audioteca.html">Audioteca</a></li>
+      <li><a href="galeria.html">Galería</a></li>
+      <li><a href="videoteca.html">Videoteca</a></li>
     </ul>
   </nav>
 
-  <!-- ── Parallax Hero ─────────────────────────────────────── -->
+  <!-- ── Hero Section ──────────────────────────────────────── -->
+  <section class="hero-section" aria-labelledby="hero-title">
+    <div class="hero-bg-field" aria-hidden="true"></div>
+    <div class="hero-orbit" aria-hidden="true"></div>
+
+    <div class="hero-content reveal">
+      <span class="hero-eyebrow">Plataforma Académica de Geociencias</span>
+      <h1 class="hero-title" id="hero-title">
+        Geociencias:<br>Estructura, Tiempo<br>y Campos de la Tierra
+      </h1>
+      <p class="hero-subtitle">
+        Un viaje científico hacia el interior de nuestro planeta: desde la corteza hasta
+        el núcleo interno, explorando el tiempo geológico y los campos geofísicos
+        que dan forma a la Tierra que habitamos.
+      </p>
+      <div class="hero-cta-group">
+        <a href="#presentation" class="btn-primary">Explorar el Proyecto</a>
+        <a href="blog.html" class="btn-outline">Leer el Blog Científico →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Presentation / Scope Section ──────────────────────── -->
+  <section class="presentation-section" id="presentation" aria-labelledby="pres-title">
+    <div class="container">
+      <h2 class="section-heading" id="pres-title">Sobre Este Proyecto</h2>
+      <p style="color:var(--clr-text-muted);max-width:780px;margin-bottom:0;line-height:1.8;font-size:1.02rem;">
+        Esta plataforma nació como un espacio de divulgación científica académica orientado a estudiantes
+        y profesionales interesados en las ciencias de la Tierra. Aquí encontrarás artículos, recursos
+        multimedia, referencias bibliográficas y herramientas interactivas que conectan la teoría con la
+        práctica geofísica.
+      </p>
+
+      <div class="presentation-grid">
+        <div class="pres-card reveal">
+          <div class="pres-card__icon">🔭</div>
+          <h3>Delimitación</h3>
+          <p>
+            El proyecto abarca el estudio de la <strong>estructura interna de la Tierra</strong> —
+            corteza, manto y núcleo —, la <strong>escala del tiempo geológico</strong> desde el
+            Hadeano hasta el Cuaternario, y los principales <strong>campos geofísicos</strong>:
+            gravitacional, magnético y geotérmico. Se excluyen disciplinas como la
+            meteorología y la oceanografía de superficie.
+          </p>
+        </div>
+
+        <div class="pres-card reveal">
+          <div class="pres-card__icon">🎯</div>
+          <h3>Misión</h3>
+          <p>
+            Democratizar el conocimiento geofísico a través de contenidos rigurosos y accesibles.
+            Nuestra misión es construir un puente entre la investigación científica de frontera y
+            el público académico, estimulando el pensamiento crítico y la curiosidad por los
+            procesos que ocurren bajo nuestros pies.
+          </p>
+        </div>
+
+        <div class="pres-card reveal">
+          <div class="pres-card__icon">🌐</div>
+          <h3>Visión</h3>
+          <p>
+            Convertirnos en la referencia hispanohablante de divulgación geofísica digital,
+            integrando tecnologías de visualización científica, recursos interactivos y una
+            comunidad activa de aprendizaje que impulse la educación en Ciencias de la Tierra
+            para las próximas generaciones.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Parallax Descent — Layers of the Earth ───────────── -->
   <main class="parallax-wrapper" id="main-content">
 
-    <!-- ① Surface / Superfície -->
+    <!-- ① Corteza / Surface -->
     <section class="parallax-section parallax-section--surface" aria-labelledby="sec-surface">
       <div class="parallax-bg"></div>
       <div class="section-content">
@@ -47,13 +120,14 @@
           </p>
           <p>
             La discontinuidad de Mohorovičić (Moho) marca el límite
-            entre la corteza y el manto superior.
+            entre la corteza y el manto superior, identificada en 1909
+            a partir del análisis de ondas sísmicas regionales.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- ② Crust → Upper Mantle transition -->
+    <!-- ② Manto Superior -->
     <section class="parallax-section parallax-section--crust" aria-labelledby="sec-crust">
       <div class="parallax-bg"></div>
       <div class="section-content">
@@ -70,13 +144,14 @@
           </p>
           <p>
             Las ondas sísmicas P y S cambian de velocidad al cruzar
-            estas zonas, revelando su composición y estado físico.
+            estas zonas, revelando su composición y estado físico
+            con una precisión sin precedentes.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- ③ Lower Mantle -->
+    <!-- ③ Manto Inferior -->
     <section class="parallax-section parallax-section--mantle" aria-labelledby="sec-mantle">
       <div class="parallax-bg"></div>
       <div class="section-content">
@@ -94,13 +169,14 @@
           </p>
           <p>
             La discontinuidad de Gutenberg (2 891 km) separa el manto
-            del núcleo externo.
+            del núcleo externo y fue identificada gracias al análisis
+            de la zona de sombra sísmica descrita por Richard Oldham.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- ④ Outer Core -->
+    <!-- ④ Núcleo Externo -->
     <section class="parallax-section parallax-section--outercore" aria-labelledby="sec-outercore">
       <div class="parallax-bg"></div>
       <div class="section-content">
@@ -118,13 +194,14 @@
           </p>
           <p>
             Las ondas sísmicas S no se propagan en este núcleo líquido,
-            hecho clave para su descubrimiento por Oldham en 1906.
+            hecho clave para su descubrimiento por Oldham en 1906 y
+            confirmado mediante tomografía sísmica global.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- ⑤ Inner Core — Glowing Core -->
+    <!-- ⑤ Núcleo Interno -->
     <section class="parallax-section parallax-section--innercore" aria-labelledby="sec-innercore">
       <div class="parallax-bg"></div>
       <div class="section-content">
@@ -143,7 +220,8 @@
           </p>
           <p>
             Descubierto por Inge Lehmann en 1936, el núcleo interno es
-            la cápsula del tiempo geológico más profunda que conocemos.
+            la cápsula del tiempo geológico más profunda que conocemos
+            y aún guarda secretos sobre la rotación diferencial de nuestro planeta.
           </p>
         </div>
       </div>
@@ -153,11 +231,19 @@
 
   <!-- ── Footer ─────────────────────────────────────────────── -->
   <footer class="site-footer">
-    <p>
-      &copy; 2024 Geo&amp;Tierra — Estructura Interna de la Tierra, Tiempo Geológico y Campos Geofísicos.
-      <br>
-      Material de divulgación científica con fines educativos.
-    </p>
+    <div class="site-footer__inner">
+      <div class="site-footer__logo">🌍 Geo&amp;Tierra</div>
+      <ul class="site-footer__links">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="hemeroteca.html">Hemeroteca</a></li>
+        <li><a href="recursos.html">Recursos</a></li>
+        <li><a href="audioteca.html">Audioteca</a></li>
+        <li><a href="galeria.html">Galería</a></li>
+        <li><a href="videoteca.html">Videoteca</a></li>
+      </ul>
+      <p>&copy; 2024 Geociencias: Estructura, Tiempo y Campos de la Tierra &mdash; Material de divulgación científica con fines educativos.</p>
+    </div>
   </footer>
 
   <script src="js/main.js"></script>
