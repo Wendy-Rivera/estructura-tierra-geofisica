@@ -17,6 +17,9 @@
 const qs  = (sel, ctx = document) => ctx.querySelector(sel);
 const qsa = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
 
+// Keep in sync with CSS @media (max-width: 768px)
+const MOBILE_BREAKPOINT = 768;
+
 // ── Parallax ───────────────────────────────────────────────
 function initParallax() {
   const sections = qsa('.parallax-section');
@@ -95,12 +98,15 @@ function initScrollReveal() {
   const items = qsa('.reveal');
   if (!items.length) return;
 
+  // Counter for staggering items as they enter the viewport
+  let revealCount = 0;
+
   const observer = new IntersectionObserver(
     entries => {
-      entries.forEach((entry, i) => {
+      entries.forEach(entry => {
         if (entry.isIntersecting) {
-          // Staggered delay for grid items
-          const delay = (i % 4) * 80;
+          const delay = (revealCount % 4) * 80;
+          revealCount++;
           setTimeout(() => {
             entry.target.classList.add('visible');
           }, delay);
@@ -133,7 +139,7 @@ function initActiveNav() {
  */
 function initCardTilt() {
   const cards = qsa('.glass-card, .gallery-item, .video-card');
-  if (!cards.length || window.matchMedia('(max-width: 768px)').matches) return;
+  if (!cards.length || window.matchMedia(`(max-width: ${MOBILE_BREAKPOINT}px)`).matches) return;
 
   cards.forEach(card => {
     card.addEventListener('mousemove', e => {

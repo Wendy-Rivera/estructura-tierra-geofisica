@@ -87,6 +87,12 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 /* ── Custom Scrollbar — Glowing Magma Vein ───────────────── */
+/* Firefox */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--clr-magma) var(--clr-bg);
+}
+/* WebKit */
 ::-webkit-scrollbar {
   width: 8px;
 }
