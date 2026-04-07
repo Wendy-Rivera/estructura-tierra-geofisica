@@ -27,7 +27,11 @@ const MOBILE_BREAKPOINT = 768;
 // ── Three.js Hero Canvas ───────────────────────────────────
 function initHeroCanvas() {
   const canvas = document.getElementById('hero-canvas');
-  if (!canvas || typeof THREE === 'undefined') return;
+  if (!canvas) return;
+  if (typeof THREE === 'undefined') {
+    console.warn('THREE.js library not loaded — hero canvas disabled');
+    return;
+  }
 
   const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
