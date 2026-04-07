@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Contenido multimedia: vídeos, animaciones y podcasts sobre la estructura interna de la Tierra y geofísica." />
+  <title>Multimedia — Geo&amp;Tierra</title>
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <style>
+    /* ── Multimedia-specific styles ── */
+    .media-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .media-card {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .media-card .media-thumb {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: linear-gradient(135deg, #3a1a00 0%, #8b1a00 100%);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      color: rgba(255,255,255,0.5);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .media-card .media-thumb::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.25);
+      border-radius: 10px;
+    }
+
+    .media-card .media-thumb .play-icon {
+      position: relative;
+      z-index: 1;
+    }
+
+    .audio-section {
+      margin-top: 3rem;
+    }
+
+    .audio-item {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      padding: 1rem 1.25rem;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 10px;
+      margin-bottom: 0.75rem;
+    }
+
+    .audio-item .audio-icon {
+      font-size: 1.75rem;
+      flex-shrink: 0;
+    }
+
+    .audio-item p {
+      font-size: 0.9rem;
+      color: var(--clr-text-muted);
+      margin: 0;
+    }
+
+    .audio-item strong {
+      display: block;
+      color: var(--clr-text);
+      margin-bottom: 0.2rem;
+    }
+
+    @media (max-width: 768px) {
+      .media-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Navigation ───────────────────────────────────────── -->
+  <nav class="site-nav" aria-label="Navegación principal">
+    <span class="site-nav__logo">🌍 Geo&amp;Tierra</span>
+
+    <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <ul class="site-nav__links" role="list">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="hemeroteca.html">Hemeroteca</a></li>
+      <li><a href="multimedia.html" class="active">Multimedia</a></li>
+      <li><a href="recursos.html">Recursos</a></li>
+    </ul>
+  </nav>
+
+  <!-- ── Page Hero ─────────────────────────────────────────── -->
+  <header class="page-hero">
+    <div class="page-hero__inner">
+      <h1>Multimedia</h1>
+      <p>Vídeos, animaciones interactivas y podcasts sobre geofísica y el interior terrestre.</p>
+    </div>
+  </header>
+
+  <!-- ── Main Content ──────────────────────────────────────── -->
+  <main id="main-content">
+    <div class="container">
+
+      <!-- Videos -->
+      <h2 class="section-heading">Vídeos y Animaciones</h2>
+
+      <div class="media-grid">
+
+        <div class="glass-card media-card reveal">
+          <div class="media-thumb">
+            <span class="play-icon">▶</span>
+          </div>
+          <div>
+            <span class="layer-badge">Vídeo</span>
+            <h3>Viaje al centro de la Tierra</h3>
+            <p>Animación 3D que muestra las distintas capas del interior terrestre y sus propiedades físicas.</p>
+            <a href="#">Ver vídeo →</a>
+          </div>
+        </div>
+
+        <div class="glass-card media-card reveal">
+          <div class="media-thumb">
+            <span class="play-icon">▶</span>
+          </div>
+          <div>
+            <span class="layer-badge">Vídeo</span>
+            <h3>Tectónica de placas explicada</h3>
+            <p>Visualización del movimiento de las placas tectónicas a lo largo del tiempo geológico.</p>
+            <a href="#">Ver vídeo →</a>
+          </div>
+        </div>
+
+        <div class="glass-card media-card reveal">
+          <div class="media-thumb">
+            <span class="play-icon">▶</span>
+          </div>
+          <div>
+            <span class="layer-badge">Animación</span>
+            <h3>El campo geomagnético</h3>
+            <p>Simulación interactiva del campo magnético terrestre y sus líneas de fuerza.</p>
+            <a href="#">Ver animación →</a>
+          </div>
+        </div>
+
+        <div class="glass-card media-card reveal">
+          <div class="media-thumb">
+            <span class="play-icon">▶</span>
+          </div>
+          <div>
+            <span class="layer-badge">Documental</span>
+            <h3>Historia de la Tierra en 24 horas</h3>
+            <p>Compresión de 4 600 millones de años de historia geológica en un formato accesible.</p>
+            <a href="#">Ver documental →</a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Audio -->
+      <section class="audio-section">
+        <h2 class="section-heading">Podcasts y Audio</h2>
+
+        <div class="audio-item reveal">
+          <span class="audio-icon">🎙️</span>
+          <div>
+            <strong>Ep. 01 — Sismología: escuchando la Tierra</strong>
+            <p>Entrevista con sismólogos sobre cómo las ondas sísmicas revelan el interior terrestre. · 42 min</p>
+          </div>
+        </div>
+
+        <div class="audio-item reveal">
+          <span class="audio-icon">🎙️</span>
+          <div>
+            <strong>Ep. 02 — El tiempo geológico y la memoria de las rocas</strong>
+            <p>Cómo los geólogos leen el tiempo en las rocas, fósiles y estratos. · 38 min</p>
+          </div>
+        </div>
+
+        <div class="audio-item reveal">
+          <span class="audio-icon">🎙️</span>
+          <div>
+            <strong>Ep. 03 — El núcleo interno: ¿qué sabemos realmente?</strong>
+            <p>Debate sobre los últimos descubrimientos en torno al núcleo interno sólido. · 55 min</p>
+          </div>
+        </div>
+
+        <div class="audio-item reveal">
+          <span class="audio-icon">🎙️</span>
+          <div>
+            <strong>Ep. 04 — Campos geofísicos y exploración del subsuelo</strong>
+            <p>Aplicaciones prácticas de la gravimetría, el geomagnetismo y la geotermia. · 47 min</p>
+          </div>
+        </div>
+
+      </section>
+
+    </div>
+  </main>
+
+  <!-- ── Footer ─────────────────────────────────────────────── -->
+  <footer class="site-footer">
+    <p>
+      &copy; 2024 Geo&amp;Tierra — Estructura Interna de la Tierra, Tiempo Geológico y Campos Geofísicos.
+      <br>
+      Material de divulgación científica con fines educativos.
+    </p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

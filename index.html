@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Estructura interna de la Tierra, tiempo geológico y campos geofísicos — página principal con efecto parallax." />
+  <title>Estructura Interna de la Tierra</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ── Navigation ───────────────────────────────────────── -->
+  <nav class="site-nav" aria-label="Navegación principal">
+    <span class="site-nav__logo">🌍 Geo&amp;Tierra</span>
+
+    <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <ul class="site-nav__links" role="list">
+      <li><a href="index.html" class="active">Inicio</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="hemeroteca.html">Hemeroteca</a></li>
+      <li><a href="multimedia.html">Multimedia</a></li>
+      <li><a href="recursos.html">Recursos</a></li>
+    </ul>
+  </nav>
+
+  <!-- ── Parallax Hero ─────────────────────────────────────── -->
+  <main class="parallax-wrapper" id="main-content">
+
+    <!-- ① Surface / Superfície -->
+    <section class="parallax-section parallax-section--surface" aria-labelledby="sec-surface">
+      <div class="parallax-bg"></div>
+      <div class="section-content">
+        <p class="depth-label">Profundidad: 0 – 30 km</p>
+        <div class="glass-card reveal" id="sec-surface">
+          <span class="layer-badge">Corteza</span>
+          <h2>La Superficie Terrestre</h2>
+          <h3>Corteza Continental y Oceánica</h3>
+          <p>
+            La corteza es la capa más externa y delgada de la Tierra.
+            La corteza <strong>continental</strong> tiene hasta 70 km de grosor
+            y está compuesta principalmente de granito; la corteza
+            <strong>oceánica</strong> es más delgada (~7 km) y densa,
+            formada mayoritariamente por basalto.
+          </p>
+          <p>
+            La discontinuidad de Mohorovičić (Moho) marca el límite
+            entre la corteza y el manto superior.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ② Crust → Upper Mantle transition -->
+    <section class="parallax-section parallax-section--crust" aria-labelledby="sec-crust">
+      <div class="parallax-bg"></div>
+      <div class="section-content">
+        <p class="depth-label">Profundidad: 30 – 400 km</p>
+        <div class="glass-card reveal" id="sec-crust">
+          <span class="layer-badge">Manto Superior</span>
+          <h2>El Manto Superior</h2>
+          <h3>Litosfera y Astenosfera</h3>
+          <p>
+            El manto superior se divide en la <em>litosfera</em> rígida
+            — que incluye la corteza y la parte más fría del manto — y
+            la <em>astenosfera</em>, una zona parcialmente fundida
+            (plástica) que permite el movimiento de las placas tectónicas.
+          </p>
+          <p>
+            Las ondas sísmicas P y S cambian de velocidad al cruzar
+            estas zonas, revelando su composición y estado físico.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ③ Lower Mantle -->
+    <section class="parallax-section parallax-section--mantle" aria-labelledby="sec-mantle">
+      <div class="parallax-bg"></div>
+      <div class="section-content">
+        <p class="depth-label">Profundidad: 400 – 2 900 km</p>
+        <div class="glass-card reveal" id="sec-mantle">
+          <span class="layer-badge">Manto Inferior</span>
+          <h2>El Manto Inferior</h2>
+          <h3>Convección y Tiempo Geológico</h3>
+          <p>
+            A presiones de más de 100 GPa, los minerales se reorganizan
+            en fases de alta densidad como la <em>bridgmanita</em>
+            (perovskita de Mg–Si). Las corrientes de convección en este
+            manto son el motor de la tectónica de placas durante
+            <strong>millones de años</strong>.
+          </p>
+          <p>
+            La discontinuidad de Gutenberg (2 891 km) separa el manto
+            del núcleo externo.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ④ Outer Core -->
+    <section class="parallax-section parallax-section--outercore" aria-labelledby="sec-outercore">
+      <div class="parallax-bg"></div>
+      <div class="section-content">
+        <p class="depth-label">Profundidad: 2 900 – 5 150 km</p>
+        <div class="glass-card reveal" id="sec-outercore">
+          <span class="layer-badge">Núcleo Externo</span>
+          <h2>El Núcleo Externo</h2>
+          <h3>Hierro Líquido y Campo Geomagnético</h3>
+          <p>
+            Compuesto de hierro y níquel en estado <em>líquido</em>,
+            el núcleo externo es el origen del <strong>campo magnético
+            terrestre</strong>. La convección de este metal fundido actúa
+            como una dinamo que genera y mantiene dicho campo, protegiéndonos
+            de la radiación solar.
+          </p>
+          <p>
+            Las ondas sísmicas S no se propagan en este núcleo líquido,
+            hecho clave para su descubrimiento por Oldham en 1906.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ⑤ Inner Core — Glowing Core -->
+    <section class="parallax-section parallax-section--innercore" aria-labelledby="sec-innercore">
+      <div class="parallax-bg"></div>
+      <div class="section-content">
+        <p class="depth-label">Profundidad: 5 150 – 6 371 km (centro)</p>
+        <div class="glass-card reveal" id="sec-innercore">
+          <span class="layer-badge">Núcleo Interno</span>
+          <h2>El Núcleo Interno</h2>
+          <h3>El Corazón Incandescente de la Tierra</h3>
+          <p>
+            A presiones de ~360 GPa y temperaturas superiores a
+            <strong>5 000 °C</strong>, el hierro se encuentra en estado
+            <em>sólido</em> pese a su temperatura extrema. Sus cristales
+            de hierro hexagonal presentan una anisotropía que orienta las
+            ondas sísmicas de polo a polo más rápido que en dirección
+            ecuatorial.
+          </p>
+          <p>
+            Descubierto por Inge Lehmann en 1936, el núcleo interno es
+            la cápsula del tiempo geológico más profunda que conocemos.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── Footer ─────────────────────────────────────────────── -->
+  <footer class="site-footer">
+    <p>
+      &copy; 2024 Geo&amp;Tierra — Estructura Interna de la Tierra, Tiempo Geológico y Campos Geofísicos.
+      <br>
+      Material de divulgación científica con fines educativos.
+    </p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

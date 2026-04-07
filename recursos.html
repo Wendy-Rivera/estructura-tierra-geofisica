@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Recursos educativos sobre geofísica: libros, enlaces, herramientas y datos abiertos." />
+  <title>Recursos — Geo&amp;Tierra</title>
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <style>
+    /* ── Resources-specific styles ── */
+    .resource-list {
+      list-style: none;
+      margin-top: 1.25rem;
+    }
+
+    .resource-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 0.85rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .resource-list li:last-child {
+      border-bottom: none;
+    }
+
+    .resource-list .res-icon {
+      font-size: 1.4rem;
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+    }
+
+    .resource-list .res-info strong {
+      display: block;
+      color: var(--clr-text);
+      margin-bottom: 0.2rem;
+      font-size: 0.97rem;
+    }
+
+    .resource-list .res-info p {
+      font-size: 0.88rem;
+      color: var(--clr-text-muted);
+      margin: 0 0 0.3rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Navigation ───────────────────────────────────────── -->
+  <nav class="site-nav" aria-label="Navegación principal">
+    <span class="site-nav__logo">🌍 Geo&amp;Tierra</span>
+
+    <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <ul class="site-nav__links" role="list">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="hemeroteca.html">Hemeroteca</a></li>
+      <li><a href="multimedia.html">Multimedia</a></li>
+      <li><a href="recursos.html" class="active">Recursos</a></li>
+    </ul>
+  </nav>
+
+  <!-- ── Page Hero ─────────────────────────────────────────── -->
+  <header class="page-hero">
+    <div class="page-hero__inner">
+      <h1>Recursos</h1>
+      <p>Libros, herramientas online, conjuntos de datos y enlaces de interés para el estudio de la geofísica.</p>
+    </div>
+  </header>
+
+  <!-- ── Main Content ──────────────────────────────────────── -->
+  <main id="main-content">
+    <div class="container">
+
+      <div class="cards-grid">
+
+        <!-- Libros recomendados -->
+        <div class="glass-card reveal">
+          <span class="layer-badge">Libros</span>
+          <h3>Bibliografía esencial</h3>
+          <ul class="resource-list">
+            <li>
+              <span class="res-icon">📖</span>
+              <div class="res-info">
+                <strong>Introduction to Seismology — Sherrif &amp; Geldart</strong>
+                <p>Referencia clásica sobre métodos de exploración sísmica y sismología global.</p>
+              </div>
+            </li>
+            <li>
+              <span class="res-icon">📖</span>
+              <div class="res-info">
+                <strong>The Earth: Its Origin, History and Physical Constitution — Harold Jeffreys</strong>
+                <p>Obra pionera que establece las bases de la geofísica moderna.</p>
+              </div>
+            </li>
+            <li>
+              <span class="res-icon">📖</span>
+              <div class="res-info">
+                <strong>Geodynamics — Donald Turcotte &amp; Gerald Schubert</strong>
+                <p>Tratamiento cuantitativo de la tectónica de placas y la dinámica del manto.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Herramientas online -->
+        <div class="glass-card reveal">
+          <span class="layer-badge">Herramientas</span>
+          <h3>Herramientas en línea</h3>
+          <ul class="resource-list">
+            <li>
+              <span class="res-icon">🌐</span>
+              <div class="res-info">
+                <strong>USGS Earthquake Catalog</strong>
+                <p>Catálogo sísmico interactivo con filtros por magnitud, región y fecha.</p>
+                <a href="https://earthquake.usgs.gov/earthquakes/search/" target="_blank" rel="noopener">Abrir →</a>
+              </div>
+            </li>
+            <li>
+              <span class="res-icon">🌐</span>
+              <div class="res-info">
+                <strong>NOAA World Magnetic Model</strong>
+                <p>Calculadora online del campo magnético terrestre para cualquier punto del globo.</p>
+                <a href="https://www.ngdc.noaa.gov/geomag/calculators/magcalc.shtml" target="_blank" rel="noopener">Abrir →</a>
+              </div>
+            </li>
+            <li>
+              <span class="res-icon">🌐</span>
+              <div class="res-info">
+                <strong>IRIS Wilber 3</strong>
+                <p>Acceso a formas de onda sísmicas de eventos catalogados a nivel mundial.</p>
+                <a href="https://ds.iris.edu/wilber3/" target="_blank" rel="noopener">Abrir →</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Datos abiertos -->
+        <div class="glass-card reveal">
+          <span class="layer-badge">Datos</span>
+          <h3>Conjuntos de datos abiertos</h3>
+          <ul class="resource-list">
+            <li>
+              <span class="res-icon">📊</span>
+              <div class="res-info">
+                <strong>CRUST1.0 — Modelo global de la corteza terrestre</strong>
+                <p>Modelo de 1° × 1° con espesor y velocidades de la corteza a escala global.</p>
+                <a href="https://igppweb.ucsd.edu/~gabi/crust1.html" target="_blank" rel="noopener">Descargar →</a>
+              </div>
+            </li>
+            <li>
+              <span class="res-icon">📊</span>
+              <div class="res-info">
+                <strong>IGRF — International Geomagnetic Reference Field</strong>
+                <p>Modelo estándar internacional del campo geomagnético publicado por IAGA.</p>
+                <a href="https://www.ngdc.noaa.gov/IAGA/vmod/igrf.html" target="_blank" rel="noopener">Descargar →</a>
+              </div>
+            </li>
+            <li>
+              <span class="res-icon">📊</span>
+              <div class="res-info">
+                <strong>Preliminary Reference Earth Model (PREM)</strong>
+                <p>Modelo de referencia de la estructura interna de la Tierra (Dziewonski &amp; Anderson, 1981).</p>
+                <a href="https://ds.iris.edu/ds/products/emc-prem/" target="_blank" rel="noopener">Ver →</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Glosario -->
+        <div class="glass-card reveal">
+          <span class="layer-badge">Glosario</span>
+          <h3>Términos clave</h3>
+          <ul class="resource-list">
+            <li>
+              <span class="res-icon">🔑</span>
+              <div class="res-info">
+                <strong>Isostasia</strong>
+                <p>Equilibrio gravitacional entre bloques de litosfera de diferente densidad y espesor.</p>
+              </div>
+            </li>
+            <li>
+              <span class="res-icon">🔑</span>
+              <div class="res-info">
+                <strong>Geotermia</strong>
+                <p>Gradiente de temperatura que aumenta con la profundidad en la Tierra (~25–30 °C/km en la corteza).</p>
+              </div>
+            </li>
+            <li>
+              <span class="res-icon">🔑</span>
+              <div class="res-info">
+                <strong>Onda de Rayleigh / Love</strong>
+                <p>Tipos de ondas sísmicas superficiales que viajan a lo largo de la superficie terrestre.</p>
+              </div>
+            </li>
+            <li>
+              <span class="res-icon">🔑</span>
+              <div class="res-info">
+                <strong>Discontinuidad de Gutenberg</strong>
+                <p>Límite a ~2 891 km que separa el manto inferior del núcleo externo líquido.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- ── Footer ─────────────────────────────────────────────── -->
+  <footer class="site-footer">
+    <p>
+      &copy; 2024 Geo&amp;Tierra — Estructura Interna de la Tierra, Tiempo Geológico y Campos Geofísicos.
+      <br>
+      Material de divulgación científica con fines educativos.
+    </p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

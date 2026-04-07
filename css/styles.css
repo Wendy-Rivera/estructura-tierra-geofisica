@@ -1,0 +1,396 @@
+/* ============================================================
+   Estructura Interna de la Tierra — Global Styles
+   Dark mode · Magma orange/yellow accents · Glassmorphism
+   ============================================================ */
+
+/* ── Reset & box-sizing ──────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── Custom Properties ───────────────────────────────────── */
+:root {
+  /* Colours */
+  --clr-bg:          #1a1a1e;        /* charcoal background        */
+  --clr-surface:     #23232a;        /* slightly lighter surface   */
+  --clr-accent-1:    #ff6b1a;        /* magma orange               */
+  --clr-accent-2:    #ffcc00;        /* magma yellow               */
+  --clr-accent-glow: rgba(255, 107, 26, 0.35);
+  --clr-text:        #e8e8e8;
+  --clr-text-muted:  #9a9aaa;
+  --clr-nav-bg:      rgba(26, 26, 30, 0.75);
+
+  /* Parallax layer colours */
+  --layer-surface:   #2e4a1e;        /* mossy green — surface      */
+  --layer-crust:     #6b4226;        /* brown crust                */
+  --layer-mantle:    #8b1a00;        /* deep red mantle            */
+  --layer-outercore: #c44200;        /* orange outer core          */
+  --layer-innercore: #ff8c00;        /* bright orange inner core   */
+
+  /* Typography */
+  --font-display: 'Georgia', serif;
+  --font-body:    'Segoe UI', system-ui, -apple-system, sans-serif;
+
+  /* Spacing */
+  --nav-height: 64px;
+}
+
+/* ── Base ────────────────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--clr-bg);
+  color: var(--clr-text);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+a {
+  color: var(--clr-accent-1);
+  text-decoration: none;
+  transition: color 0.25s;
+}
+
+a:hover {
+  color: var(--clr-accent-2);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ── Navigation ──────────────────────────────────────────── */
+.site-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--nav-height);
+  background: var(--clr-nav-bg);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255, 107, 26, 0.25);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+}
+
+.site-nav__logo {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--clr-accent-2);
+  letter-spacing: 0.04em;
+}
+
+.site-nav__links {
+  list-style: none;
+  display: flex;
+  gap: 1.75rem;
+}
+
+.site-nav__links a {
+  color: var(--clr-text);
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  padding: 0.25rem 0;
+  border-bottom: 2px solid transparent;
+  transition: color 0.25s, border-color 0.25s;
+}
+
+.site-nav__links a:hover,
+.site-nav__links a.active {
+  color: var(--clr-accent-1);
+  border-bottom-color: var(--clr-accent-1);
+}
+
+/* Hamburger (mobile) */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 4px;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--clr-text);
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+/* ── Parallax Hero (index only) ──────────────────────────── */
+.parallax-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.parallax-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: calc(var(--nav-height) + 2rem) 2rem 4rem;
+}
+
+/* Individual layer background colours */
+.parallax-section--surface   { background: var(--layer-surface);   }
+.parallax-section--crust     { background: var(--layer-crust);     }
+.parallax-section--mantle    { background: var(--layer-mantle);     }
+.parallax-section--outercore { background: var(--layer-outercore); }
+.parallax-section--innercore {
+  background: radial-gradient(ellipse at center, #ffcc00 0%, #ff6b1a 45%, #8b1a00 100%);
+}
+
+/* Texture overlays */
+.parallax-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0,0,0,0.08) 2px,
+    rgba(0,0,0,0.08) 4px
+  );
+  pointer-events: none;
+}
+
+.parallax-bg {
+  position: absolute;
+  inset: -30%;   /* extra space for parallax movement */
+  background-size: cover;
+  background-position: center;
+  will-change: transform;
+}
+
+.section-content {
+  position: relative;
+  z-index: 2;
+  max-width: 780px;
+  width: 100%;
+  text-align: center;
+}
+
+/* ── Glassmorphism Cards ─────────────────────────────────── */
+.glass-card {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(18px) saturate(160%);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 16px;
+  padding: 2rem 2.5rem;
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  text-align: left;
+}
+
+.glass-card h2 {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  color: var(--clr-accent-2);
+  margin-bottom: 0.75rem;
+  text-shadow: 0 0 12px var(--clr-accent-glow);
+}
+
+.glass-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  color: var(--clr-accent-1);
+  margin-bottom: 0.5rem;
+}
+
+.glass-card p {
+  color: var(--clr-text);
+  font-size: 0.97rem;
+  line-height: 1.7;
+  margin-bottom: 0.75rem;
+}
+
+.glass-card p:last-child {
+  margin-bottom: 0;
+}
+
+.layer-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.75rem;
+  border-radius: 99px;
+  background: var(--clr-accent-1);
+  color: #fff;
+  margin-bottom: 0.75rem;
+}
+
+/* ── Page Hero (non-index pages) ─────────────────────────── */
+.page-hero {
+  min-height: 38vh;
+  display: flex;
+  align-items: flex-end;
+  padding: calc(var(--nav-height) + 3rem) 2rem 3rem;
+  background: linear-gradient(160deg, #23232a 0%, #3a1a00 100%);
+  border-bottom: 1px solid rgba(255, 107, 26, 0.2);
+}
+
+.page-hero__inner {
+  max-width: 900px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.page-hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  color: var(--clr-accent-2);
+  text-shadow: 0 0 24px var(--clr-accent-glow);
+  margin-bottom: 0.5rem;
+}
+
+.page-hero p {
+  color: var(--clr-text-muted);
+  font-size: 1.05rem;
+  max-width: 560px;
+}
+
+/* ── Main Content Container ──────────────────────────────── */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+/* ── Cards Grid ──────────────────────────────────────────── */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+/* ── Placeholder / Coming Soon ───────────────────────────── */
+.coming-soon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 40vh;
+  text-align: center;
+  gap: 1rem;
+}
+
+.coming-soon .icon {
+  font-size: 4rem;
+  opacity: 0.4;
+}
+
+.coming-soon h2 {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--clr-accent-1);
+}
+
+.coming-soon p {
+  color: var(--clr-text-muted);
+  max-width: 400px;
+}
+
+/* ── Section headings ────────────────────────────────────── */
+.section-heading {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  color: var(--clr-accent-2);
+  border-left: 4px solid var(--clr-accent-1);
+  padding-left: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+/* ── Depth indicator ─────────────────────────────────────── */
+.depth-label {
+  font-size: 0.85rem;
+  color: var(--clr-text-muted);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+/* ── Footer ──────────────────────────────────────────────── */
+.site-footer {
+  background: var(--clr-surface);
+  border-top: 1px solid rgba(255, 107, 26, 0.2);
+  padding: 2rem;
+  text-align: center;
+  color: var(--clr-text-muted);
+  font-size: 0.85rem;
+}
+
+.site-footer a {
+  color: var(--clr-accent-1);
+}
+
+/* ── Scroll-reveal animation ─────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Responsive ──────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .site-nav__links {
+    position: fixed;
+    top: var(--nav-height);
+    left: 0;
+    width: 100%;
+    background: rgba(26, 26, 30, 0.97);
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem 0;
+    gap: 1.25rem;
+    transform: translateY(-110%);
+    transition: transform 0.35s ease;
+    border-bottom: 1px solid rgba(255, 107, 26, 0.2);
+    pointer-events: none;
+  }
+
+  .site-nav__links.open {
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  .glass-card {
+    padding: 1.5rem;
+  }
+
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+}
