@@ -3,15 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Geociencias: Estructura, Tiempo y Campos de la Tierra — plataforma académica de divulgación científica sobre el interior terrestre, el tiempo geológico y los campos geofísicos." />
-  <title>Geociencias: Estructura, Tiempo y Campos de la Tierra</title>
+  <meta name="description" content="Estructura interna de la Tierra, tiempo geológico y campos geofísicos — investigación científica sobre el interior terrestre, la escala del tiempo geológico y los campos geofísicos." />
+  <title>Estructura Interna de la Tierra, Tiempo Geológico y Campos Geofísicos</title>
   <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
 
   <!-- ── Navigation ───────────────────────────────────────── -->
   <nav class="site-nav" aria-label="Navegación principal">
-    <span class="site-nav__logo">🌍 Geo&amp;Tierra</span>
+    <span class="site-nav__logo"><i class="fa-solid fa-earth-americas"></i> Geo&amp;Tierra</span>
 
     <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -30,22 +31,49 @@
 
   <!-- ── Hero Section ──────────────────────────────────────── -->
   <section class="hero-section" aria-labelledby="hero-title">
+    <canvas id="hero-canvas" aria-hidden="true"></canvas>
     <div class="hero-bg-field" aria-hidden="true"></div>
     <div class="hero-orbit" aria-hidden="true"></div>
 
     <div class="hero-content reveal">
-      <span class="hero-eyebrow">Plataforma Académica de Geociencias</span>
+      <span class="hero-eyebrow">4 600 Ma &nbsp;·&nbsp; 6 371 km &nbsp;·&nbsp; 5 000 °C</span>
       <h1 class="hero-title" id="hero-title">
-        Geociencias:<br>Estructura, Tiempo<br>y Campos de la Tierra
+        Estructura Interna<br>de la Tierra,<br>Tiempo Geológico<br>y Campos Geofísicos
       </h1>
       <p class="hero-subtitle">
-        Un viaje científico hacia el interior de nuestro planeta: desde la corteza hasta
-        el núcleo interno, explorando el tiempo geológico y los campos geofísicos
-        que dan forma a la Tierra que habitamos.
+        Un viaje al corazón del planeta: desde la corteza hasta el núcleo interno,
+        a través de cuatro mil seiscientos millones de años de historia y los
+        campos geofísicos que dan forma al mundo que habitamos.
       </p>
       <div class="hero-cta-group">
-        <a href="#presentation" class="btn-primary">Explorar el Proyecto</a>
-        <a href="blog.html" class="btn-outline">Leer el Blog Científico →</a>
+        <a href="#presentation" class="btn-primary"><i class="fa-solid fa-layer-group"></i> &nbsp;Explorar</a>
+        <a href="blog.html" class="btn-outline">Blog Científico &nbsp;<i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Stats Section ─────────────────────────────────────── -->
+  <section class="stats-section" aria-label="Datos clave del proyecto">
+    <div class="stats-grid">
+      <div class="stat-item reveal">
+        <div class="stat-number" data-target="6371">0</div>
+        <div class="stat-unit">km</div>
+        <div class="stat-label">Radio terrestre</div>
+      </div>
+      <div class="stat-item reveal">
+        <div class="stat-number" data-target="4600">0</div>
+        <div class="stat-unit">Ma</div>
+        <div class="stat-label">Edad del planeta</div>
+      </div>
+      <div class="stat-item reveal">
+        <div class="stat-number" data-target="5000">0</div>
+        <div class="stat-unit">°C</div>
+        <div class="stat-label">Temperatura del núcleo</div>
+      </div>
+      <div class="stat-item reveal">
+        <div class="stat-number" data-target="12">0</div>
+        <div class="stat-unit"></div>
+        <div class="stat-label">Placas tectónicas mayores</div>
       </div>
     </div>
   </section>
@@ -53,46 +81,45 @@
   <!-- ── Presentation / Scope Section ──────────────────────── -->
   <section class="presentation-section" id="presentation" aria-labelledby="pres-title">
     <div class="container">
-      <h2 class="section-heading" id="pres-title">Sobre Este Proyecto</h2>
+      <h2 class="section-heading" id="pres-title">Sobre Esta Investigación</h2>
       <p style="color:var(--clr-text-muted);max-width:780px;margin-bottom:0;line-height:1.8;font-size:1.02rem;">
-        Esta plataforma nació como un espacio de divulgación científica académica orientado a estudiantes
-        y profesionales interesados en las ciencias de la Tierra. Aquí encontrarás artículos, recursos
-        multimedia, referencias bibliográficas y herramientas interactivas que conectan la teoría con la
-        práctica geofísica.
+        Esta investigación explora tres dimensiones fundamentales del sistema terrestre:
+        la estructura interna del planeta desde la corteza hasta el núcleo, la escala del
+        tiempo geológico que abarca 4 600 millones de años de historia, y los principales
+        campos geofísicos que revelan los procesos activos en el interior de la Tierra.
       </p>
 
       <div class="presentation-grid">
         <div class="pres-card reveal">
-          <div class="pres-card__icon">🔭</div>
+          <div class="pres-card__icon"><i class="fa-solid fa-layer-group"></i></div>
           <h3>Delimitación</h3>
           <p>
-            El proyecto abarca el estudio de la <strong>estructura interna de la Tierra</strong> —
+            El estudio abarca la <strong>estructura interna de la Tierra</strong> —
             corteza, manto y núcleo —, la <strong>escala del tiempo geológico</strong> desde el
             Hadeano hasta el Cuaternario, y los principales <strong>campos geofísicos</strong>:
-            gravitacional, magnético y geotérmico. Se excluyen disciplinas como la
-            meteorología y la oceanografía de superficie.
+            gravitacional, magnético y geotérmico.
           </p>
         </div>
 
         <div class="pres-card reveal">
-          <div class="pres-card__icon">🎯</div>
-          <h3>Misión</h3>
+          <div class="pres-card__icon"><i class="fa-solid fa-bullseye"></i></div>
+          <h3>Objetivos</h3>
           <p>
-            Democratizar el conocimiento geofísico a través de contenidos rigurosos y accesibles.
-            Nuestra misión es construir un puente entre la investigación científica de frontera y
-            el público académico, estimulando el pensamiento crítico y la curiosidad por los
-            procesos que ocurren bajo nuestros pies.
+            Comprender y divulgar los procesos que ocurren en el interior del planeta a
+            través de contenidos rigurosos. El estudio busca conectar la investigación
+            científica de frontera con el público académico, estimulando el pensamiento
+            crítico sobre los procesos geofísicos.
           </p>
         </div>
 
         <div class="pres-card reveal">
-          <div class="pres-card__icon">🌐</div>
-          <h3>Visión</h3>
+          <div class="pres-card__icon"><i class="fa-solid fa-satellite-dish"></i></div>
+          <h3>Alcance</h3>
           <p>
-            Convertirnos en la referencia hispanohablante de divulgación geofísica digital,
-            integrando tecnologías de visualización científica, recursos interactivos y una
-            comunidad activa de aprendizaje que impulse la educación en Ciencias de la Tierra
-            para las próximas generaciones.
+            Abarcamos desde la sismología global hasta la geocronología radiométrica,
+            integrando los tres campos geofísicos fundamentales — gravitacional, magnético
+            y geotérmico — en un marco unificado que conecta todas las dimensiones del
+            planeta.
           </p>
         </div>
       </div>
@@ -232,7 +259,7 @@
   <!-- ── Footer ─────────────────────────────────────────────── -->
   <footer class="site-footer">
     <div class="site-footer__inner">
-      <div class="site-footer__logo">🌍 Geo&amp;Tierra</div>
+      <div class="site-footer__logo"><i class="fa-solid fa-earth-americas"></i> Geo&amp;Tierra</div>
       <ul class="site-footer__links">
         <li><a href="index.html">Inicio</a></li>
         <li><a href="blog.html">Blog</a></li>
@@ -242,10 +269,11 @@
         <li><a href="galeria.html">Galería</a></li>
         <li><a href="videoteca.html">Videoteca</a></li>
       </ul>
-      <p>&copy; 2024 Geociencias: Estructura, Tiempo y Campos de la Tierra &mdash; Material de divulgación científica con fines educativos.</p>
+      <p>&copy; 2024 Estructura Interna de la Tierra, Tiempo Geológico y Campos Geofísicos &mdash; Investigación científica con fines educativos.</p>
     </div>
   </footer>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

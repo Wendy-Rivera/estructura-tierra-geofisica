@@ -4,7 +4,7 @@
    ============================================================ */
 
 /* ── Google Fonts ────────────────────────────────────────── */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap');
 
 /* ── Modern CSS Reset ────────────────────────────────────── */
 *, *::before, *::after {
@@ -73,7 +73,9 @@ p, h1, h2, h3, h4, h5, h6 {
 
   /* Typography */
   --font-display: 'Montserrat', 'Georgia', sans-serif;
+  --font-title:   'Playfair Display', 'Georgia', serif;
   --font-body:    'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font-serif:   'EB Garamond', 'Georgia', 'Times New Roman', serif;
 
   /* Spacing */
   --nav-height:   68px;
@@ -381,11 +383,11 @@ a:hover {
 }
 
 .hero-title {
-  font-family: var(--font-display);
-  font-size: clamp(2.4rem, 7vw, 5.5rem);
+  font-family: var(--font-title);
+  font-size: clamp(2.2rem, 6.5vw, 5rem);
   font-weight: 900;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
+  line-height: 1.12;
+  letter-spacing: -0.01em;
   margin-bottom: 1.5rem;
   background: linear-gradient(135deg, var(--clr-core) 0%, var(--clr-magma) 50%, var(--clr-geo-blue) 100%);
   background-size: 300% auto;
@@ -541,9 +543,18 @@ a:hover {
 }
 
 .pres-card__icon {
-  font-size: 2.2rem;
+  font-size: 1.75rem;
   margin-bottom: 1rem;
   animation: floatUp 4s ease-in-out infinite;
+  color: var(--clr-core);
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,215,0,0.08);
+  border-radius: 50%;
+  border: 1px solid rgba(255,215,0,0.18);
 }
 
 .pres-card__icon:nth-child(1) { animation-delay: 0s; }
@@ -809,18 +820,24 @@ a:hover {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--clr-geo-blue);
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.6rem;
 }
 
+/* APA 7 — Hanging indent + Garamond */
 .blog-article__biblio ol {
-  padding-left: 1.2rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .blog-article__biblio li {
-  font-size: 0.78rem;
-  color: var(--clr-text-dim);
-  line-height: 1.5;
-  margin-bottom: 0.2rem;
+  font-family: var(--font-serif);
+  font-size: 0.85rem;
+  color: var(--clr-text);
+  line-height: 1.7;
+  padding-left: 2.5em;
+  text-indent: -2.5em;
+  margin-bottom: 0.6rem;
 }
 
 /* ── Hemeroteca List ─────────────────────────────────────── */
@@ -1384,6 +1401,162 @@ a:hover {
   transform: translateY(0);
 }
 
+/* ── Scroll Progress Bar ─────────────────────────────────── */
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--clr-magma), var(--clr-core), var(--clr-geo-blue));
+  z-index: 9999;
+  transition: width 0.1s linear;
+  box-shadow: 0 0 8px rgba(255,69,0,0.6);
+}
+
+/* ── Three.js Hero Canvas ────────────────────────────────── */
+#hero-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.85;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 900px;
+}
+
+/* ── Stats Section ───────────────────────────────────────── */
+.stats-section {
+  background: var(--clr-bg);
+  padding: 4rem 2rem;
+  border-bottom: 1px solid rgba(255,69,0,0.12);
+  position: relative;
+  overflow: hidden;
+}
+
+.stats-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg,
+    rgba(255,69,0,0.04) 0%,
+    transparent 30%,
+    rgba(0,212,255,0.04) 70%,
+    transparent 100%);
+  pointer-events: none;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 2rem 1.5rem;
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-card);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.stat-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.5), 0 0 24px rgba(255,69,0,0.12);
+}
+
+.stat-number {
+  font-family: var(--font-title);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 900;
+  color: var(--clr-core);
+  text-shadow: 0 0 20px var(--glow-core);
+  line-height: 1;
+}
+
+.stat-unit {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--clr-magma);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin: 0.3rem 0;
+}
+
+.stat-label {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  color: var(--clr-text-muted);
+  line-height: 1.4;
+}
+
+/* ── Back to Top Button ──────────────────────────────────── */
+#back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 46px;
+  height: 46px;
+  background: linear-gradient(135deg, var(--clr-magma), var(--clr-magma-light));
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 20px var(--glow-magma);
+  transition: transform 0.3s, opacity 0.3s, box-shadow 0.3s;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#back-to-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#back-to-top:hover {
+  transform: translateY(-4px) scale(1.08);
+  box-shadow: 0 8px 32px var(--glow-magma);
+}
+
+/* ── Resource icon override (Font Awesome) ───────────────── */
+.res-icon {
+  font-size: 1.15rem;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+  color: var(--clr-magma);
+  width: 2rem;
+  text-align: center;
+}
+
+/* ── Audio icon override ─────────────────────────────────── */
+.audio-item .audio-icon {
+  font-size: 1.4rem;
+  flex-shrink: 0;
+  color: var(--clr-magma);
+  width: 2rem;
+  text-align: center;
+}
+
 /* ── Responsive ──────────────────────────────────────────── */
 @media (max-width: 900px) {
   .site-nav__links {
@@ -1454,6 +1627,10 @@ a:hover {
     font-size: 1.5rem;
     min-width: 1.75rem;
   }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 480px) {
@@ -1467,6 +1644,10 @@ a:hover {
   }
 
   .presentation-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-grid {
     grid-template-columns: 1fr;
   }
 }

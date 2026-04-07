@@ -1,14 +1,18 @@
 /**
  * main.js
- * Geociencias: Estructura, Tiempo y Campos de la Tierra
+ * Estructura Interna de la Tierra, Tiempo Geológico y Campos Geofísicos
  * "Deep Earth Abyss" Interactive Behaviours
  *
+ * • Three.js animated layered-Earth globe (index hero)
  * • Vertical parallax scrolling (index.html)
  * • Mobile navigation toggle
  * • Scroll-reveal for .reveal elements
  * • Active nav-link highlighting
  * • 3D card tilt effect (gallery & blog items)
  * • Video play button interaction
+ * • Scroll progress bar
+ * • Animated stat counters
+ * • Back-to-top button
  */
 
 'use strict';
@@ -19,6 +23,100 @@ const qsa = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
 
 // Keep in sync with CSS @media (max-width: 768px)
 const MOBILE_BREAKPOINT = 768;
+
+// ── Three.js Hero Canvas ───────────────────────────────────
+function initHeroCanvas() {
+  const canvas = document.getElementById('hero-canvas');
+  if (!canvas || typeof THREE === 'undefined') return;
+
+  const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  renderer.setSize(canvas.clientWidth, canvas.clientHeight);
+
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(55, canvas.clientWidth / canvas.clientHeight, 0.1, 100);
+  camera.position.z = 5;
+
+  // ── Outer wireframe sphere (seismic network / surface) ──
+  const outerGeo = new THREE.IcosahedronGeometry(2, 4);
+  const outerMat = new THREE.MeshBasicMaterial({
+    color: 0x00D4FF,
+    wireframe: true,
+    transparent: true,
+    opacity: 0.10,
+  });
+  const outerSphere = new THREE.Mesh(outerGeo, outerMat);
+
+  // ── Mid sphere (manto) ──
+  const midGeo = new THREE.IcosahedronGeometry(1.35, 3);
+  const midMat = new THREE.MeshBasicMaterial({
+    color: 0xFF4500,
+    wireframe: true,
+    transparent: true,
+    opacity: 0.14,
+  });
+  const midSphere = new THREE.Mesh(midGeo, midMat);
+
+  // ── Inner core sphere (glowing solid) ──
+  const coreGeo = new THREE.SphereGeometry(0.55, 48, 48);
+  const coreMat = new THREE.MeshBasicMaterial({
+    color: 0xFFD700,
+    transparent: true,
+    opacity: 0.92,
+  });
+  const coreSphere = new THREE.Mesh(coreGeo, coreMat);
+
+  // ── Particles (seismic station network) ──
+  const PARTICLE_COUNT = 900;
+  const positions = new Float32Array(PARTICLE_COUNT * 3);
+  for (let i = 0; i < PARTICLE_COUNT; i++) {
+    const theta = Math.random() * Math.PI * 2;
+    const phi   = Math.acos(2 * Math.random() - 1);
+    const r     = 2.2 + Math.random() * 1.2;
+    positions[i * 3]     = r * Math.sin(phi) * Math.cos(theta);
+    positions[i * 3 + 1] = r * Math.sin(phi) * Math.sin(theta);
+    positions[i * 3 + 2] = r * Math.cos(phi);
+  }
+  const ptGeo = new THREE.BufferGeometry();
+  ptGeo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+  const ptMat = new THREE.PointsMaterial({
+    color: 0x00D4FF,
+    size: 0.018,
+    transparent: true,
+    opacity: 0.55,
+  });
+  const particles = new THREE.Points(ptGeo, ptMat);
+
+  scene.add(outerSphere, midSphere, coreSphere, particles);
+
+  let t = 0;
+  function animate() {
+    requestAnimationFrame(animate);
+    t += 0.005;
+
+    outerSphere.rotation.y  = t * 0.25;
+    outerSphere.rotation.x  = t * 0.08;
+    midSphere.rotation.y    = -t * 0.38;
+    midSphere.rotation.z    = t * 0.18;
+    particles.rotation.y    = t * 0.12;
+
+    // Pulsating core
+    const pulse = 1 + 0.12 * Math.sin(t * 2.5);
+    coreSphere.scale.set(pulse, pulse, pulse);
+
+    renderer.render(scene, camera);
+  }
+  animate();
+
+  function onResize() {
+    const w = canvas.clientWidth;
+    const h = canvas.clientHeight;
+    renderer.setSize(w, h, false);
+    camera.aspect = w / h;
+    camera.updateProjectionMatrix();
+  }
+  window.addEventListener('resize', onResize, { passive: true });
+}
 
 // ── Parallax ───────────────────────────────────────────────
 function initParallax() {
@@ -98,7 +196,6 @@ function initScrollReveal() {
   const items = qsa('.reveal');
   if (!items.length) return;
 
-  // Counter for staggering items as they enter the viewport
   let revealCount = 0;
 
   const observer = new IntersectionObserver(
@@ -132,11 +229,6 @@ function initActiveNav() {
 }
 
 // ── 3D Card Tilt Effect ────────────────────────────────────
-/**
- * Adds a subtle 3D perspective tilt on mouse move
- * for .glass-card, .gallery-item, and .video-card elements.
- * Resets smoothly on mouse leave.
- */
 function initCardTilt() {
   const cards = qsa('.glass-card, .gallery-item, .video-card');
   if (!cards.length || window.matchMedia(`(max-width: ${MOBILE_BREAKPOINT}px)`).matches) return;
@@ -148,8 +240,8 @@ function initCardTilt() {
       const y      = e.clientY - rect.top;
       const cx     = rect.width  / 2;
       const cy     = rect.height / 2;
-      const rotX   = ((y - cy) / cy) * -6;   // ±6deg vertical
-      const rotY   = ((x - cx) / cx) *  6;   // ±6deg horizontal
+      const rotX   = ((y - cy) / cy) * -6;
+      const rotY   = ((x - cx) / cx) *  6;
       card.style.transform = `perspective(800px) rotateX(${rotX.toFixed(2)}deg) rotateY(${rotY.toFixed(2)}deg) translateY(-4px) scale(1.01)`;
     });
 
@@ -166,16 +258,12 @@ function initVideoPlayButtons() {
     btn.addEventListener('click', () => {
       const card = btn.closest('.video-card');
       if (!card) return;
-      const title = card.querySelector('h3');
-      if (title) {
-        // Visual feedback — pulse the button
-        btn.style.transform = 'scale(1.3)';
-        btn.style.background = 'var(--clr-core)';
-        setTimeout(() => {
-          btn.style.transform = '';
-          btn.style.background = '';
-        }, 400);
-      }
+      btn.style.transform = 'scale(1.3)';
+      btn.style.background = 'var(--clr-core)';
+      setTimeout(() => {
+        btn.style.transform = '';
+        btn.style.background = '';
+      }, 400);
     });
   });
 }
@@ -191,8 +279,76 @@ function initHeroScroll() {
   });
 }
 
+// ── Scroll Progress Bar ────────────────────────────────────
+function initScrollProgress() {
+  const bar = document.createElement('div');
+  bar.id = 'scroll-progress';
+  document.body.prepend(bar);
+
+  function updateBar() {
+    const scrollTop    = window.scrollY;
+    const docHeight    = document.documentElement.scrollHeight - window.innerHeight;
+    const pct          = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    bar.style.width    = pct.toFixed(2) + '%';
+  }
+
+  window.addEventListener('scroll', updateBar, { passive: true });
+  updateBar();
+}
+
+// ── Back to Top ────────────────────────────────────────────
+function initBackToTop() {
+  const btn = document.createElement('button');
+  btn.id = 'back-to-top';
+  btn.setAttribute('aria-label', 'Volver al inicio');
+  btn.innerHTML = '<i class="fa-solid fa-chevron-up"></i>';
+  document.body.appendChild(btn);
+
+  window.addEventListener('scroll', () => {
+    btn.classList.toggle('visible', window.scrollY > 400);
+  }, { passive: true });
+
+  btn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
+
+// ── Animated Stat Counters ─────────────────────────────────
+function initCounters() {
+  const counters = qsa('.stat-number[data-target]');
+  if (!counters.length) return;
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const el      = entry.target;
+      const target  = parseFloat(el.dataset.target);
+      const isFloat = el.dataset.target.includes('.');
+      const duration = 1800;
+      const start    = performance.now();
+
+      function tick(now) {
+        const elapsed = now - start;
+        const progress = Math.min(elapsed / duration, 1);
+        // easeOutExpo
+        const ease = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+        const value = target * ease;
+        el.textContent = isFloat
+          ? value.toFixed(1)
+          : Math.round(value).toLocaleString('es');
+        if (progress < 1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+      observer.unobserve(el);
+    });
+  }, { threshold: 0.3 });
+
+  counters.forEach(el => observer.observe(el));
+}
+
 // ── Init ───────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
+  initHeroCanvas();
   initParallax();
   initMobileNav();
   initScrollReveal();
@@ -200,5 +356,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initCardTilt();
   initVideoPlayButtons();
   initHeroScroll();
+  initScrollProgress();
+  initBackToTop();
+  initCounters();
 });
 
