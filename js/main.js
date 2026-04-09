@@ -350,6 +350,63 @@ function initCounters() {
   counters.forEach(el => observer.observe(el));
 }
 
+// ── TOC Smooth-Scroll ──────────────────────────────────────
+function initTocLinks() {
+  qsa('.toc-item a[href*="#"]').forEach(link => {
+    const href = link.getAttribute('href');
+    if (!href) return;
+
+    const hashIdx = href.indexOf('#');
+    if (hashIdx === -1) return;
+
+    const pagePart = href.slice(0, hashIdx);
+    const hash = href.slice(hashIdx);
+
+    // Only handle same-page anchor links (no page part, or same page)
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    const isSamePage = pagePart === '' || pagePart === currentPage;
+
+    if (!isSamePage) return;
+
+    link.addEventListener('click', e => {
+      const target = document.querySelector(hash);
+      if (!target) return;
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+}
+
+// ── TOC Active Highlight ───────────────────────────────────
+function initTocHighlight() {
+  const tocItems = qsa('.toc-item[data-section]');
+  if (!tocItems.length) return;
+
+  const sections = tocItems
+    .map(item => {
+      const id = item.dataset.section;
+      return id ? document.getElementById(id) : null;
+    })
+    .filter(Boolean);
+
+  if (!sections.length) return;
+
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const id = entry.target.id;
+        tocItems.forEach(item => {
+          item.classList.toggle('toc-item--active', item.dataset.section === id);
+        });
+      });
+    },
+    { threshold: 0.3 }
+  );
+
+  sections.forEach(sec => observer.observe(sec));
+}
+
 // ── Init ───────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
   initHeroCanvas();
@@ -363,5 +420,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollProgress();
   initBackToTop();
   initCounters();
+  initTocLinks();
+  initTocHighlight();
 });
 
