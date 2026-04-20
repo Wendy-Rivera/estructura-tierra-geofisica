@@ -1,445 +1,118 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Blog científico sobre geofísica, estructura interna de la Tierra, tiempo geológico y campos geofísicos." />
-  <title>Blog Científico — Geo&amp;Tierra</title>
-  <link rel="stylesheet" href="css/styles.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Blog científico del proyecto sobre estructura interna de la Tierra, tiempo geológico y campos geofísicos.">
+  <title>Blog Científico | GEOLOGÍA FÍSICA DE EL SALVADOR</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <script src="js/tailwind-config.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/brutalist-theme.css">
 </head>
-<body>
+<body class="bg-obsidian text-bone font-ui">
+  <div id="tsparticles" class="fixed inset-0 pointer-events-none z-0"></div>
 
-  <!-- ── Navigation ───────────────────────────────────────── -->
-  <nav class="site-nav" aria-label="Navegación principal">
-    <span class="site-nav__logo"><i class="fa-solid fa-earth-americas"></i> Geociencias</span>
-    <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-    <ul class="site-nav__links" role="list">
-      <li><a href="index.html">Inicio</a></li>
-      <li><a href="blog.html" class="active">Blog</a></li>
-      <li><a href="hemeroteca.html">Hemeroteca</a></li>
-      <li><a href="recursos.html">Recursos</a></li>
-      <li><a href="audioteca.html">Audioteca</a></li>
-      <li><a href="galeria.html">Galería</a></li>
-      <li><a href="videoteca.html">Videoteca</a></li>
-    </ul>
-  </nav>
-
-  <!-- ── Page Hero ─────────────────────────────────────────── -->
-  <header class="page-hero">
-    <div class="page-hero__inner">
-      <h1>Blog Científico</h1>
-      <p>Ocho artículos de divulgación sobre geofísica, tectónica de placas y el interior terrestre — elaborados sobre el tema de investigación.</p>
-    </div>
-  </header>
-
-  <!-- ── Main Content ──────────────────────────────────────── -->
-  <main id="main-content">
-    <div class="container">
-
-      <h2 class="section-heading">Entradas del Blog</h2>
-
-      <div class="blog-grid">
-
-        <!-- ── Entrada 1 ── -->
-        <article class="glass-card blog-article reveal">
-          <img
-            class="blog-article__img"
-            src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=800&auto=format&fit=crop"
-            alt="Vista desde el espacio de la Tierra mostrando continentes y océanos"
-            loading="lazy"
-          />
-          <div class="blog-article__body">
-            <div class="blog-article__meta">
-              <span class="layer-badge">Sismología</span>
-              <span class="blog-article__date">Grupo A · 2024</span>
-            </div>
-            <h3>Ondas sísmicas: mensajeras del interior terrestre</h3>
-            <div class="academic-body">
-            <p class="blog-article__section">
-              <strong>Introducción.</strong> Desde tiempos remotos, los terremotos han fascinado y aterrorizado a la humanidad.
-              Sin embargo, más allá de su poder destructivo, los sismos son también herramientas de conocimiento:
-              las ondas que generan viajan por el interior de la Tierra y nos revelan su estructura.
-            </p>
-            <p class="blog-article__section">
-              <strong>Desarrollo.</strong> Las ondas sísmicas se clasifican en dos grandes tipos: las <em>ondas de cuerpo</em> — P (primarias) y S (secundarias) —
-              y las <em>ondas superficiales</em> — Rayleigh y Love. Las ondas P son compresionales y pueden viajar
-              tanto por sólidos como por líquidos; las S son transversales y sólo se propagan en medios sólidos.
-              Esta diferencia permitió a Richard Oldham demostrar en 1906 que el núcleo externo es líquido,
-              al detectar una "zona de sombra" donde las ondas S desaparecen. La velocidad de propagación
-              de las ondas varía con la densidad y elasticidad del medio, creando discontinuidades sísmicas
-              — como el Moho y la de Gutenberg — que delimitan las capas internas de la Tierra.
-            </p>
-            <blockquote class="blog-article__conclusion">
-              <strong>Conclusión.</strong> Las ondas sísmicas son, en esencia, radiografías del planeta:
-              sin perforar la Tierra, podemos reconstruir su estructura interna con una resolución que mejora
-              cada año gracias a las redes globales de sismógrafos y la tomografía sísmica.
-            </blockquote>
-            <div class="blog-article__biblio">
-              <h4>Referencias</h4>
-              <ul class="apa-references">
-                <li>Sheriff, R. E., &amp; Geldart, L. P. (1995). <em>Exploration seismology</em> (2.ª ed.). Cambridge University Press.</li>
-                <li>Oldham, R. D. (1906). The constitution of the interior of the Earth, as revealed by earthquakes. <em>Quarterly Journal of the Geological Society, 62</em>, 456–475. https://doi.org/10.1144/GSL.JGS.1906.062.01-04.21</li>
-              </ul>
-            </div>
-            </div>
+  <div class="tectonic-shell">
+    <header class="sticky top-0 z-40 px-3 pt-3 sm:px-6 lg:px-10">
+      <nav class="cut-nav ash-frame bg-zinc-900/60 px-4 py-4 sm:px-6" aria-label="Navegación principal">
+        <div class="grid gap-4 lg:grid-cols-[1.35fr_2fr] lg:items-center">
+          <div class="cut-brand border border-magma/50 bg-magma/10 p-4">
+            <p class="font-display text-2xl leading-none tracking-wide text-bone sm:text-3xl">GEOLOGÍA FÍSICA DE EL SALVADOR</p>
+            <p class="mt-2 text-[10px] uppercase tracking-[0.26em] text-bone/45 sm:text-xs">NP 02 / LIC. PEDRO ELIAS SALAZAR MENJIVAR</p>
           </div>
-        </article>
 
-        <!-- ── Entrada 2 ── -->
-        <article class="glass-card blog-article reveal">
-          <img
-            class="blog-article__img"
-            src="https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?w=800&auto=format&fit=crop"
-            alt="Representación artística de las líneas del campo magnético terrestre"
-            loading="lazy"
-          />
-          <div class="blog-article__body">
-            <div class="blog-article__meta">
-              <span class="layer-badge">Geomagnetismo</span>
-              <span class="blog-article__date">Grupo A · 2024</span>
-            </div>
-            <h3>El campo magnético terrestre y sus inversiones polares</h3>
-            <div class="academic-body">
-            <p class="blog-article__section">
-              <strong>Introducción.</strong> La Tierra actúa como un imán gigante cuyo campo magnético
-              nos protege del viento solar. Pero ese campo no es eterno ni constante:
-              a lo largo de la historia geológica ha oscilado en intensidad y, lo más sorprendente, ha invertido su polaridad cientos de veces.
-            </p>
-            <p class="blog-article__section">
-              <strong>Desarrollo.</strong> El campo geomagnético se origina en el movimiento convectivo del
-              hierro líquido del núcleo externo, un mecanismo conocido como <em>efecto dinamo</em>.
-              La última inversión magnética ocurrió hace aproximadamente 780 000 años (inversión Brunhes–Matuyama).
-              Estas inversiones quedan registradas en las rocas volcánicas del fondo oceánico:
-              al solidificarse, los minerales ferromagnéticos se alinean con el campo imperante,
-              creando franjas simétricas a ambos lados de las dorsales oceánicas.
-              Este registro paleomagnético fue fundamental para confirmar la teoría de la tectónica de placas.
-            </p>
-            <blockquote class="blog-article__conclusion">
-              <strong>Conclusión.</strong> Las inversiones polares son uno de los registros más espectaculares
-              del tiempo geológico y demuestran que la Tierra es un sistema dinámico en constante evolución.
-              Su estudio tiene implicaciones prácticas para la navegación y la comprensión del clima espacial.
-            </blockquote>
-            <div class="blog-article__biblio">
-              <h4>Referencias</h4>
-              <ul class="apa-references">
-                <li>Glatzmaier, G. A., &amp; Roberts, P. H. (1995). A three-dimensional self-consistent computer simulation of a geomagnetic field reversal. <em>Nature, 377</em>, 203–209. https://doi.org/10.1038/377203a0</li>
-                <li>Cox, A. (1969). Geomagnetic reversals. <em>Science, 163</em>(3864), 237–245. https://doi.org/10.1126/science.163.3864.237</li>
-              </ul>
-            </div>
-            </div>
+          <ul class="grid grid-cols-2 gap-2 sm:grid-cols-4">
+            <li><a href="index.html" class="site-link cut-link">Inicio</a></li>
+            <li><a href="index.html#presentacion" class="site-link cut-link">Presentación</a></li>
+            <li><a href="blog.html" class="site-link cut-link is-active">Blog</a></li>
+            <li><a href="hemeroteca.html" class="site-link cut-link">Hemeroteca</a></li>
+            <li><a href="recursos.html" class="site-link cut-link is-cyan">Recursos</a></li>
+            <li><a href="audioteca.html" class="site-link cut-link is-cyan">Audioteca</a></li>
+            <li><a href="galeria.html" class="site-link cut-link is-cyan">Galería</a></li>
+            <li><a href="videoteca.html" class="site-link cut-link is-cyan">Videoteca</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main class="page-wrap">
+      <section class="cut-panel-a ash-frame panel">
+        <div class="grid gap-8 lg:grid-cols-[1.2fr_1fr] lg:items-end">
+          <div>
+            <p class="small-overline">Blog Científico</p>
+            <h1 data-hero-title class="section-title">Entradas de análisis geofísico</h1>
           </div>
-        </article>
+          <p data-hero-copy class="section-copy">Este blog presenta síntesis técnicas orientadas al trabajo universitario. Cada entrada conecta conceptos fundamentales con evidencia observacional y referencias verificables para comprender la dinámica interna del planeta y sus campos geofísicos. Los textos se presentan en formato de parafraseo académico, con autor institucional y año.</p>
+        </div>
+      </section>
 
-        <!-- ── Entrada 3 ── -->
-        <article class="glass-card blog-article reveal">
-          <img
-            class="blog-article__img"
-            src="https://images.unsplash.com/photo-1508791290064-7aa22a7ac890?w=800&auto=format&fit=crop"
-            alt="Estratos rocosos coloreados que representan diferentes épocas geológicas"
-            loading="lazy"
-          />
-          <div class="blog-article__body">
-            <div class="blog-article__meta">
-              <span class="layer-badge">Geología</span>
-              <span class="blog-article__date">Grupo B · 2024</span>
-            </div>
-            <h3>La escala del tiempo geológico: 4 600 millones de años de historia</h3>
-            <div class="academic-body">
-            <p class="blog-article__section">
-              <strong>Introducción.</strong> El tiempo geológico es quizás el concepto más difícil de
-              aprehender para el ser humano: ~4 600 millones de años de historia planetaria,
-              frente a los apenas 300 000 años del <em>Homo sapiens</em>. Comprender esta escala es fundamental para
-              interpretar cualquier proceso geofísico.
-            </p>
-            <p class="blog-article__section">
-              <strong>Desarrollo.</strong> La escala del tiempo geológico se organiza jerárquicamente en eones,
-              eras, períodos y épocas. El eón <em>Hadeano</em> (4 600–4 000 Ma) es el más antiguo y abarca
-              la formación de la Tierra, la Luna y los primeros océanos. El <em>Arcaico</em> (4 000–2 500 Ma)
-              alberga las primeras evidencias de vida microbiana. El <em>Proterozoico</em> (2 500–541 Ma)
-              culmina con la explosión de vida multicelular. El <em>Fanerozoico</em>, el eón actual,
-              comprende eras como el Paleozoico, Mesozoico y Cenozoico, marcadas por grandes extinciones
-              y radiaciones evolutivas. La datación radiométrica (U-Pb, K-Ar, Rb-Sr) permite asignar
-              edades absolutas a estas divisiones con márgenes de error de apenas millones de años.
-            </p>
-            <blockquote class="blog-article__conclusion">
-              <strong>Conclusión.</strong> La escala del tiempo geológico es la columna vertebral de las
-              Ciencias de la Tierra. Sin ella, sería imposible correlacionar eventos como extinciones masivas,
-              ciclos de Wilson o variaciones del nivel del mar a lo largo de la historia del planeta.
-            </blockquote>
-            <div class="blog-article__biblio">
-              <h4>Referencias</h4>
-              <ul class="apa-references">
-                <li>Gradstein, F. M., Ogg, J. G., &amp; Schmitz, M. D. (Eds.). (2020). <em>Geologic time scale 2020</em>. Elsevier.</li>
-                <li>Knoll, A. H. (2003). <em>Life on a young planet: The first three billion years of evolution on Earth</em>. Princeton University Press.</li>
-              </ul>
-            </div>
-            </div>
-          </div>
-        </article>
+      <section class="cut-panel-b ash-frame panel mt-10" id="entradas">
+        <p class="section-copy mb-6 text-xs">Nota de integridad académica: las entradas de este bloque son parafraseos de fuentes institucionales verificables, citadas como (Servicio Geológico Colombiano, 2025, 2026) e (Instituto Geofísico de la Escuela Politécnica Nacional, 2026).</p>
+        <div class="card-grid cols-2">
+          <article class="info-card cut-panel-c" data-anim-in>
+            <h3 class="font-display text-3xl text-bone">Ondas sísmicas y estructura profunda</h3>
+            <p class="section-copy mt-3">Las ondas P atraviesan sólidos y líquidos, mientras que las ondas S no se propagan en medios líquidos; esta diferencia permitió identificar un núcleo externo líquido. Las discontinuidades de Mohorovicic, Gutenberg y Lehmann marcan cambios de composición y estado, y la tomografía sísmica permite visualizar heterogeneidades térmicas del manto.</p>
+            <p class="mt-4 text-xs uppercase tracking-[0.17em] text-magnetic">Categoría: Sismología</p>
+          </article>
 
-        <!-- ── Entrada 4 ── -->
-        <article class="glass-card blog-article reveal">
-          <img
-            class="blog-article__img"
-            src="https://images.unsplash.com/photo-1559827291-72ee739d0d9a?w=800&auto=format&fit=crop"
-            alt="Mapa global mostrando los límites de las placas tectónicas"
-            loading="lazy"
-          />
-          <div class="blog-article__body">
-            <div class="blog-article__meta">
-              <span class="layer-badge">Geodinámica</span>
-              <span class="blog-article__date">Grupo B · 2024</span>
-            </div>
-            <h3>Convección en el manto y tectónica de placas</h3>
-            <div class="academic-body">
-            <p class="blog-article__section">
-              <strong>Introducción.</strong> Alfred Wegener propuso en 1912 la deriva continental, una idea
-              revolucionaria que fue duramente criticada hasta que la geofísica marina de los años 1950–60
-              aportó pruebas irrefutables. El mecanismo motor es la convección en el manto.
-            </p>
-            <p class="blog-article__section">
-              <strong>Desarrollo.</strong> La convección mantélica opera porque el manto, aunque sólido en
-              escala de tiempo corta, fluye como un líquido muy viscoso en escalas geológicas.
-              El calor residual de la acreción planetaria y la desintegración de elementos radiactivos
-              (U, Th, K) genera un gradiente térmico que impulsa células de convección.
-              Estas células arrastran las placas litosféricas: donde el material asciende se crean
-              <em>dorsales oceánicas</em> (como la Dorsal Mesoatlántica); donde desciende se producen
-              <em>zonas de subducción</em> (como la Fosa de las Marianas). Las velocidades de movimiento
-              varían entre 1 y 10 cm/año, comparables al crecimiento de las uñas humanas.
-            </p>
-            <blockquote class="blog-article__conclusion">
-              <strong>Conclusión.</strong> La tectónica de placas unifica en un solo marco explicativo
-              la distribución de volcanes, terremotos, cordilleras y cuencas oceánicas.
-              Es sin duda la teoría unificadora de las Ciencias de la Tierra.
-            </blockquote>
-            <div class="blog-article__biblio">
-              <h4>Referencias</h4>
-              <ul class="apa-references">
-                <li>Turcotte, D. L., &amp; Schubert, G. (2014). <em>Geodynamics</em> (3.ª ed.). Cambridge University Press.</li>
-                <li>Morgan, W. J. (1968). Rises, trenches, great faults and crustal blocks. <em>Journal of Geophysical Research, 73</em>(6), 1959–1982. https://doi.org/10.1029/JB073i006p01959</li>
-              </ul>
-            </div>
-            </div>
-          </div>
-        </article>
+          <article class="info-card cut-panel-d" data-anim-in>
+            <h3 class="font-display text-3xl text-bone">Inversiones del campo geomagnético</h3>
+            <p class="section-copy mt-3">El campo magnético terrestre se explica por el geodinamo del núcleo externo, donde el hierro líquido conductor se mueve por convección y rotación. El paleomagnetismo registrado en rocas muestra inversiones de polaridad a lo largo del tiempo geológico y sirve para correlación estratigráfica y reconstrucción tectónica.</p>
+            <p class="mt-4 text-xs uppercase tracking-[0.17em] text-magnetic">Categoría: Geomagnetismo</p>
+          </article>
 
-        <!-- ── Entrada 5 ── -->
-        <article class="glass-card blog-article reveal">
-          <img
-            class="blog-article__img"
-            src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&auto=format&fit=crop"
-            alt="Fotografía aérea de montañas mostrando la topografía terrestre"
-            loading="lazy"
-          />
-          <div class="blog-article__body">
-            <div class="blog-article__meta">
-              <span class="layer-badge">Gravimetría</span>
-              <span class="blog-article__date">Grupo C · 2024</span>
-            </div>
-            <h3>Anomalías gravimétricas y el geoide terrestre</h3>
-            <div class="academic-body">
-            <p class="blog-article__section">
-              <strong>Introducción.</strong> La gravedad no es igual en todos los puntos de la Tierra.
-              Pequeñas variaciones del campo gravitacional revelan diferencias de densidad
-              ocultas bajo la superficie — minerales pesados, cavidades, variaciones de la
-              corteza — con aplicaciones que van desde la exploración de recursos hasta la
-              monitorización del cambio climático.
-            </p>
-            <p class="blog-article__section">
-              <strong>Desarrollo.</strong> El <em>geoide</em> es la superficie equipotencial gravitacional
-              que mejor aproxima el nivel medio del mar. Las <em>anomalías gravimétricas</em>
-              son las diferencias entre la gravedad observada y la teórica (elipsoide de referencia).
-              Las anomalías de <em>Bouguer</em>, que corrigen el efecto topográfico, permiten mapear
-              variaciones de densidad cortical y mantélica. Satélites como GRACE-FO miden cambios
-              temporales en el geoide causados por el deshielo glaciar, las variaciones del nivel
-              freático y los grandes terremotos, convirtiéndose en una herramienta clave del
-              monitoreo ambiental global.
-            </p>
-            <blockquote class="blog-article__conclusion">
-              <strong>Conclusión.</strong> La gravimetría es uno de los métodos geofísicos más versátiles:
-              desde la cartografía de cuencas sedimentarias para exploración petrolera hasta la
-              cuantificación de la pérdida de hielo en los polos, su campo de aplicación no deja de expandirse.
-            </blockquote>
-            <div class="blog-article__biblio">
-              <h4>Referencias</h4>
-              <ul class="apa-references">
-                <li>Blakely, R. J. (1995). <em>Potential theory in gravity and magnetic applications</em>. Cambridge University Press.</li>
-                <li>Tapley, B. D., Bettadpur, S., Ries, J. C., Thompson, P. F., &amp; Watkins, M. M. (2004). GRACE measurements of mass variability in the Earth system. <em>Science, 305</em>, 503–505. https://doi.org/10.1126/science.1099192</li>
-              </ul>
-            </div>
-            </div>
-          </div>
-        </article>
+          <article class="info-card cut-panel-e" data-anim-in>
+            <h3 class="font-display text-3xl text-bone">Escala del tiempo geológico</h3>
+            <p class="section-copy mt-3">La escala del tiempo geológico ordena la historia terrestre en eones, eras, periodos y épocas con base en cambios biológicos y geológicos globales. La datación radiométrica (U-Pb, K-Ar, Ar-Ar y Rb-Sr) permite asignar edades absolutas a rocas y calibrar límites cronoestratigráficos.</p>
+            <p class="mt-4 text-xs uppercase tracking-[0.17em] text-magnetic">Categoría: Geocronología</p>
+          </article>
 
-        <!-- ── Entrada 6 ── -->
-        <article class="glass-card blog-article reveal">
-          <img
-            class="blog-article__img"
-            src="https://images.unsplash.com/photo-1542332213-9b5a5a3fad35?w=800&auto=format&fit=crop"
-            alt="Erupción volcánica con columna de lava y piroclastos"
-            loading="lazy"
-          />
-          <div class="blog-article__body">
-            <div class="blog-article__meta">
-              <span class="layer-badge">Vulcanología</span>
-              <span class="blog-article__date">Grupo C · 2024</span>
-            </div>
-            <h3>Puntos calientes y penachos del manto</h3>
-            <div class="academic-body">
-            <p class="blog-article__section">
-              <strong>Introducción.</strong> No todo el volcanismo ocurre en los límites de las placas tectónicas.
-              Hawái, Islandia y las Galápagos se ubican en el interior de las placas y deben
-              su actividad a los llamados <em>puntos calientes</em> (hot spots), generados por
-              columnas de material caliente que ascienden desde el manto profundo.
-            </p>
-            <p class="blog-article__section">
-              <strong>Desarrollo.</strong> El concepto de penacho mantélico (<em>mantle plume</em>)
-              fue propuesto por W. Jason Morgan en 1971. Estos penachos se originan en la
-              frontera manto–núcleo (discontinuidad CMB a 2 891 km) y ascienden lentamente
-              durante decenas de millones de años, creando cadenas de islas volcánicas a medida
-              que la placa se desplaza sobre ellos. La cadena Hawái–Emperador ilustra perfectamente
-              este proceso: las islas más antiguas están al noroeste, mientras Hawái, sobre el punto
-              caliente activo, sigue erupciones constantes. La tomografía sísmica ha permitido
-              visualizar algunos de estos penachos como anomalías de baja velocidad que penetran
-              en el manto inferior.
-            </p>
-            <blockquote class="blog-article__conclusion">
-              <strong>Conclusión.</strong> Los penachos mantélicos son ventanas al manto profundo.
-              Su estudio combina vulcanología, geoquímica isotópica y sismología para revelar
-              la dinámica del interior terrestre a escala de cientos de millones de años.
-            </blockquote>
-            <div class="blog-article__biblio">
-              <h4>Referencias</h4>
-              <ul class="apa-references">
-                <li>Morgan, W. J. (1971). Convection plumes in the lower mantle. <em>Nature, 230</em>, 42–43. https://doi.org/10.1038/230042a0</li>
-                <li>Sleep, N. H. (2006). Mantle plumes from top to bottom. <em>Earth-Science Reviews, 77</em>(4), 231–271. https://doi.org/10.1016/j.earscirev.2006.03.007</li>
-              </ul>
-            </div>
-            </div>
-          </div>
-        </article>
+          <article class="info-card cut-panel-f" data-anim-in>
+            <h3 class="font-display text-3xl text-bone">Convección del manto y tectónica</h3>
+            <p class="section-copy mt-3">La convección térmica del manto impulsa el movimiento de placas litosféricas, generando expansión oceánica, subducción y colisiones continentales. Este marco explica la distribución global de sismos, volcanes y cordilleras, así como la renovación de la corteza oceánica.</p>
+            <p class="mt-4 text-xs uppercase tracking-[0.17em] text-magnetic">Categoría: Geodinámica</p>
+          </article>
 
-        <!-- ── Entrada 7 ── -->
-        <article class="glass-card blog-article reveal">
-          <img
-            class="blog-article__img"
-            src="https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=800&auto=format&fit=crop"
-            alt="Mapa de calor global con gradientes de temperatura en la corteza terrestre"
-            loading="lazy"
-          />
-          <div class="blog-article__body">
-            <div class="blog-article__meta">
-              <span class="layer-badge">Geotermia</span>
-              <span class="blog-article__date">Grupo D · 2024</span>
-            </div>
-            <h3>El flujo de calor terrestre y la geotermia</h3>
-            <div class="academic-body">
-            <p class="blog-article__section">
-              <strong>Introducción.</strong> La Tierra pierde constantemente calor hacia el espacio.
-              Este flujo, aunque pequeño en comparación con la energía solar (~0,09 W/m²
-              promedio global), es el motor de la convección mantélica y una fuente
-              renovable de energía que la humanidad está comenzando a aprovechar a gran escala.
-            </p>
-            <p class="blog-article__section">
-              <strong>Desarrollo.</strong> El calor interno de la Tierra proviene de dos fuentes:
-              el calor primordial de la acreción planetaria (~45%) y la desintegración radiactiva
-              de isótopos de uranio, torio y potasio (~55%). El <em>gradiente geotérmico</em>
-              varía entre 20 y 30 °C/km en zonas continentales estables, y puede superar
-              los 100 °C/km en regiones volcánicas activas como Islandia o los Campos Flégreos.
-              La geotermia profunda explota este gradiente perforando pozos que capturan
-              vapor o agua caliente para generar electricidad, como en Nueva Zelanda, Kenia
-              y El Salvador. Las técnicas EGS (Enhanced Geothermal Systems) buscan extender
-              este recurso a zonas con bajo gradiente mediante fracturación hidráulica controlada.
-            </p>
-            <blockquote class="blog-article__conclusion">
-              <strong>Conclusión.</strong> El flujo de calor terrestre vincula la física del interior
-              planetario con la transición energética global. Comprender su distribución es
-              clave tanto para la ciencia básica como para el desarrollo de energías limpias.
-            </blockquote>
-            <div class="blog-article__biblio">
-              <h4>Referencias</h4>
-              <ul class="apa-references">
-                <li>Pollack, H. N., Hurter, S. J., &amp; Johnson, J. R. (1993). Heat flow from the Earth's interior: Analysis of the global data set. <em>Reviews of Geophysics, 31</em>(3), 267–280. https://doi.org/10.1029/93RG01249</li>
-                <li>Lund, J. W., &amp; Toth, A. N. (2021). Direct utilization of geothermal energy 2020 worldwide review. <em>Geothermics, 90</em>, 101915. https://doi.org/10.1016/j.geothermics.2020.101915</li>
-              </ul>
-            </div>
-            </div>
-          </div>
-        </article>
+          <article class="info-card cut-panel-g" data-anim-in>
+            <h3 class="font-display text-3xl text-bone">Campo gravitacional y geoide</h3>
+            <p class="section-copy mt-3">La gravimetría mide variaciones del campo gravitatorio asociadas a contrastes de densidad en el subsuelo. Las anomalías de Bouguer ayudan a identificar cuencas sedimentarias, estructuras corticales y zonas de interés para estudios geológicos, hidrogeológicos y de riesgo.</p>
+            <p class="mt-4 text-xs uppercase tracking-[0.17em] text-magnetic">Categoría: Gravimetría</p>
+          </article>
 
-        <!-- ── Entrada 8 ── -->
-        <article class="glass-card blog-article reveal">
-          <img
-            class="blog-article__img"
-            src="https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=800&auto=format&fit=crop"
-            alt="Imagen satelital nocturna de la Tierra mostrando la atmósfera y auroras"
-            loading="lazy"
-          />
-          <div class="blog-article__body">
-            <div class="blog-article__meta">
-              <span class="layer-badge">Geofísica</span>
-              <span class="blog-article__date">Grupo D · 2024</span>
-            </div>
-            <h3>El núcleo interno: rotación diferencial y anisotropía sísmica</h3>
-            <div class="academic-body">
-            <p class="blog-article__section">
-              <strong>Introducción.</strong> El núcleo interno sólido de la Tierra es uno de los
-              objetos más inaccesibles del sistema solar y, paradójicamente, uno de los mejor
-              estudiados gracias a las ondas sísmicas que lo atraviesan. Sus propiedades físicas
-              desafían nuestra comprensión de la materia bajo condiciones extremas.
-            </p>
-            <p class="blog-article__section">
-              <strong>Desarrollo.</strong> Inge Lehmann demostró en 1936 la existencia del núcleo
-              interno sólido al identificar reflexiones de ondas PKiKP que no podían explicarse
-              con un núcleo completamente líquido. Con un radio de ~1 220 km, está compuesto de
-              hierro en fase hexagonal compacta (hcp-Fe) bajo presiones de ~360 GPa y temperaturas
-              de ~5 000–6 000 °C. La <em>anisotropía sísmica</em> del núcleo interno se manifiesta
-              en el hecho de que las ondas PKIKP viajan un ~3% más rápido en dirección polar
-              que en dirección ecuatorial, reflejo de la alineación preferencial de cristales de Fe.
-              Xu Song y Paul Richards propusieron en 1996 que el núcleo interno rota ligeramente
-              más rápido que el resto del planeta (~0,3–1° por año), aunque este dato sigue
-              siendo objeto de debate científico activo.
-            </p>
-            <blockquote class="blog-article__conclusion">
-              <strong>Conclusión.</strong> El núcleo interno sigue siendo una frontera del conocimiento
-              geofísico. Su estudio mediante sismología global promete iluminar la historia
-              térmica de la Tierra y los mecanismos que sustentan el campo geomagnético.
-            </blockquote>
-            <div class="blog-article__biblio">
-              <h4>Referencias</h4>
-              <ul class="apa-references">
-                <li>Lehmann, I. (1936). P'. <em>Publications du Bureau Central Séismologique International, Série A, Travaux Scientifiques, 14</em>, 87–115.</li>
-                <li>Song, X., &amp; Richards, P. G. (1996). Seismological evidence for differential rotation of the Earth's inner core. <em>Nature, 382</em>, 221–224. https://doi.org/10.1038/382221a0</li>
-              </ul>
-            </div>
-            </div>
-          </div>
-        </article>
+          <article class="info-card cut-panel-h" data-anim-in>
+            <h3 class="font-display text-3xl text-bone">Núcleo interno y evidencia sísmica</h3>
+            <p class="section-copy mt-3">El núcleo interno es sólido por efecto de la presión extrema, aun a temperaturas muy elevadas. Estudios de anisotropía sísmica y propagación de ondas sugieren una estructura compleja, con posibles variaciones texturales y dinámicas vinculadas al acoplamiento núcleo-manto.</p>
+            <p class="mt-4 text-xs uppercase tracking-[0.17em] text-magnetic">Categoría: Tierra profunda</p>
+          </article>
+        </div>
 
+        <div class="mt-8 border border-white/20 bg-zinc-950/45 p-4">
+          <p class="text-xs uppercase tracking-[0.18em] text-magnetic">Referencias base del parafraseo</p>
+          <p class="apa-ref mt-3">Servicio Geológico Colombiano. (2025). 10 cosas que pasan en la superficie o bajo tierra después de un sismo. <em>Servicio Geológico Colombiano</em>. https://www2.sgc.gov.co/Noticias/Paginas/10-cosas-que-pasan-en-la-superficie-o-bajo-tierra-despues-de-un-sismo.aspx</p>
+          <p class="apa-ref">Servicio Geológico Colombiano. (2026). Las historias que nos cuentan las cenizas volcánicas: así estudia el SGC estas pequeñas partículas. <em>Servicio Geológico Colombiano</em>. https://www2.sgc.gov.co/Noticias/Paginas/Las-historias-que-nos-cuentan-las-cenizas-volcanicas.aspx</p>
+          <p class="apa-ref">Instituto Geofísico de la Escuela Politécnica Nacional. (2026). Trabajos de monitoreo térmico y morfológico en el volcán Cotopaxi. <em>Instituto Geofísico EPN</em>. https://www.igepn.edu.ec/interactuamos-con-usted/2344-trabajos-de-monitoreo-termico-y-morfologico-en-el-volcan-cotopaxi</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer-shell">
+      <div class="cut-panel-i ash-frame border border-white/20 bg-zinc-900/45 p-5">
+        <p class="text-sm font-bold uppercase tracking-[0.2em] text-bone">GEOLOGÍA FÍSICA DE EL SALVADOR</p>
+        <p class="mt-2 text-xs leading-relaxed text-ash">Blog académico del proyecto: Estructura interna de la Tierra, tiempo geológico y campos geofísicos.</p>
       </div>
-    </div>
-  </main>
+    </footer>
+  </div>
 
-  <!-- ── Footer ─────────────────────────────────────────────── -->
-  <footer class="site-footer">
-    <div class="site-footer__inner">
-      <div class="site-footer__logo"><i class="fa-solid fa-earth-americas"></i> Geociencias</div>
-      <ul class="site-footer__links">
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="hemeroteca.html">Hemeroteca</a></li>
-        <li><a href="recursos.html">Recursos</a></li>
-        <li><a href="audioteca.html">Audioteca</a></li>
-        <li><a href="galeria.html">Galería</a></li>
-        <li><a href="videoteca.html">Videoteca</a></li>
-      </ul>
-      <p>&copy; 2024 Geociencias: Estructura y Campos de la Tierra &mdash; Revista científica con fines educativos.</p>
-    </div>
-  </footer>
-
-  <script src="js/main.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles-engine"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles-basic"></script>
+  <script src="js/brutalist-theme.js"></script>
 </body>
 </html>

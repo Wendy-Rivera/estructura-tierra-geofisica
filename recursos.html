@@ -1,324 +1,140 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Recursos educativos sobre geofísica: herramientas interactivas (Genially, Kahoot, Nearpod), resúmenes Wakelet, libros y datos abiertos." />
-  <title>Recursos Educativos — Geo&amp;Tierra</title>
-  <link rel="stylesheet" href="css/styles.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Recursos educativos y herramientas para geología física y geofísica.">
+  <title>Recursos | GEOLOGÍA FÍSICA DE EL SALVADOR</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <script src="js/tailwind-config.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/brutalist-theme.css">
 </head>
-<body>
+<body class="bg-obsidian text-bone font-ui">
+  <div id="tsparticles" class="fixed inset-0 pointer-events-none z-0"></div>
 
-  <!-- ── Navigation ───────────────────────────────────────── -->
-  <nav class="site-nav" aria-label="Navegación principal">
-    <span class="site-nav__logo"><i class="fa-solid fa-earth-americas"></i> Geociencias</span>
-    <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-    <ul class="site-nav__links" role="list">
-      <li><a href="index.html">Inicio</a></li>
-      <li><a href="blog.html">Blog</a></li>
-      <li><a href="hemeroteca.html">Hemeroteca</a></li>
-      <li><a href="recursos.html" class="active">Recursos</a></li>
-      <li><a href="audioteca.html">Audioteca</a></li>
-      <li><a href="galeria.html">Galería</a></li>
-      <li><a href="videoteca.html">Videoteca</a></li>
-    </ul>
-  </nav>
-
-  <!-- ── Page Hero ─────────────────────────────────────────── -->
-  <header class="page-hero">
-    <div class="page-hero__inner">
-      <h1>Recursos Educativos</h1>
-      <p>Herramientas interactivas, evaluaciones, resúmenes curados y datos abiertos para el estudio de las geociencias.</p>
-    </div>
-  </header>
-
-  <!-- ── Main Content ──────────────────────────────────────── -->
-  <main id="main-content">
-    <div class="container">
-
-      <!-- ── Sección: Herramientas Interactivas ─────────────── -->
-      <h2 class="section-heading">Herramientas Interactivas</h2>
-      <div class="cards-grid">
-
-        <!-- Genially -->
-        <div class="glass-card reveal">
-          <span class="layer-badge">Genially</span>
-          <h3>Presentación: Capas de la Tierra</h3>
-          <p>Infografía interactiva sobre las capas internas de la Tierra, sus propiedades físicas y las discontinuidades sísmicas que las separan.</p>
-          <div class="tool-frame">
-            <iframe
-              src="https://view.genial.ly/example-placeholder"
-              height="420"
-              title="Genially: Capas de la Tierra"
-              allowfullscreen
-              loading="lazy"
-            ></iframe>
+  <div class="tectonic-shell">
+    <header class="sticky top-0 z-40 px-3 pt-3 sm:px-6 lg:px-10">
+      <nav class="cut-nav ash-frame bg-zinc-900/60 px-4 py-4 sm:px-6" aria-label="Navegación principal">
+        <div class="grid gap-4 lg:grid-cols-[1.35fr_2fr] lg:items-center">
+          <div class="cut-brand border border-magma/50 bg-magma/10 p-4">
+            <p class="font-display text-2xl leading-none tracking-wide text-bone sm:text-3xl">GEOLOGÍA FÍSICA DE EL SALVADOR</p>
+            <p class="mt-2 text-[10px] uppercase tracking-[0.26em] text-bone/45 sm:text-xs">NP 02 / LIC. PEDRO ELIAS SALAZAR MENJIVAR</p>
           </div>
+
+          <ul class="grid grid-cols-2 gap-2 sm:grid-cols-4">
+            <li><a href="index.html" class="site-link cut-link">Inicio</a></li>
+            <li><a href="index.html#presentacion" class="site-link cut-link">Presentación</a></li>
+            <li><a href="blog.html" class="site-link cut-link">Blog</a></li>
+            <li><a href="hemeroteca.html" class="site-link cut-link">Hemeroteca</a></li>
+            <li><a href="recursos.html" class="site-link cut-link is-cyan is-active">Recursos</a></li>
+            <li><a href="audioteca.html" class="site-link cut-link is-cyan">Audioteca</a></li>
+            <li><a href="galeria.html" class="site-link cut-link is-cyan">Galería</a></li>
+            <li><a href="videoteca.html" class="site-link cut-link is-cyan">Videoteca</a></li>
+          </ul>
         </div>
+      </nav>
+    </header>
 
-        <!-- Genially 2 -->
-        <div class="glass-card reveal">
-          <span class="layer-badge">Genially</span>
-          <h3>Línea del Tiempo Geológico</h3>
-          <p>Recorrido interactivo por los principales hitos de la historia geológica de la Tierra, desde la formación del planeta hasta el Cuaternario.</p>
-          <div class="tool-frame">
-            <iframe
-              src="https://view.genial.ly/example-placeholder-2"
-              height="420"
-              title="Genially: Tiempo Geológico"
-              allowfullscreen
-              loading="lazy"
-            ></iframe>
+    <main class="page-wrap">
+      <section class="cut-panel-a ash-frame panel">
+        <div class="grid gap-8 lg:grid-cols-[1.2fr_1fr] lg:items-end">
+          <div>
+            <p class="small-overline">Recursos</p>
+            <h1 data-hero-title class="section-title">Herramientas y materiales</h1>
           </div>
-        </div>
-
-        <!-- Kahoot -->
-        <div class="glass-card reveal">
-          <span class="layer-badge">Kahoot</span>
-          <h3>Quiz: Estructura Interna de la Tierra</h3>
-          <p>Evaluación gamificada con 15 preguntas sobre corteza, manto y núcleo, ondas sísmicas y discontinuidades. Ideal para repasar los conceptos fundamentales.</p>
-          <div class="tool-frame">
-            <iframe
-              src="https://kahoot.it/challenge/placeholder"
-              height="420"
-              title="Kahoot: Estructura Interna"
-              allowfullscreen
-              loading="lazy"
-            ></iframe>
-          </div>
-        </div>
-
-        <!-- Nearpod -->
-        <div class="glass-card reveal">
-          <span class="layer-badge">Nearpod</span>
-          <h3>Lección: El Campo Geomagnético</h3>
-          <p>Lección interactiva con diapositivas, video integrado y preguntas formativas sobre el origen, propiedades y variaciones del campo magnético terrestre.</p>
-          <div class="tool-frame">
-            <iframe
-              src="https://nearpod.com/student/placeholder"
-              height="420"
-              title="Nearpod: Campo Geomagnético"
-              allowfullscreen
-              loading="lazy"
-            ></iframe>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- ── Sección: Wakelet ────────────────────────────────── -->
-      <section class="wakelet-section">
-        <h2 class="section-heading">Resúmenes Wakelet</h2>
-        <p style="color:var(--clr-text-muted);margin-bottom:1.5rem;max-width:680px;">
-          Colecciones curadas de artículos, vídeos y recursos web organizados por tema,
-          compiladas por los miembros del equipo como síntesis de investigación.
-        </p>
-        <div class="wakelet-grid">
-
-          <div class="glass-card reveal">
-            <span class="layer-badge">Wakelet</span>
-            <h3>Sismología Global</h3>
-            <p>Colección de artículos, animaciones y datos sobre ondas sísmicas, terremotos y la red de monitoreo IRIS.</p>
-            <div class="tool-frame" style="margin-top:1rem;">
-              <iframe
-                class="wakeletEmbed"
-                src="https://embed.wakelet.com/wakes/placeholder-sismologia"
-                height="400"
-                title="Wakelet: Sismología Global"
-                allowfullscreen
-                loading="lazy"
-              ></iframe>
-            </div>
-          </div>
-
-          <div class="glass-card reveal">
-            <span class="layer-badge">Wakelet</span>
-            <h3>Tectónica de Placas y Geodinámica</h3>
-            <p>Recursos seleccionados sobre el movimiento de placas, dorsales oceánicas, zonas de subducción y la historia de Pangea.</p>
-            <div class="tool-frame" style="margin-top:1rem;">
-              <iframe
-                class="wakeletEmbed"
-                src="https://embed.wakelet.com/wakes/placeholder-tectonica"
-                height="400"
-                title="Wakelet: Tectónica"
-                allowfullscreen
-                loading="lazy"
-              ></iframe>
-            </div>
-          </div>
-
-          <div class="glass-card reveal">
-            <span class="layer-badge">Wakelet</span>
-            <h3>Tiempo Geológico y Paleontología</h3>
-            <p>Síntesis de contenidos sobre la escala temporal geológica, métodos de datación radiométrica y grandes eventos evolutivos.</p>
-            <div class="tool-frame" style="margin-top:1rem;">
-              <iframe
-                class="wakeletEmbed"
-                src="https://embed.wakelet.com/wakes/placeholder-tiempo"
-                height="400"
-                title="Wakelet: Tiempo Geológico"
-                allowfullscreen
-                loading="lazy"
-              ></iframe>
-            </div>
-          </div>
-
+          <p data-hero-copy class="section-copy">En esta sección se reúne un inventario de herramientas didácticas para crear presentaciones, cuestionarios y lecciones interactivas sobre geología física. Incluye plataformas recomendadas, enlaces oficiales y usos sugeridos por objetivo de aprendizaje.</p>
         </div>
       </section>
 
-      <!-- ── Sección: Bibliografía y Datos ──────────────────── -->
-      <h2 class="section-heading" style="margin-top:4rem;">Bibliografía y Datos Abiertos</h2>
-      <div class="cards-grid">
+      <section class="cut-panel-b ash-frame panel mt-10">
+        <div class="card-grid cols-3">
+          <article id="genially" class="info-card cut-panel-c" data-anim-in>
+            <h3 class="font-display text-3xl text-bone">Genially / Presentaciones</h3>
+            <div class="media-slot cut-image-e mt-4 aspect-video border border-white/20 p-2">
+              <div class="flex h-full w-full flex-col justify-between border border-dashed border-magma/45 bg-zinc-950/45 p-4 text-left text-xs text-ash">
+                <p class="leading-relaxed">Útil para líneas del tiempo geológicas, esquemas de capas internas y visualizaciones de procesos tectónicos.</p>
+                <a href="https://genially.com/es/plantillas/educacion" target="_blank" rel="noopener noreferrer" class="mt-3 inline-block border border-magma/60 px-3 py-2 text-[10px] uppercase tracking-[0.15em] text-bone hover:bg-magma/15">Plantillas educativas de Genially</a>
+              </div>
+            </div>
+          </article>
 
-        <div class="glass-card reveal">
-          <span class="layer-badge">Libros</span>
-          <h3>Bibliografía Esencial</h3>
-          <ul class="resource-list">
-            <li>
-              <span class="res-icon"><i class="fa-solid fa-book"></i></span>
-              <div class="res-info">
-                <strong>Introduction to Seismology — Sherrif &amp; Geldart</strong>
-                <p>Referencia clásica sobre métodos de exploración sísmica y sismología global.</p>
+          <article id="kahoot" class="info-card cut-panel-d" data-anim-in>
+            <h3 class="font-display text-3xl text-bone">Kahoot / Cuestionarios</h3>
+            <div class="media-slot cut-image-a mt-4 aspect-video border border-white/20 p-2">
+              <div class="flex h-full w-full flex-col justify-between border border-dashed border-magnetic/45 bg-zinc-950/45 p-4 text-left text-xs text-ash">
+                <p class="leading-relaxed">Recurso recomendado para evaluación diagnóstica y formativa sobre sismología, tiempo geológico y campos geofísicos.</p>
+                <a href="https://kahoot.com/library/?lang=es" target="_blank" rel="noopener noreferrer" class="mt-3 inline-block border border-magnetic/60 px-3 py-2 text-[10px] uppercase tracking-[0.15em] text-bone hover:bg-magnetic/15">Biblioteca de Kahoot en español</a>
               </div>
-            </li>
-            <li>
-              <span class="res-icon"><i class="fa-solid fa-book"></i></span>
-              <div class="res-info">
-                <strong>The Earth: Its Origin, History and Physical Constitution — Harold Jeffreys</strong>
-                <p>Obra pionera que establece las bases de la geofísica moderna.</p>
+            </div>
+          </article>
+
+          <article id="nearpod" class="info-card cut-panel-e" data-anim-in>
+            <h3 class="font-display text-3xl text-bone">Nearpod / Lecciones</h3>
+            <div class="media-slot cut-image-b mt-4 aspect-video border border-white/20 p-2">
+              <div class="flex h-full w-full flex-col justify-between border border-dashed border-magma/45 bg-zinc-950/45 p-4 text-left text-xs text-ash">
+                <p class="leading-relaxed">Permite crear lecciones guiadas con preguntas en tiempo real, mapas y actividades de seguimiento para trabajo colaborativo.</p>
+                <a href="https://nearpod.com" target="_blank" rel="noopener noreferrer" class="mt-3 inline-block border border-magma/60 px-3 py-2 text-[10px] uppercase tracking-[0.15em] text-bone hover:bg-magma/15">Sitio oficial de Nearpod</a>
               </div>
-            </li>
-            <li>
-              <span class="res-icon"><i class="fa-solid fa-book"></i></span>
-              <div class="res-info">
-                <strong>Geodynamics — Donald Turcotte &amp; Gerald Schubert</strong>
-                <p>Tratamiento cuantitativo de la tectónica de placas y la dinámica del manto.</p>
-              </div>
-            </li>
-          </ul>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="cuestionarios" class="cut-panel-g ash-frame panel mt-10">
+        <div class="mb-8 grid gap-4 lg:grid-cols-[1.2fr_1fr] lg:items-end">
+          <div>
+            <p class="small-overline">Cuestionarios</p>
+            <h2 class="section-title">Área de tests interactivos</h2>
+          </div>
+          <p class="section-copy">En este bloque se presenta una selección de cuestionarios listos para practicar. Cada tarjeta te lleva a un enlace específico para reforzar conceptos de estructura interna, sismología, tiempo geológico y campo geomagnético.</p>
         </div>
 
-        <div class="glass-card reveal">
-          <span class="layer-badge">Herramientas</span>
-          <h3>Herramientas en Línea</h3>
-          <ul class="resource-list">
-            <li>
-              <span class="res-icon"><i class="fa-solid fa-globe"></i></span>
-              <div class="res-info">
-                <strong>USGS Earthquake Catalog</strong>
-                <p>Catálogo sísmico interactivo con filtros por magnitud, región y fecha.</p>
-                <a href="https://earthquake.usgs.gov/earthquakes/search/" target="_blank" rel="noopener">Abrir →</a>
-              </div>
-            </li>
-            <li>
-              <span class="res-icon"><i class="fa-solid fa-globe"></i></span>
-              <div class="res-info">
-                <strong>NOAA World Magnetic Model</strong>
-                <p>Calculadora online del campo magnético terrestre para cualquier punto del globo.</p>
-                <a href="https://www.ngdc.noaa.gov/geomag/calculators/magcalc.shtml" target="_blank" rel="noopener">Abrir →</a>
-              </div>
-            </li>
-            <li>
-              <span class="res-icon"><i class="fa-solid fa-globe"></i></span>
-              <div class="res-info">
-                <strong>IRIS Wilber 3</strong>
-                <p>Acceso a formas de onda sísmicas de eventos catalogados a nivel mundial.</p>
-                <a href="https://ds.iris.edu/wilber3/" target="_blank" rel="noopener">Abrir →</a>
-              </div>
-            </li>
-          </ul>
-        </div>
+        <div class="grid grid-cols-1 gap-4 lg:grid-cols-2">
+          <article class="info-card cut-panel-c" data-anim-in>
+            <h3 class="font-display text-3xl leading-none text-bone">Test 1: Estructura interna de la Tierra</h3>
+            <p class="section-copy mt-4">Repaso de capas terrestres, discontinuidades principales y evidencias sísmicas básicas.</p>
+            <a href="https://kahoot.com/library/?lang=es" target="_blank" rel="noopener noreferrer" class="mt-5 inline-block border border-magma/60 px-4 py-2 text-[10px] uppercase tracking-[0.15em] text-bone hover:bg-magma/15">Ir al test</a>
+          </article>
 
-        <div class="glass-card reveal">
-          <span class="layer-badge">Datos</span>
-          <h3>Conjuntos de Datos Abiertos</h3>
-          <ul class="resource-list">
-            <li>
-              <span class="res-icon"><i class="fa-solid fa-database"></i></span>
-              <div class="res-info">
-                <strong>CRUST1.0 — Modelo global de la corteza terrestre</strong>
-                <p>Modelo de 1° × 1° con espesor y velocidades de la corteza a escala global.</p>
-                <a href="https://igppweb.ucsd.edu/~gabi/crust1.html" target="_blank" rel="noopener">Descargar →</a>
-              </div>
-            </li>
-            <li>
-              <span class="res-icon"><i class="fa-solid fa-database"></i></span>
-              <div class="res-info">
-                <strong>IGRF — International Geomagnetic Reference Field</strong>
-                <p>Modelo estándar internacional del campo geomagnético publicado por IAGA.</p>
-                <a href="https://www.ngdc.noaa.gov/IAGA/vmod/igrf.html" target="_blank" rel="noopener">Descargar →</a>
-              </div>
-            </li>
-            <li>
-              <span class="res-icon"><i class="fa-solid fa-database"></i></span>
-              <div class="res-info">
-                <strong>Preliminary Reference Earth Model (PREM)</strong>
-                <p>Modelo de referencia de la estructura interna de la Tierra (Dziewonski &amp; Anderson, 1981).</p>
-                <a href="https://ds.iris.edu/ds/products/emc-prem/" target="_blank" rel="noopener">Ver →</a>
-              </div>
-            </li>
-          </ul>
-        </div>
+          <article class="info-card cut-panel-d" data-anim-in>
+            <h3 class="font-display text-3xl leading-none text-bone">Test 2: Sismología aplicada</h3>
+            <p class="section-copy mt-4">Preguntas sobre ondas P y S, zonas de sombra sísmica e interpretación geofísica inicial.</p>
+            <a href="https://quizizz.com/admin/search/sismologia" target="_blank" rel="noopener noreferrer" class="mt-5 inline-block border border-magnetic/60 px-4 py-2 text-[10px] uppercase tracking-[0.15em] text-bone hover:bg-magnetic/15">Ir al test</a>
+          </article>
 
-        <div class="glass-card reveal">
-          <span class="layer-badge">Glosario</span>
-          <h3>Términos Clave</h3>
-          <ul class="resource-list">
-            <li>
-              <span class="res-icon"><i class="fa-solid fa-key"></i></span>
-              <div class="res-info">
-                <strong>Isostasia</strong>
-                <p>Equilibrio gravitacional entre bloques de litosfera de diferente densidad y espesor.</p>
-              </div>
-            </li>
-            <li>
-              <span class="res-icon"><i class="fa-solid fa-key"></i></span>
-              <div class="res-info">
-                <strong>Gradiente geotérmico</strong>
-                <p>Aumento de temperatura con la profundidad en la Tierra (~25–30 °C/km en la corteza).</p>
-              </div>
-            </li>
-            <li>
-              <span class="res-icon"><i class="fa-solid fa-key"></i></span>
-              <div class="res-info">
-                <strong>Bridgmanita</strong>
-                <p>Silicato de magnesio de alta presión, mineral más abundante de la Tierra (manto inferior).</p>
-              </div>
-            </li>
-            <li>
-              <span class="res-icon"><i class="fa-solid fa-key"></i></span>
-              <div class="res-info">
-                <strong>Discontinuidad de Gutenberg</strong>
-                <p>Límite a ~2 891 km que separa el manto inferior del núcleo externo líquido.</p>
-              </div>
-            </li>
-          </ul>
-        </div>
+          <article class="info-card cut-panel-e" data-anim-in>
+            <h3 class="font-display text-3xl leading-none text-bone">Test 3: Tiempo geológico</h3>
+            <p class="section-copy mt-4">Ejercicios de eones, eras, periodos y principios de datación relativa y radiométrica.</p>
+            <a href="https://quizizz.com/admin/search/tiempo%20geologico" target="_blank" rel="noopener noreferrer" class="mt-5 inline-block border border-magma/60 px-4 py-2 text-[10px] uppercase tracking-[0.15em] text-bone hover:bg-magma/15">Ir al test</a>
+          </article>
 
+          <article class="info-card cut-panel-f" data-anim-in>
+            <h3 class="font-display text-3xl leading-none text-bone">Test 4: Campo geomagnético</h3>
+            <p class="section-copy mt-4">Evaluación breve sobre magnetosfera, polaridad geomagnética y aplicaciones del paleomagnetismo.</p>
+            <a href="https://quizizz.com/admin/search/campo%20magnetico%20terrestre" target="_blank" rel="noopener noreferrer" class="mt-5 inline-block border border-magnetic/60 px-4 py-2 text-[10px] uppercase tracking-[0.15em] text-bone hover:bg-magnetic/15">Ir al test</a>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer-shell">
+      <div class="cut-panel-i ash-frame border border-white/20 bg-zinc-900/45 p-5">
+        <p class="text-sm font-bold uppercase tracking-[0.2em] text-bone">GEOLOGÍA FÍSICA DE EL SALVADOR</p>
+        <p class="mt-2 text-xs leading-relaxed text-ash">Recursos de apoyo para fortalecer la comprensión de estructura interna, tiempo geológico y campos geofísicos.</p>
       </div>
-    </div>
-  </main>
+    </footer>
+  </div>
 
-  <!-- ── Footer ─────────────────────────────────────────────── -->
-  <footer class="site-footer">
-    <div class="site-footer__inner">
-      <div class="site-footer__logo"><i class="fa-solid fa-earth-americas"></i> Geociencias</div>
-      <ul class="site-footer__links">
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="hemeroteca.html">Hemeroteca</a></li>
-        <li><a href="recursos.html">Recursos</a></li>
-        <li><a href="audioteca.html">Audioteca</a></li>
-        <li><a href="galeria.html">Galería</a></li>
-        <li><a href="videoteca.html">Videoteca</a></li>
-      </ul>
-      <p>&copy; 2024 Geociencias: Estructura y Campos de la Tierra &mdash; Revista científica con fines educativos.</p>
-    </div>
-  </footer>
-
-  <script src="js/main.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles-engine"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles-basic"></script>
+  <script src="js/brutalist-theme.js"></script>
 </body>
 </html>

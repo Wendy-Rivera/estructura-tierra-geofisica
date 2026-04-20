@@ -1,0 +1,337 @@
+:root {
+  --bg: #3a3d43;
+  --magma: #ff6b35;
+  --magnetic: #16c79a;
+  --bone: #fff7ed;
+  --ash: #d8dcf2;
+  --glass-soft: rgba(58, 60, 66, 0.44);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  background: var(--bg);
+  color: var(--bone);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Space Grotesk", sans-serif;
+  background-image:
+    linear-gradient(124deg, rgba(255, 107, 53, 0.24) 0%, rgba(255, 107, 53, 0) 40%),
+    linear-gradient(302deg, rgba(22, 199, 154, 0.2) 0%, rgba(22, 199, 154, 0) 45%),
+    radial-gradient(circle at 17% 14%, rgba(255, 209, 102, 0.24) 0%, rgba(255, 209, 102, 0) 29%),
+    radial-gradient(circle at 84% 78%, rgba(185, 190, 198, 0.2) 0%, rgba(185, 190, 198, 0) 37%),
+    linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+  background-size: auto, auto, auto, auto, 46px 46px, 46px 46px;
+  background-attachment: fixed;
+}
+
+section[id],
+article[id] {
+  scroll-margin-top: 132px;
+}
+
+#tsparticles {
+  opacity: 0.62;
+  filter: contrast(116%) saturate(112%);
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tectonic-shell {
+  position: relative;
+  z-index: 10;
+  min-height: 100vh;
+}
+
+.page-wrap {
+  padding: 2rem 0.75rem 4rem;
+}
+
+@media (min-width: 640px) {
+  .page-wrap {
+    padding: 2.2rem 1.5rem 4.2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .page-wrap {
+    padding: 2.6rem 2.5rem 4.5rem;
+  }
+}
+
+.cut-nav {
+  clip-path: polygon(0 0, 100% 0, 99% 100%, 3% 96%);
+}
+
+.cut-brand {
+  clip-path: polygon(0 0, 100% 4%, 96% 100%, 0 92%);
+}
+
+.cut-link {
+  clip-path: polygon(0 0, 100% 0, 94% 100%, 6% 100%);
+}
+
+.cut-button {
+  clip-path: polygon(0 0, 100% 0, 96% 100%, 4% 96%);
+}
+
+.cut-panel-a {
+  clip-path: polygon(0 0, 100% 2%, 98% 100%, 1% 97%);
+}
+
+.cut-panel-b {
+  clip-path: polygon(0 2%, 100% 0, 99% 96%, 2% 100%);
+}
+
+.cut-panel-c {
+  clip-path: polygon(0 0, 100% 0, 97% 94%, 2% 100%);
+}
+
+.cut-panel-d {
+  clip-path: polygon(2% 0, 100% 2%, 98% 100%, 0 95%);
+}
+
+.cut-panel-e {
+  clip-path: polygon(0 4%, 99% 0, 100% 100%, 2% 97%);
+}
+
+.cut-panel-f {
+  clip-path: polygon(0 0, 100% 3%, 98% 100%, 1% 98%);
+}
+
+.cut-panel-g {
+  clip-path: polygon(0 1%, 100% 0, 99% 99%, 0 96%);
+}
+
+.cut-panel-h {
+  clip-path: polygon(1% 0, 100% 1%, 97% 100%, 0 95%);
+}
+
+.cut-panel-i {
+  clip-path: polygon(0 0, 99% 0, 100% 94%, 3% 100%);
+}
+
+.cut-panel-team {
+  clip-path: polygon(0 2%, 99% 0, 100% 100%, 0 100%);
+}
+
+.cut-image-a {
+  clip-path: polygon(0 0, 100% 6%, 92% 100%, 3% 96%);
+}
+
+.cut-image-b {
+  clip-path: polygon(4% 0, 100% 0, 99% 96%, 0 100%);
+}
+
+.cut-image-c {
+  clip-path: polygon(0 3%, 96% 0, 100% 100%, 4% 98%);
+}
+
+.cut-image-d {
+  clip-path: polygon(0 0, 98% 3%, 96% 100%, 2% 97%);
+}
+
+.cut-image-e {
+  clip-path: polygon(0 0, 100% 2%, 97% 100%, 3% 96%);
+}
+
+.ash-frame {
+  border: 1px solid rgba(255, 255, 255, 0.26);
+  background: var(--glass-soft);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow:
+    0 0 0 1px rgba(255, 107, 53, 0.16) inset,
+    0 0 0 1px rgba(22, 199, 154, 0.1);
+}
+
+.panel {
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(50, 53, 60, 0.55);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 1.3rem;
+}
+
+@media (min-width: 640px) {
+  .panel {
+    padding: 1.7rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .panel {
+    padding: 2rem;
+  }
+}
+
+.media-slot {
+  background:
+    linear-gradient(135deg, rgba(255, 107, 53, 0.2) 0%, rgba(255, 107, 53, 0) 52%),
+    linear-gradient(315deg, rgba(22, 199, 154, 0.2) 0%, rgba(22, 199, 154, 0) 54%),
+    rgba(47, 50, 56, 0.72);
+}
+
+.site-link {
+  display: block;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  background: rgba(51, 54, 61, 0.76);
+  padding: 0.55rem 0.55rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--ash);
+  font-size: 0.66rem;
+  transition: border-color 0.25s ease, color 0.25s ease, background-color 0.25s ease;
+}
+
+.site-link:hover,
+.site-link:focus-visible,
+.site-link.is-active {
+  border-color: rgba(255, 107, 53, 0.95);
+  color: var(--bone);
+  background: rgba(74, 78, 86, 0.9);
+}
+
+.site-link.is-cyan:hover,
+.site-link.is-cyan:focus-visible,
+.site-link.is-cyan.is-active {
+  border-color: rgba(22, 199, 154, 0.95);
+}
+
+.card-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .card-grid.cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .card-grid.cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .card-grid.cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.info-card {
+  border: 1px solid rgba(255, 255, 255, 0.26);
+  background: rgba(58, 61, 69, 0.58);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 1rem;
+}
+
+@media (min-width: 640px) {
+  .info-card {
+    padding: 1.25rem;
+  }
+}
+
+.info-card h3,
+.info-card h4 {
+  margin-top: 0;
+}
+
+.small-overline {
+  font-size: 0.67rem;
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  color: #67f3cf;
+}
+
+.section-title {
+  margin: 0.35rem 0 0;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2rem, 5vw, 4.2rem);
+  line-height: 0.9;
+  color: var(--bone);
+}
+
+.section-copy {
+  color: #e5ebff;
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+.apa-ref {
+  margin-top: 0.75rem;
+  padding-left: 1.4rem;
+  text-indent: -1.4rem;
+  color: #edf3ff;
+  font-size: 0.93rem;
+  line-height: 1.75;
+}
+
+.apa-note {
+  margin-top: 0.55rem;
+  color: #dbe6ff;
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.apa-list {
+  margin: 0.75rem 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.35rem;
+}
+
+.apa-list .apa-ref {
+  margin-top: 0;
+}
+
+.team-member-card {
+  padding-bottom: 1.15rem;
+}
+
+.team-member-id {
+  color: var(--bone);
+  font-size: 0.88rem;
+  letter-spacing: 0.11em;
+}
+
+.team-member-name {
+  color: var(--bone);
+  font-size: 0.96rem;
+  line-height: 1.48;
+  word-break: break-word;
+}
+
+.footer-shell {
+  padding: 0 0.75rem 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .footer-shell {
+    padding: 0 1.5rem 1.7rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .footer-shell {
+    padding: 0 2.5rem 1.9rem;
+  }
+}

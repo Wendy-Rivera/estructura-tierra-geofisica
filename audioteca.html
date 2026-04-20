@@ -1,171 +1,124 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Audioteca: cinco pistas de audio originales sobre geofísica, estructura interna de la Tierra y tiempo geológico." />
-  <title>Audioteca — Geo&amp;Tierra</title>
-  <link rel="stylesheet" href="css/styles.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Audioteca del proyecto: piezas sonoras sobre geofísica, tiempo geológico y estructura interna de la Tierra.">
+  <title>Audioteca | GEOLOGÍA FÍSICA DE EL SALVADOR</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <script src="js/tailwind-config.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/brutalist-theme.css">
 </head>
-<body>
+<body class="bg-obsidian text-bone font-ui">
+  <div id="tsparticles" class="fixed inset-0 pointer-events-none z-0"></div>
 
-  <!-- ── Navigation ───────────────────────────────────────── -->
-  <nav class="site-nav" aria-label="Navegación principal">
-    <span class="site-nav__logo"><i class="fa-solid fa-earth-americas"></i> Geociencias</span>
-    <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-    <ul class="site-nav__links" role="list">
-      <li><a href="index.html">Inicio</a></li>
-      <li><a href="blog.html">Blog</a></li>
-      <li><a href="hemeroteca.html">Hemeroteca</a></li>
-      <li><a href="recursos.html">Recursos</a></li>
-      <li><a href="audioteca.html" class="active">Audioteca</a></li>
-      <li><a href="galeria.html">Galería</a></li>
-      <li><a href="videoteca.html">Videoteca</a></li>
-    </ul>
-  </nav>
-
-  <!-- ── Page Hero ─────────────────────────────────────────── -->
-  <header class="page-hero">
-    <div class="page-hero__inner">
-      <h1>Audioteca Científica</h1>
-      <p>Cinco pistas de audio originales creadas por el equipo — cada una de entre 4 y 7 minutos de duración — explorando los grandes temas de las geociencias.</p>
-    </div>
-  </header>
-
-  <!-- ── Main Content ──────────────────────────────────────── -->
-  <main id="main-content">
-    <div class="container">
-
-      <h2 class="section-heading">Pistas de Audio</h2>
-
-      <div class="audio-hub">
-
-        <!-- Pista 1 -->
-        <div class="audio-player-card reveal">
-          <div class="audio-player-card__header">
-            <div class="audio-track-num">01</div>
-            <div class="audio-track-info">
-              <span class="layer-badge">Sismología</span>
-              <h3>Escuchando el Interior de la Tierra</h3>
-              <p>Una introducción a la sismología global: cómo los terremotos generan ondas que viajan por el interior del planeta y nos revelan su estructura en capas.</p>
-            </div>
-            <span class="audio-duration">~5 min</span>
+  <div class="tectonic-shell">
+    <header class="sticky top-0 z-40 px-3 pt-3 sm:px-6 lg:px-10">
+      <nav class="cut-nav ash-frame bg-zinc-900/60 px-4 py-4 sm:px-6" aria-label="Navegación principal">
+        <div class="grid gap-4 lg:grid-cols-[1.35fr_2fr] lg:items-center">
+          <div class="cut-brand border border-magma/50 bg-magma/10 p-4">
+            <p class="font-display text-2xl leading-none tracking-wide text-bone sm:text-3xl">GEOLOGÍA FÍSICA DE EL SALVADOR</p>
+            <p class="mt-2 text-[10px] uppercase tracking-[0.26em] text-bone/45 sm:text-xs">NP 02 / LIC. PEDRO ELIAS SALAZAR MENJIVAR</p>
           </div>
-          <audio controls preload="none" aria-label="Pista 01: Escuchando el Interior de la Tierra">
-            <source src="assets/audio/track-01-sismologia.mp3" type="audio/mpeg" />
-            Tu navegador no soporta el elemento de audio HTML5.
-          </audio>
-        </div>
 
-        <!-- Pista 2 -->
-        <div class="audio-player-card reveal">
-          <div class="audio-player-card__header">
-            <div class="audio-track-num">02</div>
-            <div class="audio-track-info">
-              <span class="layer-badge">Geomagnetismo</span>
-              <h3>El Escudo Magnético de la Tierra</h3>
-              <p>Exploramos el campo geomagnético terrestre: su origen en el núcleo líquido, las inversiones de polaridad a lo largo de la historia geológica y su importancia para la vida en la Tierra.</p>
-            </div>
-            <span class="audio-duration">~6 min</span>
+          <ul class="grid grid-cols-2 gap-2 sm:grid-cols-4">
+            <li><a href="index.html" class="site-link cut-link">Inicio</a></li>
+            <li><a href="index.html#presentacion" class="site-link cut-link">Presentación</a></li>
+            <li><a href="blog.html" class="site-link cut-link">Blog</a></li>
+            <li><a href="hemeroteca.html" class="site-link cut-link">Hemeroteca</a></li>
+            <li><a href="recursos.html" class="site-link cut-link is-cyan">Recursos</a></li>
+            <li><a href="audioteca.html" class="site-link cut-link is-cyan is-active">Audioteca</a></li>
+            <li><a href="galeria.html" class="site-link cut-link is-cyan">Galería</a></li>
+            <li><a href="videoteca.html" class="site-link cut-link is-cyan">Videoteca</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main class="page-wrap">
+      <section class="cut-panel-a ash-frame panel">
+        <div class="grid gap-8 lg:grid-cols-[1.2fr_1fr] lg:items-end">
+          <div>
+            <p class="small-overline">Audioteca</p>
+            <h1 data-hero-title class="section-title">Archivo sonoro de investigación</h1>
           </div>
-          <audio controls preload="none" aria-label="Pista 02: El Escudo Magnético de la Tierra">
-            <source src="assets/audio/track-02-geomagnetismo.mp3" type="audio/mpeg" />
-            Tu navegador no soporta el elemento de audio HTML5.
-          </audio>
+          <p data-hero-copy class="section-copy">La audioteca reúne cápsulas de repaso para reforzar conceptos de sismología, geodinámica, geocronología y campos geofísicos. Cada pista está pensada para estudio autónomo previo a evaluaciones y discusiones de clase.</p>
         </div>
+      </section>
 
-        <!-- Pista 3 -->
-        <div class="audio-player-card reveal">
-          <div class="audio-player-card__header">
-            <div class="audio-track-num">03</div>
-            <div class="audio-track-info">
-              <span class="layer-badge">Geodinámica</span>
-              <h3>Las Placas que Mueven el Mundo</h3>
-              <p>La tectónica de placas narrada desde sus raíces históricas — la deriva continental de Wegener — hasta la comprensión moderna de la convección mantélica y el ciclo de Wilson.</p>
-            </div>
-            <span class="audio-duration">~7 min</span>
-          </div>
-          <audio controls preload="none" aria-label="Pista 03: Las Placas que Mueven el Mundo">
-            <source src="assets/audio/track-03-tectonica.mp3" type="audio/mpeg" />
-            Tu navegador no soporta el elemento de audio HTML5.
-          </audio>
+      <section class="cut-panel-b ash-frame panel mt-10">
+        <div class="card-grid">
+          <article class="info-card cut-panel-c" data-anim-in>
+            <h3 class="font-display text-3xl text-bone">Pista 01. Sismología global</h3>
+            <p class="section-copy mt-3">Explica cómo las ondas P y S permiten inferir la estructura interna de la Tierra y por qué las discontinuidades sísmicas son clave para distinguir corteza, manto y núcleo.</p>
+            <audio controls preload="none" class="mt-4 w-full">
+              <source src="assets/audio/track-01-sismologia.mp3" type="audio/mpeg">
+              Tu navegador no soporta audio HTML5.
+            </audio>
+            <p class="mt-3 text-[11px] leading-relaxed text-ash">Referencia de consulta para ampliar: Spotify (s. f.). Recuperado el 19 de abril de 2026, de <a href="https://open.spotify.com/search/sismolog%C3%ADa%20podcast" target="_blank" rel="noopener noreferrer" class="underline">podcasts de sismología</a>.</p>
+          </article>
+
+          <article class="info-card cut-panel-d" data-anim-in>
+            <h3 class="font-display text-3xl text-bone">Pista 02. Geomagnetismo</h3>
+            <p class="section-copy mt-3">Desarrolla el concepto de geodinamo y la evidencia paleomagnética de inversiones del campo terrestre, con énfasis en su utilidad para reconstrucción tectónica.</p>
+            <audio controls preload="none" class="mt-4 w-full">
+              <source src="assets/audio/track-02-geomagnetismo.mp3" type="audio/mpeg">
+              Tu navegador no soporta audio HTML5.
+            </audio>
+            <p class="mt-3 text-[11px] leading-relaxed text-ash">Referencia de consulta para ampliar: Spotify (s. f.). Recuperado el 19 de abril de 2026, de <a href="https://open.spotify.com/search/campo%20geomagn%C3%A9tico" target="_blank" rel="noopener noreferrer" class="underline">podcasts sobre campo geomagnético</a>.</p>
+          </article>
+
+          <article class="info-card cut-panel-e" data-anim-in>
+            <h3 class="font-display text-3xl text-bone">Pista 03. Tectónica de placas</h3>
+            <p class="section-copy mt-3">Relaciona convección del manto, límites de placas y distribución global de sismos y volcanes para interpretar la dinámica actual del planeta.</p>
+            <audio controls preload="none" class="mt-4 w-full">
+              <source src="assets/audio/track-03-tectonica.mp3" type="audio/mpeg">
+              Tu navegador no soporta audio HTML5.
+            </audio>
+            <p class="mt-3 text-[11px] leading-relaxed text-ash">Referencia de consulta para ampliar: Spotify (s. f.). Recuperado el 19 de abril de 2026, de <a href="https://open.spotify.com/search/tect%C3%B3nica%20de%20placas" target="_blank" rel="noopener noreferrer" class="underline">podcasts sobre tectónica de placas</a>.</p>
+          </article>
+
+          <article class="info-card cut-panel-f" data-anim-in>
+            <h3 class="font-display text-3xl text-bone">Pista 04. Tiempo geológico</h3>
+            <p class="section-copy mt-3">Resume la escala geocronológica y cómo la datación radiométrica permite asignar edades absolutas a eventos tectónicos, sedimentarios y magmáticos.</p>
+            <audio controls preload="none" class="mt-4 w-full">
+              <source src="assets/audio/track-04-tiempo-geologico.mp3" type="audio/mpeg">
+              Tu navegador no soporta audio HTML5.
+            </audio>
+            <p class="mt-3 text-[11px] leading-relaxed text-ash">Referencia de consulta para ampliar: Spotify (s. f.). Recuperado el 19 de abril de 2026, de <a href="https://open.spotify.com/search/tiempo%20geol%C3%B3gico" target="_blank" rel="noopener noreferrer" class="underline">podcasts de tiempo geológico</a>.</p>
+          </article>
+
+          <article class="info-card cut-panel-g" data-anim-in>
+            <h3 class="font-display text-3xl text-bone">Pista 05. Núcleo terrestre</h3>
+            <p class="section-copy mt-3">Describe propiedades del núcleo interno y externo, su relación con el campo magnético y las principales evidencias sísmicas que sustentan los modelos actuales.</p>
+            <audio controls preload="none" class="mt-4 w-full">
+              <source src="assets/audio/track-05-nucleo.mp3" type="audio/mpeg">
+              Tu navegador no soporta audio HTML5.
+            </audio>
+            <p class="mt-3 text-[11px] leading-relaxed text-ash">Referencia de consulta para ampliar: Spotify (s. f.). Recuperado el 19 de abril de 2026, de <a href="https://open.spotify.com/search/geolog%C3%ADa%20podcast" target="_blank" rel="noopener noreferrer" class="underline">podcasts de geología</a>.</p>
+          </article>
         </div>
+      </section>
+    </main>
 
-        <!-- Pista 4 -->
-        <div class="audio-player-card reveal">
-          <div class="audio-player-card__header">
-            <div class="audio-track-num">04</div>
-            <div class="audio-track-info">
-              <span class="layer-badge">Tiempo Geológico</span>
-              <h3>Cuatro Mil Seiscientos Millones de Años</h3>
-              <p>Un viaje sonoro por la escala del tiempo geológico: desde la formación de la Tierra en el Hadeano hasta el Antropoceno, con énfasis en los grandes eventos que marcaron la historia del planeta.</p>
-            </div>
-            <span class="audio-duration">~6 min</span>
-          </div>
-          <audio controls preload="none" aria-label="Pista 04: Cuatro Mil Seiscientos Millones de Años">
-            <source src="assets/audio/track-04-tiempo-geologico.mp3" type="audio/mpeg" />
-            Tu navegador no soporta el elemento de audio HTML5.
-          </audio>
-        </div>
-
-        <!-- Pista 5 -->
-        <div class="audio-player-card reveal">
-          <div class="audio-player-card__header">
-            <div class="audio-track-num">05</div>
-            <div class="audio-track-info">
-              <span class="layer-badge">Núcleo Terrestre</span>
-              <h3>En el Corazón del Planeta</h3>
-              <p>Llegamos al final del viaje: el núcleo terrestre. Describimos la naturaleza del núcleo externo líquido y el núcleo interno sólido, el efecto dinamo y los últimos descubrimientos sobre la rotación diferencial del núcleo.</p>
-            </div>
-            <span class="audio-duration">~5 min</span>
-          </div>
-          <audio controls preload="none" aria-label="Pista 05: En el Corazón del Planeta">
-            <source src="assets/audio/track-05-nucleo.mp3" type="audio/mpeg" />
-            Tu navegador no soporta el elemento de audio HTML5.
-          </audio>
-        </div>
-
+    <footer class="footer-shell">
+      <div class="cut-panel-i ash-frame border border-white/20 bg-zinc-900/45 p-5">
+        <p class="text-sm font-bold uppercase tracking-[0.2em] text-bone">GEOLOGÍA FÍSICA DE EL SALVADOR</p>
+        <p class="mt-2 text-xs leading-relaxed text-ash">Audioteca del proyecto académico con producción de contenido original.</p>
       </div>
+    </footer>
+  </div>
 
-      <!-- Nota informativa -->
-      <div class="glass-card reveal" style="margin-top:3rem; background:rgba(0,212,255,0.04); border-color:rgba(0,212,255,0.15);">
-        <span class="layer-badge" style="background:linear-gradient(135deg,#00D4FF,#0090aa);">Nota</span>
-        <h3 style="color:var(--clr-geo-blue);">Sobre las Pistas de Audio</h3>
-        <p>
-          Todas las pistas de esta audioteca son producciones originales elaboradas por los integrantes del equipo
-          como parte de la investigación "Estructura Interna de la Tierra, Tiempo Geológico y Campos Geofísicos".
-          Los archivos de audio se alojarán en la carpeta <code style="background:rgba(255,255,255,0.08);padding:0.1rem 0.4rem;border-radius:4px;font-size:0.85em;">assets/audio/</code>
-          del repositorio una vez finalizadas las grabaciones.
-        </p>
-        <p>
-          Duración total aproximada de la colección: <strong style="color:var(--clr-core);">~29 minutos</strong>.
-          Formato: MP3, 128 kbps, en español.
-        </p>
-      </div>
-
-    </div>
-  </main>
-
-  <!-- ── Footer ─────────────────────────────────────────────── -->
-  <footer class="site-footer">
-    <div class="site-footer__inner">
-      <div class="site-footer__logo"><i class="fa-solid fa-earth-americas"></i> Geociencias</div>
-      <ul class="site-footer__links">
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="hemeroteca.html">Hemeroteca</a></li>
-        <li><a href="recursos.html">Recursos</a></li>
-        <li><a href="audioteca.html">Audioteca</a></li>
-        <li><a href="galeria.html">Galería</a></li>
-        <li><a href="videoteca.html">Videoteca</a></li>
-      </ul>
-      <p>&copy; 2024 Geociencias: Estructura y Campos de la Tierra &mdash; Revista científica con fines educativos.</p>
-    </div>
-  </footer>
-
-  <script src="js/main.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles-engine"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles-basic"></script>
+  <script src="js/brutalist-theme.js"></script>
 </body>
 </html>

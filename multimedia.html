@@ -1,240 +1,104 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Contenido multimedia: vídeos, animaciones y podcasts sobre la estructura interna de la Tierra y geofísica." />
-  <title>Multimedia — Geo&amp;Tierra</title>
-  <link rel="stylesheet" href="css/styles.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Centro multimedia del proyecto de geología física.">
+  <title>Multimedia | GEOLOGÍA FÍSICA DE EL SALVADOR</title>
 
-  <style>
-    /* ── Multimedia-specific styles ── */
-    .media-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
 
-    .media-card {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    .media-card .media-thumb {
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      background: linear-gradient(135deg, #3a1a00 0%, #8b1a00 100%);
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 3rem;
-      color: rgba(255,255,255,0.5);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .media-card .media-thumb::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.25);
-      border-radius: 10px;
-    }
-
-    .media-card .media-thumb .play-icon {
-      position: relative;
-      z-index: 1;
-    }
-
-    .audio-section {
-      margin-top: 3rem;
-    }
-
-    .audio-item {
-      display: flex;
-      align-items: center;
-      gap: 1.25rem;
-      padding: 1rem 1.25rem;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 10px;
-      margin-bottom: 0.75rem;
-    }
-
-    .audio-item .audio-icon {
-      font-size: 1.75rem;
-      flex-shrink: 0;
-    }
-
-    .audio-item p {
-      font-size: 0.9rem;
-      color: var(--clr-text-muted);
-      margin: 0;
-    }
-
-    .audio-item strong {
-      display: block;
-      color: var(--clr-text);
-      margin-bottom: 0.2rem;
-    }
-
-    @media (max-width: 768px) {
-      .media-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+  <script src="js/tailwind-config.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/brutalist-theme.css">
 </head>
-<body>
+<body class="bg-obsidian text-bone font-ui">
+  <div id="tsparticles" class="fixed inset-0 pointer-events-none z-0"></div>
 
-  <!-- ── Navigation ───────────────────────────────────────── -->
-  <nav class="site-nav" aria-label="Navegación principal">
-    <span class="site-nav__logo"><i class="fa-solid fa-earth-americas"></i> Geo&amp;Tierra</span>
-
-    <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-
-    <ul class="site-nav__links" role="list">
-      <li><a href="index.html">Inicio</a></li>
-      <li><a href="blog.html">Blog</a></li>
-      <li><a href="hemeroteca.html">Hemeroteca</a></li>
-      <li><a href="recursos.html">Recursos</a></li>
-      <li><a href="audioteca.html">Audioteca</a></li>
-      <li><a href="galeria.html">Galería</a></li>
-      <li><a href="videoteca.html">Videoteca</a></li>
-    </ul>
-  </nav>
-
-  <!-- ── Page Hero ─────────────────────────────────────────── -->
-  <header class="page-hero">
-    <div class="page-hero__inner">
-      <h1>Multimedia</h1>
-      <p>Vídeos, animaciones interactivas y podcasts sobre geofísica y el interior terrestre.</p>
-    </div>
-  </header>
-
-  <!-- ── Main Content ──────────────────────────────────────── -->
-  <main id="main-content">
-    <div class="container">
-
-      <!-- Videos -->
-      <h2 class="section-heading">Vídeos y Animaciones</h2>
-
-      <div class="media-grid">
-
-        <div class="glass-card media-card reveal">
-          <div class="media-thumb">
-            <span class="play-icon"><i class="fa-solid fa-play"></i></span>
+  <div class="tectonic-shell">
+    <header class="sticky top-0 z-40 px-3 pt-3 sm:px-6 lg:px-10">
+      <nav class="cut-nav ash-frame bg-zinc-900/60 px-4 py-4 sm:px-6" aria-label="Navegación principal">
+        <div class="grid gap-4 lg:grid-cols-[1.35fr_2fr] lg:items-center">
+          <div class="cut-brand border border-magma/50 bg-magma/10 p-4">
+            <p class="font-display text-2xl leading-none tracking-wide text-bone sm:text-3xl">GEOLOGÍA FÍSICA DE EL SALVADOR</p>
+            <p class="mt-2 text-[10px] uppercase tracking-[0.26em] text-bone/45 sm:text-xs">NP 02 / LIC. PEDRO ELIAS SALAZAR MENJIVAR</p>
           </div>
-          <div>
-            <span class="layer-badge">Vídeo</span>
-            <h3>Viaje al centro de la Tierra</h3>
-            <p>Animación 3D que muestra las distintas capas del interior terrestre y sus propiedades físicas.</p>
-            <a href="#">Ver vídeo →</a>
-          </div>
+
+          <ul class="grid grid-cols-2 gap-2 sm:grid-cols-4">
+            <li><a href="index.html" class="site-link cut-link">Inicio</a></li>
+            <li><a href="index.html#presentacion" class="site-link cut-link">Presentación</a></li>
+            <li><a href="blog.html" class="site-link cut-link">Blog</a></li>
+            <li><a href="hemeroteca.html" class="site-link cut-link">Hemeroteca</a></li>
+            <li><a href="recursos.html" class="site-link cut-link is-cyan">Recursos</a></li>
+            <li><a href="audioteca.html" class="site-link cut-link is-cyan">Audioteca</a></li>
+            <li><a href="galeria.html" class="site-link cut-link is-cyan">Galería</a></li>
+            <li><a href="videoteca.html" class="site-link cut-link is-cyan">Videoteca</a></li>
+          </ul>
         </div>
+      </nav>
+    </header>
 
-        <div class="glass-card media-card reveal">
-          <div class="media-thumb">
-            <span class="play-icon"><i class="fa-solid fa-play"></i></span>
-          </div>
+    <main class="page-wrap">
+      <section class="cut-panel-a ash-frame panel">
+        <div class="grid gap-8 lg:grid-cols-[1.2fr_1fr] lg:items-end">
           <div>
-            <span class="layer-badge">Vídeo</span>
-            <h3>Tectónica de placas explicada</h3>
-            <p>Visualización del movimiento de las placas tectónicas a lo largo del tiempo geológico.</p>
-            <a href="#">Ver vídeo →</a>
+            <p class="small-overline">Multimedia</p>
+            <h1 data-hero-title class="section-title">Panel integrado de contenidos</h1>
           </div>
+          <p data-hero-copy class="section-copy">Este panel integra tres formatos complementarios: video para explicación conceptual, audio para repaso autónomo e interactivos para evaluación formativa. La selección prioriza recursos en español y plataformas educativas de uso académico. El sustento conceptual del proyecto se documenta por parafraseo con referencias verificables en la hemeroteca.</p>
         </div>
-
-        <div class="glass-card media-card reveal">
-          <div class="media-thumb">
-            <span class="play-icon"><i class="fa-solid fa-play"></i></span>
-          </div>
-          <div>
-            <span class="layer-badge">Animación</span>
-            <h3>El campo geomagnético</h3>
-            <p>Simulación interactiva del campo magnético terrestre y sus líneas de fuerza.</p>
-            <a href="#">Ver animación →</a>
-          </div>
-        </div>
-
-        <div class="glass-card media-card reveal">
-          <div class="media-thumb">
-            <span class="play-icon"><i class="fa-solid fa-play"></i></span>
-          </div>
-          <div>
-            <span class="layer-badge">Documental</span>
-            <h3>Historia de la Tierra en 24 horas</h3>
-            <p>Compresión de 4 600 millones de años de historia geológica en un formato accesible.</p>
-            <a href="#">Ver documental →</a>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Audio -->
-      <section class="audio-section">
-        <h2 class="section-heading">Podcasts y Audio</h2>
-
-        <div class="audio-item reveal">
-          <span class="audio-icon"><i class="fa-solid fa-microphone"></i></span>
-          <div>
-            <strong>Ep. 01 — Sismología: escuchando la Tierra</strong>
-            <p>Entrevista con sismólogos sobre cómo las ondas sísmicas revelan el interior terrestre. · 42 min</p>
-          </div>
-        </div>
-
-        <div class="audio-item reveal">
-          <span class="audio-icon"><i class="fa-solid fa-microphone"></i></span>
-          <div>
-            <strong>Ep. 02 — El tiempo geológico y la memoria de las rocas</strong>
-            <p>Cómo los geólogos leen el tiempo en las rocas, fósiles y estratos. · 38 min</p>
-          </div>
-        </div>
-
-        <div class="audio-item reveal">
-          <span class="audio-icon"><i class="fa-solid fa-microphone"></i></span>
-          <div>
-            <strong>Ep. 03 — El núcleo interno: ¿qué sabemos realmente?</strong>
-            <p>Debate sobre los últimos descubrimientos en torno al núcleo interno sólido. · 55 min</p>
-          </div>
-        </div>
-
-        <div class="audio-item reveal">
-          <span class="audio-icon"><i class="fa-solid fa-microphone"></i></span>
-          <div>
-            <strong>Ep. 04 — Campos geofísicos y exploración del subsuelo</strong>
-            <p>Aplicaciones prácticas de la gravimetría, el geomagnetismo y la geotermia. · 47 min</p>
-          </div>
-        </div>
-
       </section>
 
-    </div>
-  </main>
+      <section class="cut-panel-b ash-frame panel mt-10">
+        <div class="card-grid cols-3">
+          <article class="info-card cut-panel-c" data-anim-in>
+            <h3 class="font-display text-3xl text-bone">Bloque de video</h3>
+            <div class="media-slot cut-image-e mt-4 aspect-video border border-white/20 p-2">
+              <iframe class="h-full w-full border border-dashed border-magma/45" src="https://www.youtube.com/embed?listType=search&amp;list=estructura+interna+de+la+tierra+espanol" title="Videos en español sobre estructura interna de la Tierra" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <p class="mt-3 text-[11px] leading-relaxed text-ash">Referencia del recurso audiovisual: YouTube. Recuperado el 19 de abril de 2026, de <a href="https://www.youtube.com/results?search_query=estructura+interna+de+la+tierra+espanol" target="_blank" rel="noopener noreferrer" class="underline">búsqueda temática en español</a>.</p>
+          </article>
 
-  <!-- ── Footer ─────────────────────────────────────────────── -->
-  <footer class="site-footer">
-    <div class="site-footer__inner">
-      <div class="site-footer__logo"><i class="fa-solid fa-earth-americas"></i> Geo&amp;Tierra</div>
-      <ul class="site-footer__links">
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="hemeroteca.html">Hemeroteca</a></li>
-        <li><a href="recursos.html">Recursos</a></li>
-        <li><a href="audioteca.html">Audioteca</a></li>
-        <li><a href="galeria.html">Galería</a></li>
-        <li><a href="videoteca.html">Videoteca</a></li>
-      </ul>
-      <p>&copy; 2024 Estructura Interna de la Tierra, Tiempo Geológico y Campos Geofísicos &mdash; Investigación científica con fines educativos.</p>
-    </div>
-  </footer>
+          <article class="info-card cut-panel-d" data-anim-in>
+            <h3 class="font-display text-3xl text-bone">Bloque de audio</h3>
+            <div class="media-slot cut-image-a mt-4 aspect-video border border-white/20 p-2">
+              <div class="flex h-full w-full flex-col justify-between border border-dashed border-magnetic/45 bg-zinc-950/45 p-4 text-left text-xs text-ash">
+                <p class="leading-relaxed">Para repaso auditivo, se recomienda escuchar podcasts de ciencias de la Tierra y comparar conceptos con el contenido del blog y la hemeroteca.</p>
+                <a href="audioteca.html" class="mt-3 inline-block border border-magnetic/60 px-3 py-2 text-[10px] uppercase tracking-[0.15em] text-bone hover:bg-magnetic/15">Ir a la audioteca</a>
+                <a href="https://open.spotify.com/search/geolog%C3%ADa%20podcast" target="_blank" rel="noopener noreferrer" class="mt-2 inline-block border border-white/30 px-3 py-2 text-[10px] uppercase tracking-[0.15em] text-bone hover:bg-white/10">Podcasts de geología en Spotify</a>
+              </div>
+            </div>
+          </article>
 
-  <script src="js/main.js"></script>
+          <article class="info-card cut-panel-e" data-anim-in>
+            <h3 class="font-display text-3xl text-bone">Bloque interactivo</h3>
+            <div class="media-slot cut-image-b mt-4 aspect-video border border-white/20 p-2">
+              <div class="flex h-full w-full flex-col justify-between border border-dashed border-magma/45 bg-zinc-950/45 p-4 text-left text-xs text-ash">
+                <p class="leading-relaxed">Incluye actividades para evaluación y participación activa del estudiantado mediante cuestionarios y presentaciones interactivas.</p>
+                <a href="https://kahoot.com/library/?lang=es" target="_blank" rel="noopener noreferrer" class="mt-3 inline-block border border-magma/60 px-3 py-2 text-[10px] uppercase tracking-[0.15em] text-bone hover:bg-magma/15">Kahoot (biblioteca)</a>
+                <a href="https://genially.com/es/plantillas/educacion" target="_blank" rel="noopener noreferrer" class="mt-2 inline-block border border-white/30 px-3 py-2 text-[10px] uppercase tracking-[0.15em] text-bone hover:bg-white/10">Genially (plantillas educativas)</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer-shell">
+      <div class="cut-panel-i ash-frame border border-white/20 bg-zinc-900/45 p-5">
+        <p class="text-sm font-bold uppercase tracking-[0.2em] text-bone">GEOLOGÍA FÍSICA DE EL SALVADOR</p>
+        <p class="mt-2 text-xs leading-relaxed text-ash">Centro multimedia de apoyo para la investigación y divulgación universitaria.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles-engine"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles-basic"></script>
+  <script src="js/brutalist-theme.js"></script>
 </body>
 </html>

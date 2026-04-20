@@ -1,216 +1,174 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Hemeroteca de publicaciones científicas sobre geofísica, geología y el interior de la Tierra — artículos, revistas y clásicos de referencia." />
-  <title>Hemeroteca — Geo&amp;Tierra</title>
-  <link rel="stylesheet" href="css/styles.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Hemeroteca del proyecto con fuentes científicas y referencias especializadas en geofísica.">
+  <title>Hemeroteca | GEOLOGÍA FÍSICA DE EL SALVADOR</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <script src="js/tailwind-config.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/brutalist-theme.css">
 </head>
-<body>
+<body class="bg-obsidian text-bone font-ui">
+  <div id="tsparticles" class="fixed inset-0 pointer-events-none z-0"></div>
 
-  <!-- ── Navigation ───────────────────────────────────────── -->
-  <nav class="site-nav" aria-label="Navegación principal">
-    <span class="site-nav__logo"><i class="fa-solid fa-earth-americas"></i> Geociencias</span>
-    <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-    <ul class="site-nav__links" role="list">
-      <li><a href="index.html">Inicio</a></li>
-      <li><a href="blog.html">Blog</a></li>
-      <li><a href="hemeroteca.html" class="active">Hemeroteca</a></li>
-      <li><a href="recursos.html">Recursos</a></li>
-      <li><a href="audioteca.html">Audioteca</a></li>
-      <li><a href="galeria.html">Galería</a></li>
-      <li><a href="videoteca.html">Videoteca</a></li>
-    </ul>
-  </nav>
-
-  <!-- ── Page Hero ─────────────────────────────────────────── -->
-  <header class="page-hero">
-    <div class="page-hero__inner">
-      <h1>Hemeroteca Científica</h1>
-      <p>Repositorio de revistas, artículos académicos clásicos y publicaciones de referencia en geofísica y geociencias.</p>
-    </div>
-  </header>
-
-  <!-- ── Main Content ──────────────────────────────────────── -->
-  <main id="main-content">
-    <div class="container">
-
-      <h2 class="section-heading">Publicaciones y Artículos de Referencia</h2>
-
-      <div class="hemer-list">
-
-        <!-- 1 -->
-        <div class="hemer-item reveal">
-          <span class="hemer-item__num">01</span>
-          <div class="hemer-item__content">
-            <h3>Nature Geoscience — Revista mensual de geociencias</h3>
-            <p>Publicación mensual de alto impacto que cubre investigación original sobre procesos geofísicos, geoquímicos y geológicos a escala global. Una de las revistas más citadas en el campo.</p>
-            <p class="hemer-apa-citation">Nature Geoscience. (2008–presente). <em>Nature Geoscience</em>. Springer Nature. https://www.nature.com/ngeo/</p>
-            <div class="hemer-item__meta">
-              <span class="hemer-tag">Revista</span>
-              <span class="hemer-tag">Alto impacto</span>
-              <a href="https://www.nature.com/ngeo/" target="_blank" rel="noopener">Visitar →</a>
-            </div>
+  <div class="tectonic-shell">
+    <header class="sticky top-0 z-40 px-3 pt-3 sm:px-6 lg:px-10">
+      <nav class="cut-nav ash-frame bg-zinc-900/60 px-4 py-4 sm:px-6" aria-label="Navegación principal">
+        <div class="grid gap-4 lg:grid-cols-[1.35fr_2fr] lg:items-center">
+          <div class="cut-brand border border-magma/50 bg-magma/10 p-4">
+            <p class="font-display text-2xl leading-none tracking-wide text-bone sm:text-3xl">GEOLOGÍA FÍSICA DE EL SALVADOR</p>
+            <p class="mt-2 text-[10px] uppercase tracking-[0.26em] text-bone/45 sm:text-xs">NP 02 / LIC. PEDRO ELIAS SALAZAR MENJIVAR</p>
           </div>
-        </div>
 
-        <!-- 2 -->
-        <div class="hemer-item reveal">
-          <span class="hemer-item__num">02</span>
-          <div class="hemer-item__content">
-            <h3>Journal of Geophysical Research: Solid Earth (AGU)</h3>
-            <p>Publicación de la American Geophysical Union dedicada a investigación en sólidos terrestres, tectónica, sismología, geomagnetismo y geoquímica. Fundada en 1896.</p>
-            <p class="hemer-apa-citation">American Geophysical Union. (1896–presente). <em>Journal of Geophysical Research: Solid Earth</em>. Wiley. https://agupubs.onlinelibrary.wiley.com/journal/21699356</p>
-            <div class="hemer-item__meta">
-              <span class="hemer-tag">Revista</span>
-              <span class="hemer-tag">AGU</span>
-              <a href="https://agupubs.onlinelibrary.wiley.com/journal/21699356" target="_blank" rel="noopener">Visitar →</a>
-            </div>
+          <ul class="grid grid-cols-2 gap-2 sm:grid-cols-4">
+            <li><a href="index.html" class="site-link cut-link">Inicio</a></li>
+            <li><a href="index.html#presentacion" class="site-link cut-link">Presentación</a></li>
+            <li><a href="blog.html" class="site-link cut-link">Blog</a></li>
+            <li><a href="hemeroteca.html" class="site-link cut-link is-active">Hemeroteca</a></li>
+            <li><a href="recursos.html" class="site-link cut-link is-cyan">Recursos</a></li>
+            <li><a href="audioteca.html" class="site-link cut-link is-cyan">Audioteca</a></li>
+            <li><a href="galeria.html" class="site-link cut-link is-cyan">Galería</a></li>
+            <li><a href="videoteca.html" class="site-link cut-link is-cyan">Videoteca</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main class="page-wrap">
+      <section class="cut-panel-a ash-frame panel">
+        <div class="grid gap-8 lg:grid-cols-[1.2fr_1fr] lg:items-end">
+          <div>
+            <p class="small-overline">Hemeroteca</p>
+            <h1 data-hero-title class="section-title">Fuentes académicas y científicas</h1>
           </div>
+          <p data-hero-copy class="section-copy">Esta hemeroteca reúne 10 artículos y reportes técnicos de instituciones geocientíficas hispanohablantes reconocidas (Ecuador, Colombia y España). Cada ficha incluye una reseña más extensa, cita en texto, referencia y botón de lectura para profundizar en la fuente.</p>
         </div>
+      </section>
 
-        <!-- 3 -->
-        <div class="hemer-item reveal">
-          <span class="hemer-item__num">03</span>
-          <div class="hemer-item__content">
-            <h3>Lehmann, I. (1936) — P' — Descubrimiento del núcleo interno</h3>
-            <p>Artículo fundacional de Inge Lehmann donde propone la existencia del núcleo interno sólido a partir del análisis de fases sísmicas PKiKP que no podían explicarse con un núcleo completamente líquido.</p>
-            <p class="hemer-apa-citation">Lehmann, I. (1936). P'. <em>Publications du Bureau Central Séismologique International, Série A, Travaux Scientifiques, 14</em>, 87–115.</p>
-            <div class="hemer-item__meta">
-              <span class="hemer-tag">Artículo clásico</span>
-              <span class="hemer-tag">1936</span>
-              <a href="https://doi.org/10.5194/hgss-1-53-2010" target="_blank" rel="noopener">Ver referencia →</a>
+      <section class="cut-panel-b ash-frame panel mt-10">
+        <div class="card-grid cols-2">
+          <article class="info-card cut-panel-c" data-anim-in>
+            <h3 class="font-display text-3xl text-bone">01. Monitoreo de ceniza del volcán Sangay (Ecuador)</h3>
+            <p class="section-copy mt-3">El informe describe una campaña de campo con mediciones directas de caída de ceniza, mantenimiento de cenizómetros e instalación de nuevos puntos de monitoreo, lo que permite comparar periodos eruptivos con datos objetivos. El equipo técnico documenta 136 emisiones reportadas por VAAC y contrasta esos registros con carga de ceniza acumulada en comunidades cercanas. Esta metodología de seguimiento continuo ayuda a entender cómo varía el impacto en población, suelos y rutas de evacuación. Por su nivel de detalle operativo y resultados cuantificables, es una referencia muy útil para gestión de riesgo volcánico en Latinoamérica (<strong>Instituto Geofísico de la Escuela Politécnica Nacional, 2026</strong>).</p>
+            <p class="apa-ref">Instituto Geofísico de la Escuela Politécnica Nacional. (2026). Recolección de ceniza y mantenimiento de la red de cenizómetros del volcán Sangay. <em>Instituto Geofísico EPN</em>. https://www.igepn.edu.ec/interactuamos-con-usted/2345-recoleccion-de-ceniza-y-mantenimiento-de-la-red-de-cenizometros-del-volcan-sangay</p>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <a href="https://www.igepn.edu.ec/interactuamos-con-usted/2345-recoleccion-de-ceniza-y-mantenimiento-de-la-red-de-cenizometros-del-volcan-sangay" target="_blank" rel="noopener noreferrer" class="inline-block border border-magma/60 px-3 py-2 text-[10px] uppercase tracking-[0.15em] text-bone hover:bg-magma/15">Leer más</a>
+              <a href="https://scholar.google.com/scholar?q=ceniza+volcan+Sangay+cenizometros+IG-EPN" target="_blank" rel="noopener noreferrer" class="inline-block border border-white/40 px-3 py-2 text-[10px] uppercase tracking-[0.15em] text-bone hover:bg-white/10">Google Scholar</a>
             </div>
-          </div>
-        </div>
+          </article>
 
-        <!-- 4 -->
-        <div class="hemer-item reveal">
-          <span class="hemer-item__num">04</span>
-          <div class="hemer-item__content">
-            <h3>Mohorovičić, A. (1909) — Discontinuidad Moho</h3>
-            <p>Primera descripción de la discontinuidad entre la corteza y el manto a partir del análisis de un terremoto ocurrido en la región de Kulpa (Croacia), observando la doble llegada de ondas sísmicas P.</p>
-            <p class="hemer-apa-citation">Mohorovičić, A. (1909). Potres od 8. X 1909. <em>Godišnje izvješće Zagrebačkog meteorološkog opservatorija za godinu 1909, 9</em>(4), 1–56.</p>
-            <div class="hemer-item__meta">
-              <span class="hemer-tag">Artículo clásico</span>
-              <span class="hemer-tag">1909</span>
+          <article class="info-card cut-panel-d" data-anim-in>
+            <h3 class="font-display text-3xl text-bone">02. Monitoreo térmico y morfológico del Cotopaxi</h3>
+            <p class="section-copy mt-3">Este reporte integra sobrevuelos con dron, sensores térmicos y comparación de ortomosaicos para evaluar cambios en el cráter del Cotopaxi. El texto explica de forma clara la diferencia entre temperatura aparente y temperatura real, algo clave cuando se interpretan anomalías térmicas en volcanes activos. También contextualiza resultados con campañas anteriores para evitar lecturas alarmistas y sostener conclusiones técnicas. Es una fuente valiosa porque combina lenguaje accesible con procedimientos científicos de vigilancia multiparamétrica (<strong>Instituto Geofísico de la Escuela Politécnica Nacional, 2026</strong>).</p>
+            <p class="apa-ref">Instituto Geofísico de la Escuela Politécnica Nacional. (2026). Trabajos de monitoreo térmico y morfológico en el volcán Cotopaxi. <em>Instituto Geofísico EPN</em>. https://www.igepn.edu.ec/interactuamos-con-usted/2344-trabajos-de-monitoreo-termico-y-morfologico-en-el-volcan-cotopaxi</p>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <a href="https://www.igepn.edu.ec/interactuamos-con-usted/2344-trabajos-de-monitoreo-termico-y-morfologico-en-el-volcan-cotopaxi" target="_blank" rel="noopener noreferrer" class="inline-block border border-magnetic/60 px-3 py-2 text-[10px] uppercase tracking-[0.15em] text-bone hover:bg-magnetic/15">Leer más</a>
+              <a href="https://scholar.google.com/scholar?q=monitoreo+termico+morfologico+Cotopaxi+IG-EPN" target="_blank" rel="noopener noreferrer" class="inline-block border border-white/40 px-3 py-2 text-[10px] uppercase tracking-[0.15em] text-bone hover:bg-white/10">Google Scholar</a>
             </div>
-          </div>
-        </div>
+          </article>
 
-        <!-- 5 -->
-        <div class="hemer-item reveal">
-          <span class="hemer-item__num">05</span>
-          <div class="hemer-item__content">
-            <h3>Dziewonski &amp; Anderson (1981) — Preliminary Reference Earth Model (PREM)</h3>
-            <p>El modelo PREM define la variación radial de la densidad, velocidades sísmicas y otras propiedades físicas en el interior de la Tierra. Es el estándar de referencia global más utilizado en geofísica.</p>
-            <p class="hemer-apa-citation">Dziewonski, A. M., &amp; Anderson, D. L. (1981). Preliminary reference Earth model. <em>Physics of the Earth and Planetary Interiors, 25</em>(4), 297–356. https://doi.org/10.1016/0031-9201(81)90046-7</p>
-            <div class="hemer-item__meta">
-              <span class="hemer-tag">Modelo de referencia</span>
-              <span class="hemer-tag">1981</span>
-              <a href="https://ds.iris.edu/ds/products/emc-prem/" target="_blank" rel="noopener">Ver modelo →</a>
+          <article class="info-card cut-panel-e" data-anim-in>
+            <h3 class="font-display text-3xl text-bone">03. Vigilancia del volcán Guagua Pichincha</h3>
+            <p class="section-copy mt-3">La publicación resume una campaña de vigilancia con drones multiespectrales, medición térmica y análisis de gases volcánicos con equipos MultiGAS. Además de reportar valores observados, el informe discute su comparación con periodos previos y explica por qué la interpretación debe considerar contexto meteorológico y operativo. Un aporte relevante es su enfoque preventivo: el documento traduce resultados técnicos en recomendaciones de seguridad para población y visitantes. Este puente entre ciencia aplicada y comunicación del riesgo la vuelve una fuente confiable y ampliamente utilizable en educación geológica (<strong>Instituto Geofísico de la Escuela Politécnica Nacional, 2026</strong>).</p>
+            <p class="apa-ref">Instituto Geofísico de la Escuela Politécnica Nacional. (2026). Trabajos de vigilancia de la actividad superficial del volcán Guagua Pichincha. <em>Instituto Geofísico EPN</em>. https://www.igepn.edu.ec/interactuamos-con-usted/2343-trabajos-de-vigilancia-de-la-actividad-superficial-del-volcan-guagua-pichincha</p>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <a href="https://www.igepn.edu.ec/interactuamos-con-usted/2343-trabajos-de-vigilancia-de-la-actividad-superficial-del-volcan-guagua-pichincha" target="_blank" rel="noopener noreferrer" class="inline-block border border-magma/60 px-3 py-2 text-[10px] uppercase tracking-[0.15em] text-bone hover:bg-magma/15">Leer más</a>
+              <a href="https://scholar.google.com/scholar?q=vigilancia+volcan+Guagua+Pichincha+IG-EPN" target="_blank" rel="noopener noreferrer" class="inline-block border border-white/40 px-3 py-2 text-[10px] uppercase tracking-[0.15em] text-bone hover:bg-white/10">Google Scholar</a>
             </div>
-          </div>
-        </div>
+          </article>
 
-        <!-- 6 -->
-        <div class="hemer-item reveal">
-          <span class="hemer-item__num">06</span>
-          <div class="hemer-item__content">
-            <h3>IRIS — Incorporated Research Institutions for Seismology</h3>
-            <p>Consorcio que gestiona una red global de sismógrafos de banda ancha. Sus datos son de acceso abierto y fundamentales para la sismología moderna y el monitoreo de terremotos.</p>
-            <p class="hemer-apa-citation">IRIS Consortium. (1984–presente). <em>Incorporated Research Institutions for Seismology</em>. https://www.iris.edu/</p>
-            <div class="hemer-item__meta">
-              <span class="hemer-tag">Institución</span>
-              <span class="hemer-tag">Datos abiertos</span>
-              <a href="https://www.iris.edu/" target="_blank" rel="noopener">Visitar →</a>
+          <article class="info-card cut-panel-f" data-anim-in>
+            <h3 class="font-display text-3xl text-bone">04. Tareas de vigilancia en el volcán Quilotoa</h3>
+            <p class="section-copy mt-3">Este artículo técnico explica cómo un evento viralizado en redes fue evaluado con mediciones de CO2, parámetros físico-químicos del agua, cartografía con dron y revisión de inestabilidad de laderas. El reporte muestra un ejemplo de buena práctica institucional: pasar de rumor a evidencia mediante campañas de campo y análisis comparativos. También incorpora resultados de instalación de estaciones para robustecer la red instrumental en la zona. La fuente es especialmente útil para entender la diferencia entre percepción pública de peligro y diagnóstico geocientífico fundamentado (<strong>Instituto Geofísico de la Escuela Politécnica Nacional, 2026</strong>).</p>
+            <p class="apa-ref">Instituto Geofísico de la Escuela Politécnica Nacional. (2026). Tareas de vigilancia en el volcán Quilotoa. <em>Instituto Geofísico EPN</em>. https://www.igepn.edu.ec/interactuamos-con-usted/2338-tareas-de-vigilancia-en-el-volcan-quilotoa</p>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <a href="https://www.igepn.edu.ec/interactuamos-con-usted/2338-tareas-de-vigilancia-en-el-volcan-quilotoa" target="_blank" rel="noopener noreferrer" class="inline-block border border-magnetic/60 px-3 py-2 text-[10px] uppercase tracking-[0.15em] text-bone hover:bg-magnetic/15">Leer más</a>
+              <a href="https://scholar.google.com/scholar?q=vigilancia+volcan+Quilotoa+IG-EPN" target="_blank" rel="noopener noreferrer" class="inline-block border border-white/40 px-3 py-2 text-[10px] uppercase tracking-[0.15em] text-bone hover:bg-white/10">Google Scholar</a>
             </div>
-          </div>
-        </div>
+          </article>
 
-        <!-- 7 -->
-        <div class="hemer-item reveal">
-          <span class="hemer-item__num">07</span>
-          <div class="hemer-item__content">
-            <h3>USGS — Earthquake Hazards Program</h3>
-            <p>Servicio Geológico de los Estados Unidos con acceso a catálogos sísmicos globales en tiempo real, mapas de peligrosidad sísmica y publicaciones técnicas sobre geología y riesgos naturales.</p>
-            <p class="hemer-apa-citation">U.S. Geological Survey. (s.f.). <em>Earthquake hazards program</em>. https://earthquake.usgs.gov/</p>
-            <div class="hemer-item__meta">
-              <span class="hemer-tag">Agencia gubernamental</span>
-              <span class="hemer-tag">Tiempo real</span>
-              <a href="https://earthquake.usgs.gov/" target="_blank" rel="noopener">Visitar →</a>
+          <article class="info-card cut-panel-g" data-anim-in>
+            <h3 class="font-display text-3xl text-bone">05. Vigilancia de actividad superficial en la cumbre del Cotopaxi</h3>
+            <p class="section-copy mt-3">El documento presenta mediciones directas y remotas de temperatura, además de monitoreo de gases en altura, lo que permite observar la dinámica superficial del sistema volcánico en tiempo real. Aporta discusión técnica sobre límites de cada método de observación, incluyendo efectos de nubosidad, geometría y distancia en la lectura térmica. También compara razones geoquímicas de gases con campañas previas para identificar tendencias en actividad interna y superficial. Es un material sólido para comprender cómo se construyen alertas con base en datos y no solo en señales visuales (<strong>Instituto Geofísico de la Escuela Politécnica Nacional, 2026</strong>).</p>
+            <p class="apa-ref">Instituto Geofísico de la Escuela Politécnica Nacional. (2026). Trabajos de vigilancia de actividad superficial en la cumbre del volcán Cotopaxi. <em>Instituto Geofísico EPN</em>. https://www.igepn.edu.ec/interactuamos-con-usted/2341-trabajos-de-vigilancia-de-actividad-superficial-en-la-cumbre-del-volcan-cotopaxi</p>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <a href="https://www.igepn.edu.ec/interactuamos-con-usted/2341-trabajos-de-vigilancia-de-actividad-superficial-en-la-cumbre-del-volcan-cotopaxi" target="_blank" rel="noopener noreferrer" class="inline-block border border-magma/60 px-3 py-2 text-[10px] uppercase tracking-[0.15em] text-bone hover:bg-magma/15">Leer más</a>
+              <a href="https://scholar.google.com/scholar?q=vigilancia+cumbre+Cotopaxi+IG-EPN" target="_blank" rel="noopener noreferrer" class="inline-block border border-white/40 px-3 py-2 text-[10px] uppercase tracking-[0.15em] text-bone hover:bg-white/10">Google Scholar</a>
             </div>
-          </div>
-        </div>
+          </article>
 
-        <!-- 8 -->
-        <div class="hemer-item reveal">
-          <span class="hemer-item__num">08</span>
-          <div class="hemer-item__content">
-            <h3>Glatzmaier &amp; Roberts (1995) — Simulación numérica de inversión geomagnética</h3>
-            <p>Primera simulación computacional 3D auto-consistente del campo geomagnético que reprodujo una inversión de polaridad, publicada en <em>Nature</em>. Un hito en el modelado del efecto dinamo terrestre.</p>
-            <p class="hemer-apa-citation">Glatzmaier, G. A., &amp; Roberts, P. H. (1995). A three-dimensional self-consistent computer simulation of a geomagnetic field reversal. <em>Nature, 377</em>, 203–209. https://doi.org/10.1038/377203a0</p>
-            <div class="hemer-item__meta">
-              <span class="hemer-tag">Artículo</span>
-              <span class="hemer-tag">Nature 1995</span>
+          <article class="info-card cut-panel-h" data-anim-in>
+            <h3 class="font-display text-3xl text-bone">06. Cenizas volcánicas y su huella geológica en Colombia</h3>
+            <p class="section-copy mt-3">El Servicio Geológico Colombiano expone un estudio de gran escala sobre composición química y mineralógica de cenizas, con más de mil análisis integrados en un enfoque interdisciplinario. La investigación aborda desde tefrocronología y datación de minerales hasta implicaciones en suelos, salud pública y movimientos en masa. Además, conecta resultados de laboratorio con decisiones de ordenamiento territorial y gestión de amenazas. Por su amplitud metodológica y aplicación práctica, este artículo es una referencia hispana clave en geología aplicada (<strong>Servicio Geológico Colombiano, 2026</strong>).</p>
+            <p class="apa-ref">Servicio Geológico Colombiano. (2026). Las historias que nos cuentan las cenizas volcánicas: así estudia el SGC estas pequeñas partículas. <em>Servicio Geológico Colombiano</em>. https://www2.sgc.gov.co/Noticias/Paginas/Las-historias-que-nos-cuentan-las-cenizas-volcanicas.aspx</p>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <a href="https://www2.sgc.gov.co/Noticias/Paginas/Las-historias-que-nos-cuentan-las-cenizas-volcanicas.aspx" target="_blank" rel="noopener noreferrer" class="inline-block border border-magnetic/60 px-3 py-2 text-[10px] uppercase tracking-[0.15em] text-bone hover:bg-magnetic/15">Leer más</a>
+              <a href="https://scholar.google.com/scholar?q=cenizas+volcanicas+Servicio+Geologico+Colombiano" target="_blank" rel="noopener noreferrer" class="inline-block border border-white/40 px-3 py-2 text-[10px] uppercase tracking-[0.15em] text-bone hover:bg-white/10">Google Scholar</a>
             </div>
-          </div>
-        </div>
+          </article>
 
-        <!-- 9 -->
-        <div class="hemer-item reveal">
-          <span class="hemer-item__num">09</span>
-          <div class="hemer-item__content">
-            <h3>Earth and Planetary Science Letters (EPSL)</h3>
-            <p>Revista internacional de Elsevier que publica investigaciones sobre la formación, evolución y estructura de la Tierra y otros planetas. Cubre sismología, geoquímica, geomorfología y mecanismos del interior terrestre.</p>
-            <p class="hemer-apa-citation">Elsevier. (1966–presente). <em>Earth and Planetary Science Letters</em>. https://www.journals.elsevier.com/earth-and-planetary-science-letters</p>
-            <div class="hemer-item__meta">
-              <span class="hemer-tag">Revista</span>
-              <span class="hemer-tag">Elsevier</span>
-              <a href="https://www.journals.elsevier.com/earth-and-planetary-science-letters" target="_blank" rel="noopener">Visitar →</a>
+          <article class="info-card cut-panel-i" data-anim-in>
+            <h3 class="font-display text-3xl text-bone">07. Valle de los Fantasmas y patrimonio geológico de la Tatacoa</h3>
+            <p class="section-copy mt-3">Esta nota técnica describe el origen sedimentario del llamado desierto gris de la Tatacoa y explica cómo la erosión diferencial modela sus geoformas características. También vincula el sitio con el patrimonio paleontológico de La Venta y con su reconocimiento internacional por la IUGS, destacando su valor científico y educativo. El texto resulta útil para relacionar procesos geomorfológicos, historia geológica regional y conservación del patrimonio natural. Es una fuente hispana conocida que combina divulgación rigurosa con bases geológicas claras (<strong>Servicio Geológico Colombiano, 2026</strong>).</p>
+            <p class="apa-ref">Servicio Geológico Colombiano. (2026). Valle de los Fantasmas: el desierto gris en medio de la Tatacoa. <em>Servicio Geológico Colombiano</em>. https://www2.sgc.gov.co/Noticias/Paginas/Valle-de-los-Fantasmas-el-desierto-gris-en-la-Tatacoa.aspx</p>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <a href="https://www2.sgc.gov.co/Noticias/Paginas/Valle-de-los-Fantasmas-el-desierto-gris-en-la-Tatacoa.aspx" target="_blank" rel="noopener noreferrer" class="inline-block border border-magma/60 px-3 py-2 text-[10px] uppercase tracking-[0.15em] text-bone hover:bg-magma/15">Leer más</a>
+              <a href="https://scholar.google.com/scholar?q=Tatacoa+Valle+de+los+Fantasmas+geologia" target="_blank" rel="noopener noreferrer" class="inline-block border border-white/40 px-3 py-2 text-[10px] uppercase tracking-[0.15em] text-bone hover:bg-white/10">Google Scholar</a>
             </div>
-          </div>
-        </div>
+          </article>
 
-        <!-- 10 -->
-        <div class="hemer-item reveal">
-          <span class="hemer-item__num">10</span>
-          <div class="hemer-item__content">
-            <h3>Turcotte &amp; Schubert — Geodynamics (2014, 3.ª ed.)</h3>
-            <p>Texto de referencia fundamental en geodinámica cuantitativa. Cubre tectónica de placas, elasticidad de la litosfera, convección mantélica, dinámica volcánica y aplicaciones numéricas.</p>
-            <p class="hemer-apa-citation">Turcotte, D. L., &amp; Schubert, G. (2014). <em>Geodynamics</em> (3.ª ed.). Cambridge University Press.</p>
-            <div class="hemer-item__meta">
-              <span class="hemer-tag">Libro de texto</span>
-              <span class="hemer-tag">Cambridge</span>
+          <article class="info-card cut-panel-c" data-anim-in>
+            <h3 class="font-display text-3xl text-bone">08. Diez efectos geológicos posteriores a un sismo</h3>
+            <p class="section-copy mt-3">El artículo presenta, con ejemplos reales del evento de Paratebueno-Medina, una síntesis de procesos post-sísmicos como réplicas, licuación, fracturamiento del terreno, inestabilidad de laderas y anomalías hidrológicas. Su valor está en que traduce conceptos complejos en una secuencia didáctica útil para estudiantes y para comunicación pública del riesgo. Además, se apoya en datos de monitoreo y reportes ciudadanos, mostrando cómo se integra información instrumental y percepción social. Es una fuente de referencia regional para explicar por qué el impacto de un sismo continúa semanas o meses después del evento principal (<strong>Servicio Geológico Colombiano, 2025</strong>).</p>
+            <p class="apa-ref">Servicio Geológico Colombiano. (2025). 10 cosas que pasan en la superficie o bajo tierra después de un sismo. <em>Servicio Geológico Colombiano</em>. https://www2.sgc.gov.co/Noticias/Paginas/10-cosas-que-pasan-en-la-superficie-o-bajo-tierra-despues-de-un-sismo.aspx</p>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <a href="https://www2.sgc.gov.co/Noticias/Paginas/10-cosas-que-pasan-en-la-superficie-o-bajo-tierra-despues-de-un-sismo.aspx" target="_blank" rel="noopener noreferrer" class="inline-block border border-magnetic/60 px-3 py-2 text-[10px] uppercase tracking-[0.15em] text-bone hover:bg-magnetic/15">Leer más</a>
+              <a href="https://scholar.google.com/scholar?q=efectos+geologicos+despues+de+un+sismo" target="_blank" rel="noopener noreferrer" class="inline-block border border-white/40 px-3 py-2 text-[10px] uppercase tracking-[0.15em] text-bone hover:bg-white/10">Google Scholar</a>
             </div>
-          </div>
-        </div>
+          </article>
 
+          <article class="info-card cut-panel-d" data-anim-in>
+            <h3 class="font-display text-3xl text-bone">09. Sede Cali del SGC y geociencias aplicadas</h3>
+            <p class="section-copy mt-3">Esta publicación muestra cómo una sede regional articula cartografía geológica, geometalurgia, análisis geoquímicos y proyectos de neotectónica para resolver problemas reales del territorio. El texto detalla capacidades de laboratorio, líneas de investigación y aplicaciones en trazabilidad mineral, transición energética y reducción del uso de mercurio. También evidencia colaboración con universidades y trabajo en campo en múltiples departamentos, lo que refuerza su alcance científico y social. Es una fuente hispanohablante reconocida para comprender la relación entre investigación geológica y política pública (<strong>Servicio Geológico Colombiano, 2026</strong>).</p>
+            <p class="apa-ref">Servicio Geológico Colombiano. (2026). El SGC en las regiones: Cali, corazón geocientífico del Pacífico. <em>Servicio Geológico Colombiano</em>. https://www2.sgc.gov.co/Noticias/Paginas/El-SGC-en-las-regiones-Cali-corazon-geocientifico-del-Pacifico.aspx</p>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <a href="https://www2.sgc.gov.co/Noticias/Paginas/El-SGC-en-las-regiones-Cali-corazon-geocientifico-del-Pacifico.aspx" target="_blank" rel="noopener noreferrer" class="inline-block border border-magma/60 px-3 py-2 text-[10px] uppercase tracking-[0.15em] text-bone hover:bg-magma/15">Leer más</a>
+              <a href="https://scholar.google.com/scholar?q=Servicio+Geologico+Colombiano+sede+Cali+geociencias" target="_blank" rel="noopener noreferrer" class="inline-block border border-white/40 px-3 py-2 text-[10px] uppercase tracking-[0.15em] text-bone hover:bg-white/10">Google Scholar</a>
+            </div>
+          </article>
+
+          <article class="info-card cut-panel-e" data-anim-in>
+            <h3 class="font-display text-3xl text-bone">10. Aplicación del Mapa Geológico de Colombia</h3>
+            <p class="section-copy mt-3">El artículo presenta una herramienta móvil oficial para consulta geológica en tiempo real, con escala nacional y geolocalización, útil tanto para educación como para trabajo de campo. Explica funcionalidades concretas: identificación de unidades geológicas, consulta de litologías y acceso inmediato a información técnica desde el celular. Esta democratización del dato geocientífico facilita procesos de aprendizaje y toma de decisiones en planificación territorial. Por su accesibilidad, respaldo institucional y utilidad práctica, es una fuente hispana muy pertinente para proyectos de geología aplicada (<strong>Servicio Geológico Colombiano, 2026</strong>).</p>
+            <p class="apa-ref">Servicio Geológico Colombiano. (2026). Mapa Geológico de Colombia en tu celular: así puedes descargar la nueva aplicación móvil del SGC. <em>Servicio Geológico Colombiano</em>. https://www2.sgc.gov.co/Noticias/Paginas/aplicacion-movil-mapa-geologico-colombiano.aspx</p>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <a href="https://www2.sgc.gov.co/Noticias/Paginas/aplicacion-movil-mapa-geologico-colombiano.aspx" target="_blank" rel="noopener noreferrer" class="inline-block border border-magnetic/60 px-3 py-2 text-[10px] uppercase tracking-[0.15em] text-bone hover:bg-magnetic/15">Leer más</a>
+              <a href="https://scholar.google.com/scholar?q=Mapa+Geologico+de+Colombia+aplicacion+movil" target="_blank" rel="noopener noreferrer" class="inline-block border border-white/40 px-3 py-2 text-[10px] uppercase tracking-[0.15em] text-bone hover:bg-white/10">Google Scholar</a>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer-shell">
+      <div class="cut-panel-i ash-frame border border-white/20 bg-zinc-900/45 p-5">
+        <p class="text-sm font-bold uppercase tracking-[0.2em] text-bone">GEOLOGÍA FÍSICA DE EL SALVADOR</p>
+        <p class="mt-2 text-xs leading-relaxed text-ash">Repositorio de fuentes verificables para sustentar el contenido de investigación del sitio.</p>
       </div>
-    </div>
-  </main>
+    </footer>
+  </div>
 
-  <!-- ── Footer ─────────────────────────────────────────────── -->
-  <footer class="site-footer">
-    <div class="site-footer__inner">
-      <div class="site-footer__logo"><i class="fa-solid fa-earth-americas"></i> Geociencias</div>
-      <ul class="site-footer__links">
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="hemeroteca.html">Hemeroteca</a></li>
-        <li><a href="recursos.html">Recursos</a></li>
-        <li><a href="audioteca.html">Audioteca</a></li>
-        <li><a href="galeria.html">Galería</a></li>
-        <li><a href="videoteca.html">Videoteca</a></li>
-      </ul>
-      <p>&copy; 2024 Geociencias: Estructura y Campos de la Tierra &mdash; Revista científica con fines educativos.</p>
-    </div>
-  </footer>
-
-  <script src="js/main.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles-engine"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles-basic"></script>
+  <script src="js/brutalist-theme.js"></script>
 </body>
 </html>

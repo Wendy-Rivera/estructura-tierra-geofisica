@@ -1,237 +1,92 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Galería científica: ilustraciones geológicas, diagramas geofísicos y visualizaciones del interior terrestre." />
-  <title>Galería Científica — Geo&amp;Tierra</title>
-  <link rel="stylesheet" href="css/styles.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Galería científica del proyecto de geología física y geofísica.">
+  <title>Galería | GEOLOGÍA FÍSICA DE EL SALVADOR</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <script src="js/tailwind-config.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/brutalist-theme.css">
 </head>
-<body>
+<body class="bg-obsidian text-bone font-ui">
+  <div id="tsparticles" class="fixed inset-0 pointer-events-none z-0"></div>
 
-  <!-- ── Navigation ───────────────────────────────────────── -->
-  <nav class="site-nav" aria-label="Navegación principal">
-    <span class="site-nav__logo"><i class="fa-solid fa-earth-americas"></i> Geociencias</span>
-    <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-    <ul class="site-nav__links" role="list">
-      <li><a href="index.html">Inicio</a></li>
-      <li><a href="blog.html">Blog</a></li>
-      <li><a href="hemeroteca.html">Hemeroteca</a></li>
-      <li><a href="recursos.html">Recursos</a></li>
-      <li><a href="audioteca.html">Audioteca</a></li>
-      <li><a href="galeria.html" class="active">Galería</a></li>
-      <li><a href="videoteca.html">Videoteca</a></li>
-    </ul>
-  </nav>
-
-  <!-- ── Page Hero ─────────────────────────────────────────── -->
-  <header class="page-hero">
-    <div class="page-hero__inner">
-      <h1>Galería Científica</h1>
-      <p>Ilustraciones geológicas, diagramas geofísicos y visualizaciones del interior terrestre — una colección de imágenes científicas de alta calidad.</p>
-    </div>
-  </header>
-
-  <!-- ── Main Content ──────────────────────────────────────── -->
-  <main id="main-content">
-    <div class="container">
-
-      <h2 class="section-heading">Colección de Imágenes Científicas</h2>
-
-      <div class="gallery-masonry">
-
-        <!-- Item 1 — tall -->
-        <div class="gallery-item reveal">
-          <img
-            src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=600&auto=format&fit=crop"
-            alt="Vista satelital de la Tierra mostrando la superficie terrestre y los océanos desde el espacio"
-            loading="lazy"
-            style="aspect-ratio: 3/4; width:100%; object-fit:cover;"
-          />
-          <div class="gallery-item__caption">
-            <h4>La Tierra desde el Espacio</h4>
-            <p>Vista satelital mostrando corteza continental y oceánica</p>
+  <div class="tectonic-shell">
+    <header class="sticky top-0 z-40 px-3 pt-3 sm:px-6 lg:px-10">
+      <nav class="cut-nav ash-frame bg-zinc-900/60 px-4 py-4 sm:px-6" aria-label="Navegación principal">
+        <div class="grid gap-4 lg:grid-cols-[1.35fr_2fr] lg:items-center">
+          <div class="cut-brand border border-magma/50 bg-magma/10 p-4">
+            <p class="font-display text-2xl leading-none tracking-wide text-bone sm:text-3xl">GEOLOGÍA FÍSICA DE EL SALVADOR</p>
+            <p class="mt-2 text-[10px] uppercase tracking-[0.26em] text-bone/45 sm:text-xs">NP 02 / LIC. PEDRO ELIAS SALAZAR MENJIVAR</p>
           </div>
+
+          <ul class="grid grid-cols-2 gap-2 sm:grid-cols-4">
+            <li><a href="index.html" class="site-link cut-link">Inicio</a></li>
+            <li><a href="index.html#presentacion" class="site-link cut-link">Presentación</a></li>
+            <li><a href="blog.html" class="site-link cut-link">Blog</a></li>
+            <li><a href="hemeroteca.html" class="site-link cut-link">Hemeroteca</a></li>
+            <li><a href="recursos.html" class="site-link cut-link is-cyan">Recursos</a></li>
+            <li><a href="audioteca.html" class="site-link cut-link is-cyan">Audioteca</a></li>
+            <li><a href="galeria.html" class="site-link cut-link is-cyan is-active">Galería</a></li>
+            <li><a href="videoteca.html" class="site-link cut-link is-cyan">Videoteca</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main class="page-wrap">
+      <section class="cut-panel-a ash-frame panel">
+        <div class="grid gap-8 lg:grid-cols-[1.2fr_1fr] lg:items-end">
+          <div>
+            <p class="small-overline">Galería</p>
+            <h1 data-hero-title class="section-title">Visualizaciones científicas</h1>
+          </div>
+          <p data-hero-copy class="section-copy">La galería reúne imágenes y esquemas académicos del tema: capas de la Tierra, clasificación de capas internas/externas, escala del tiempo geológico con fósiles guía y cartografía sísmica de El Salvador. Cada recurso visual se utiliza como apoyo didáctico para discutir estructura interna, tiempo geológico y campos geofísicos.</p>
+        </div>
+      </section>
+
+      <section class="cut-panel-b ash-frame panel mt-10">
+        <div class="card-grid cols-3">
+          <figure class="info-card cut-image-a" data-anim-in>
+            <img class="object-contain bg-zinc-900/70" src="assets/img/Imagen2.jpg" alt="Esquema de la estructura interna de la Tierra con corteza, manto y núcleo">
+          </figure>
+          <figure class="info-card cut-image-b" data-anim-in>
+            <img class="object-contain bg-zinc-900/70" src="assets/img/corteza-terrestre.jpg" alt="Diagrama de capas terrestres internas y capas atmosféricas externas">
+          </figure>
+          <figure class="info-card cut-image-c" data-anim-in>
+            <img class="object-contain bg-zinc-900/70" src="assets/img/Capas%20de%20la%20tierra.jpg" alt="Cuadro sinóptico de capas internas y externas de la Tierra">
+          </figure>
+          <figure class="info-card cut-image-d" data-anim-in>
+            <img class="object-contain bg-zinc-900/70" src="assets/img/Esquema%20fosiles.gif" alt="Escala geológica con fósiles representativos por periodos">
+          </figure>
+          <figure class="info-card cut-image-e" data-anim-in>
+            <img class="object-contain bg-zinc-900/70" src="assets/img/isosv.gif" alt="Mapa de isosistas del sismo del 13 de febrero de 2001 en El Salvador">
+          </figure>
         </div>
 
-        <!-- Item 2 — square -->
-        <div class="gallery-item reveal">
-          <img
-            src="https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?w=600&auto=format&fit=crop"
-            alt="Representación artística de las líneas del campo magnético terrestre envolviendo el planeta"
-            loading="lazy"
-            style="aspect-ratio: 1/1; width:100%; object-fit:cover;"
-          />
-          <div class="gallery-item__caption">
-            <h4>Campo Magnético Terrestre</h4>
-            <p>Visualización de las líneas de campo geomagnético</p>
-          </div>
-        </div>
+        <p class="section-copy mt-6 text-xs">Créditos visuales: imágenes incorporadas en el repositorio del proyecto para uso académico interno. El sustento conceptual de estas visualizaciones se desarrolla por parafraseo y referencias verificables en hemeroteca (Servicio Geológico Colombiano, 2025, 2026; Instituto Geofísico de la Escuela Politécnica Nacional, 2026).</p>
+      </section>
+    </main>
 
-        <!-- Item 3 — wide -->
-        <div class="gallery-item reveal">
-          <img
-            src="https://images.unsplash.com/photo-1508791290064-7aa22a7ac890?w=600&auto=format&fit=crop"
-            alt="Estratos rocosos coloridos expuestos en un acantilado, mostrando capas de diferentes épocas geológicas"
-            loading="lazy"
-            style="aspect-ratio: 16/9; width:100%; object-fit:cover;"
-          />
-          <div class="gallery-item__caption">
-            <h4>Estratigrafía Sedimentaria</h4>
-            <p>Capas de sedimentos que registran millones de años de historia geológica</p>
-          </div>
-        </div>
-
-        <!-- Item 4 — tall -->
-        <div class="gallery-item reveal">
-          <img
-            src="https://images.unsplash.com/photo-1542332213-9b5a5a3fad35?w=600&auto=format&fit=crop"
-            alt="Erupción volcánica con columna de lava incandescente y piroclastos emergiendo del cráter"
-            loading="lazy"
-            style="aspect-ratio: 2/3; width:100%; object-fit:cover;"
-          />
-          <div class="gallery-item__caption">
-            <h4>Vulcanismo en Acción</h4>
-            <p>Erupción que expone material del manto superior</p>
-          </div>
-        </div>
-
-        <!-- Item 5 — square -->
-        <div class="gallery-item reveal">
-          <img
-            src="https://images.unsplash.com/photo-1559827291-72ee739d0d9a?w=600&auto=format&fit=crop"
-            alt="Vista aérea de un sistema de fallas geológicas visibles en el paisaje desértico"
-            loading="lazy"
-            style="aspect-ratio: 1/1; width:100%; object-fit:cover;"
-          />
-          <div class="gallery-item__caption">
-            <h4>Sistema de Fallas Tectónicas</h4>
-            <p>Expresión superficial de fallas activas en la litosfera</p>
-          </div>
-        </div>
-
-        <!-- Item 6 — tall -->
-        <div class="gallery-item reveal">
-          <img
-            src="https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=600&auto=format&fit=crop"
-            alt="Imagen nocturna de la Tierra desde el espacio mostrando auroras boreales y la atmósfera iluminada"
-            loading="lazy"
-            style="aspect-ratio: 4/5; width:100%; object-fit:cover;"
-          />
-          <div class="gallery-item__caption">
-            <h4>Auroras: Campo Geomagnético Visible</h4>
-            <p>Interacción del viento solar con la magnetosfera terrestre</p>
-          </div>
-        </div>
-
-        <!-- Item 7 — square -->
-        <div class="gallery-item reveal">
-          <img
-            src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&auto=format&fit=crop"
-            alt="Cadena montañosa con picos nevados formada por la colisión de placas tectónicas"
-            loading="lazy"
-            style="aspect-ratio: 16/10; width:100%; object-fit:cover;"
-          />
-          <div class="gallery-item__caption">
-            <h4>Orogenia: Colisión de Placas</h4>
-            <p>Cordillera formada por la convergencia de placas litosféricas</p>
-          </div>
-        </div>
-
-        <!-- Item 8 — tall -->
-        <div class="gallery-item reveal">
-          <img
-            src="https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=600&auto=format&fit=crop"
-            alt="Imagen de cristales minerales de cuarzo bajo luz polarizada mostrando colores de interferencia"
-            loading="lazy"
-            style="aspect-ratio: 2/3; width:100%; object-fit:cover;"
-          />
-          <div class="gallery-item__caption">
-            <h4>Mineralogía Óptica</h4>
-            <p>Cristales de cuarzo bajo microscopio de luz polarizada</p>
-          </div>
-        </div>
-
-        <!-- Item 9 — wide -->
-        <div class="gallery-item reveal">
-          <img
-            src="https://images.unsplash.com/photo-1473091534298-04dcbce3278c?w=600&auto=format&fit=crop"
-            alt="Fisura de una dorsal oceánica submarina con fluido hidrotermal emergiendo del fondo marino"
-            loading="lazy"
-            style="aspect-ratio: 16/9; width:100%; object-fit:cover;"
-          />
-          <div class="gallery-item__caption">
-            <h4>Dorsal Oceánica y Chimeneas Hidrotermales</h4>
-            <p>Expansión del fondo oceánico en los límites divergentes</p>
-          </div>
-        </div>
-
-        <!-- Item 10 — square -->
-        <div class="gallery-item reveal">
-          <img
-            src="https://images.unsplash.com/photo-1521295121783-8a321d551ad2?w=600&auto=format&fit=crop"
-            alt="Diagrama de capas internas de la Tierra: corteza, manto, núcleo externo y núcleo interno"
-            loading="lazy"
-            style="aspect-ratio: 1/1; width:100%; object-fit:cover;"
-          />
-          <div class="gallery-item__caption">
-            <h4>Estructura Interna: Diagrama de Capas</h4>
-            <p>Representación esquemática de las discontinuidades internas</p>
-          </div>
-        </div>
-
-        <!-- Item 11 — tall -->
-        <div class="gallery-item reveal">
-          <img
-            src="https://images.unsplash.com/photo-1570126618953-d437176e8c79?w=600&auto=format&fit=crop"
-            alt="Sismógrafo registrando ondas sísmicas durante un terremoto con trazado visible en papel"
-            loading="lazy"
-            style="aspect-ratio: 3/4; width:100%; object-fit:cover;"
-          />
-          <div class="gallery-item__caption">
-            <h4>Sismógrafo en Acción</h4>
-            <p>Registro de ondas sísmicas que revelan el interior terrestre</p>
-          </div>
-        </div>
-
-        <!-- Item 12 — wide -->
-        <div class="gallery-item reveal">
-          <img
-            src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&auto=format&fit=crop"
-            alt="Afloramiento de rocas ígneas intrusivas (granito) con textura cristalina visible"
-            loading="lazy"
-            style="aspect-ratio: 16/9; width:100%; object-fit:cover;"
-          />
-          <div class="gallery-item__caption">
-            <h4>Granito: Roca de la Corteza Continental</h4>
-            <p>Textura cristalina del plutón granítico de la corteza continental</p>
-          </div>
-        </div>
-
+    <footer class="footer-shell">
+      <div class="cut-panel-i ash-frame border border-white/20 bg-zinc-900/45 p-5">
+        <p class="text-sm font-bold uppercase tracking-[0.2em] text-bone">GEOLOGÍA FÍSICA DE EL SALVADOR</p>
+        <p class="mt-2 text-xs leading-relaxed text-ash">Galería visual del proyecto para apoyo didáctico y divulgación científica.</p>
       </div>
-    </div>
-  </main>
+    </footer>
+  </div>
 
-  <!-- ── Footer ─────────────────────────────────────────────── -->
-  <footer class="site-footer">
-    <div class="site-footer__inner">
-      <div class="site-footer__logo"><i class="fa-solid fa-earth-americas"></i> Geociencias</div>
-      <ul class="site-footer__links">
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="hemeroteca.html">Hemeroteca</a></li>
-        <li><a href="recursos.html">Recursos</a></li>
-        <li><a href="audioteca.html">Audioteca</a></li>
-        <li><a href="galeria.html">Galería</a></li>
-        <li><a href="videoteca.html">Videoteca</a></li>
-      </ul>
-      <p>&copy; 2024 Geociencias: Estructura y Campos de la Tierra &mdash; Revista científica con fines educativos.</p>
-    </div>
-  </footer>
-
-  <script src="js/main.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles-engine"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles-basic"></script>
+  <script src="js/brutalist-theme.js"></script>
 </body>
 </html>

@@ -1,372 +1,189 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Geociencias: Estructura y Campos de la Tierra — revista científica interactiva sobre la estructura interna del planeta, tiempo geológico y campos geofísicos." />
-  <title>Geociencias: Estructura y Campos de la Tierra — Revista Científica</title>
-  <link rel="stylesheet" href="css/styles.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Proyecto universitario sobre estructura interna de la Tierra, tiempo geológico y campos geofísicos.">
+  <title>GEOLOGÍA FÍSICA DE EL SALVADOR</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <script src="js/tailwind-config.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/brutalist-theme.css">
+
+  <style>
+    .hero-cluster {
+      min-height: 380px;
+    }
+
+    @media (min-width: 1024px) {
+      .hero-cluster {
+        min-height: 560px;
+      }
+    }
+  </style>
 </head>
-<body>
+<body class="bg-obsidian text-bone font-ui">
+  <div id="tsparticles" class="fixed inset-0 pointer-events-none z-0"></div>
 
-  <!-- ── Navigation ───────────────────────────────────────── -->
-  <nav class="site-nav" aria-label="Navegación principal">
-    <span class="site-nav__logo"><i class="fa-solid fa-earth-americas"></i> Geociencias</span>
+  <div class="tectonic-shell">
+    <header class="sticky top-0 z-40 px-3 pt-3 sm:px-6 lg:px-10">
+      <nav class="cut-nav ash-frame bg-zinc-900/60 px-4 py-4 sm:px-6" aria-label="Navegación principal">
+        <div class="grid gap-4 lg:grid-cols-[1.35fr_2fr] lg:items-center">
+          <div class="cut-brand border border-magma/50 bg-magma/10 p-4">
+            <p class="font-display text-2xl leading-none tracking-wide text-bone sm:text-3xl">GEOLOGÍA FÍSICA DE EL SALVADOR</p>
+            <p class="mt-2 text-[10px] uppercase tracking-[0.26em] text-bone/45 sm:text-xs">NP 02 / LIC. PEDRO ELIAS SALAZAR MENJIVAR</p>
+          </div>
 
-    <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
+          <ul class="grid grid-cols-2 gap-2 sm:grid-cols-4">
+            <li><a href="#inicio" class="site-link cut-link is-active">Inicio</a></li>
+            <li><a href="#presentacion" class="site-link cut-link">Presentación</a></li>
+            <li><a href="blog.html" class="site-link cut-link">Blog</a></li>
+            <li><a href="hemeroteca.html" class="site-link cut-link">Hemeroteca</a></li>
+            <li><a href="recursos.html" class="site-link cut-link is-cyan">Recursos</a></li>
+            <li><a href="audioteca.html" class="site-link cut-link is-cyan">Audioteca</a></li>
+            <li><a href="galeria.html" class="site-link cut-link is-cyan">Galería</a></li>
+            <li><a href="videoteca.html" class="site-link cut-link is-cyan">Videoteca</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
 
-    <ul class="site-nav__links" role="list">
-      <li><a href="index.html" class="active">Inicio</a></li>
-      <li><a href="blog.html">Blog</a></li>
-      <li><a href="hemeroteca.html">Hemeroteca</a></li>
-      <li><a href="recursos.html">Recursos</a></li>
-      <li><a href="audioteca.html">Audioteca</a></li>
-      <li><a href="galeria.html">Galería</a></li>
-      <li><a href="videoteca.html">Videoteca</a></li>
-    </ul>
-  </nav>
+    <main class="page-wrap">
+      <section id="inicio" class="cut-panel-a ash-frame panel">
+        <div class="grid items-start gap-10 lg:grid-cols-12">
+          <article class="cut-panel-c panel lg:col-span-6" data-anim-in>
+            <p class="small-overline">Inicio / Introducción</p>
+            <h1 data-hero-title class="mt-5 font-display text-[clamp(2.2rem,7.2vw,6.1rem)] leading-[0.88] text-bone">
+              Estructura interna de la Tierra, tiempo geológico y campos geofísicos
+            </h1>
+            <p data-hero-copy class="section-copy mt-6 max-w-xl text-sm sm:text-base">
+              Este sitio académico explica cómo la evidencia sísmica, gravimétrica y magnética permite reconstruir la estructura interna del planeta (corteza, manto y núcleo), relacionarla con la escala del tiempo geológico y comprender su impacto en procesos como terremotos, vulcanismo y tectónica de placas. Esta introducción se redacta en formato de parafraseo académico con respaldo en fuentes institucionales (Servicio Geológico Colombiano, 2025; Instituto Geofísico de la Escuela Politécnica Nacional, 2026).
+            </p>
 
-  <!-- ── Hero Section ──────────────────────────────────────── -->
-  <section class="hero-section" aria-labelledby="hero-title">
-    <canvas id="hero-canvas" aria-hidden="true"></canvas>
-    <div class="hero-bg-field" aria-hidden="true"></div>
-    <div class="hero-orbit" aria-hidden="true"></div>
+            <div class="mt-8 flex flex-wrap gap-3">
+              <a href="#presentacion" class="cut-button border border-magma bg-magma/16 px-5 py-3 text-xs uppercase tracking-[0.2em] text-bone transition hover:bg-magma/26">Ver presentación</a>
+              <a href="#multimedia" class="cut-button border border-magnetic bg-magnetic/14 px-5 py-3 text-xs uppercase tracking-[0.2em] text-bone transition hover:bg-magnetic/24">Material multimedia</a>
+            </div>
+          </article>
 
-    <div class="hero-content reveal">
-      <span class="hero-journal-label">Revista Científica Interactiva</span>
-      <span class="hero-eyebrow">4 600 Ma &nbsp;·&nbsp; 6 371 km &nbsp;·&nbsp; 5 000 °C</span>
-      <h1 class="hero-title" id="hero-title">
-        Estructura Interna<br>de la Tierra,<br>Tiempo Geológico<br>y Campos Geofísicos
-      </h1>
-      <p class="hero-subtitle">
-        Un viaje al corazón del planeta: desde la corteza hasta el núcleo interno,
-        a través de cuatro mil seiscientos millones de años de historia y los
-        campos geofísicos que dan forma al mundo que habitamos.
-      </p>
-      <div class="hero-cta-group">
-        <a href="#presentation" class="btn-primary"><i class="fa-solid fa-layer-group"></i> &nbsp;Explorar</a>
-        <a href="blog.html" class="btn-outline">Blog Científico &nbsp;<i class="fa-solid fa-arrow-right"></i></a>
+          <div class="hero-cluster relative lg:col-span-6">
+            <figure data-hero-media class="cut-image-a absolute left-0 top-0 h-[50%] w-[72%] border border-white/20 bg-zinc-900/40 p-[6px] backdrop-blur-xl">
+              <img src="https://commons.wikimedia.org/wiki/Special:FilePath/The_Earth_seen_from_Apollo_17.jpg" alt="Fotografía real de la Tierra tomada durante la misión Apollo 17 de la NASA en 1972">
+            </figure>
+
+            <figure data-hero-media class="cut-image-b absolute right-0 top-[16%] h-[46%] w-[67%] border border-white/20 bg-zinc-900/40 p-[6px] backdrop-blur-xl">
+              <img src="https://biologia-geologia.com/geologia/castillalamancha2021julio19.jpg" alt="Fotografía real de estratigrafía y relieve montañoso en el Everest, asociada a procesos geológicos de larga duración">
+            </figure>
+
+            <figure data-hero-media class="cut-image-c absolute left-[10%] top-[53%] h-[44%] w-[76%] border border-white/20 bg-zinc-900/40 p-[6px] backdrop-blur-xl">
+              <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Aurora_australis_as_viewed_by_ISS-6_crew.jpg" alt="Fotografía real de aurora austral observada desde la Estación Espacial Internacional, relacionada con el campo geomagnético">
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section id="presentacion" class="cut-panel-b ash-frame panel mt-10">
+        <div class="mb-8 grid gap-4 lg:grid-cols-[1.2fr_1fr] lg:items-end">
+          <h2 class="section-title">Presentación del sitio y estructura de trabajo</h2>
+          <p class="section-copy">El proyecto organiza contenidos en tres ejes: estructura interna, tiempo geológico y campos geofísicos. Cada sección integra explicaciones conceptuales, recursos audiovisuales y referencias académicas verificables para sustentar el análisis universitario, manteniendo parafraseo con cita de autor institucional y año.</p>
+        </div>
+
+        <div class="grid grid-cols-1 gap-4 lg:grid-cols-12">
+          <article class="info-card cut-panel-c lg:col-span-5" data-anim-in>
+            <h3 class="font-display text-4xl leading-none text-bone">Misión</h3>
+            <p class="section-copy mt-4">Desarrollar un recurso digital claro y científicamente sustentado que fortalezca el aprendizaje de la geología física mediante el análisis de evidencia sísmica, modelos geodinámicos y registros geocronológicos.</p>
+          </article>
+
+          <article class="info-card cut-panel-d lg:col-span-4" data-anim-in>
+            <h3 class="font-display text-4xl leading-none text-bone">Visión</h3>
+            <p class="section-copy mt-4">Consolidar el sitio como material de consulta académica para estudiantes de ciencias de la Tierra, promoviendo alfabetización científica, pensamiento crítico y uso responsable de datos geofísicos abiertos.</p>
+          </article>
+
+          <article class="info-card cut-panel-e lg:col-span-3" data-anim-in>
+            <h3 class="font-display text-3xl leading-none text-bone">Delimitación del tema</h3>
+            <p class="section-copy mt-4">El alcance de este trabajo se delimita a tres ejes de la geología física, desarrollados con bibliografía académica verificable:</p>
+            <ul class="section-copy mt-3 list-disc space-y-2 pl-5">
+              <li>Estructura interna de la Tierra inferida por sismología, densidad y discontinuidades principales.</li>
+              <li>Tiempo geológico, escala cronoestratigráfica internacional y fundamentos de datación radiométrica.</li>
+              <li>Campos geofísicos aplicados al estudio terrestre: gravitatorio y geomagnético.</li>
+            </ul>
+            <p class="section-copy mt-3">Quedan fuera del alcance el desarrollo de geología económica, cartografía regional exhaustiva y modelado numérico avanzado no requerido por la consigna.</p>
+          </article>
+
+          <article class="info-card cut-panel-f lg:col-span-12" data-anim-in>
+            <div class="grid gap-4 lg:grid-cols-[1fr_1fr]">
+              <h3 class="font-display text-4xl leading-none text-bone">Integrantes del Equipo.</h3>
+            </div>
+
+            <div class="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
+              <article class="cut-panel-team team-member-card border border-white/20 bg-zinc-950/50 p-4 backdrop-blur-xl">
+                <figure class="cut-image-d border border-white/20 bg-zinc-900/50 p-[5px] aspect-[3/4]">
+                  <img src="assets/img/Wendy_Tatiana_Rivera_Padilla.png" alt="Fotografía de Wendy Tatiana Rivera Padilla">
+                </figure>
+                <p class="mt-4 text-xs uppercase tracking-[0.2em] text-magnetic">Carné</p>
+                <p class="team-member-id mt-1 font-bold uppercase">RP-62292-22</p>
+                <p class="team-member-name mt-2">RIVERA PADILLA, WENDY TATIANA</p>
+              </article>
+
+              <article class="cut-panel-team team-member-card border border-white/20 bg-zinc-950/50 p-4 backdrop-blur-xl">
+                <figure class="cut-image-d border border-white/20 bg-zinc-900/50 p-[5px] aspect-[3/4]">
+                  <img src="assets/img/Ruth_Vanessa_Gonzalez_Vasquez.png" alt="Fotografía de Ruth Vanessa González Vásquez">
+                </figure>
+                <p class="mt-4 text-xs uppercase tracking-[0.2em] text-magnetic">Carné</p>
+                <p class="team-member-id mt-1 font-bold uppercase">GV-62723-22</p>
+                <p class="team-member-name mt-2">GONZÁLEZ VÁSQUEZ, RUTH VANESSA</p>
+              </article>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="multimedia" class="cut-panel-g ash-frame panel mt-10">
+        <div class="mb-8 grid gap-4 lg:grid-cols-[1fr_1fr] lg:items-end">
+          <h2 class="section-title">Material Multimedia</h2>
+          <p class="section-copy">Los materiales multimedia fueron seleccionados por pertinencia temática y confiabilidad de la fuente. Se priorizan recursos en español con valor didáctico y utilidad para evaluación formativa. La argumentación conceptual del sitio se respalda con fuentes citadas en la hemeroteca (Servicio Geológico Colombiano, 2025, 2026; Instituto Geofísico de la Escuela Politécnica Nacional, 2026).</p>
+        </div>
+
+        <div class="grid grid-cols-1 gap-5 lg:grid-cols-2">
+          <article class="info-card cut-panel-c" data-anim-in>
+            <h3 class="font-display text-4xl leading-none text-bone">Audioteca</h3>
+            <div class="media-slot cut-image-e mt-4 aspect-video border border-white/20 p-2">
+              <div class="flex h-full w-full flex-col justify-between border border-dashed border-magnetic/45 bg-zinc-950/45 p-4 text-left text-xs text-ash">
+                <p class="leading-relaxed">Colección de audio para repaso autónomo: sismología, tectónica de placas, tiempo geológico y núcleo terrestre.</p>
+                <a href="audioteca.html" class="mt-3 inline-block border border-magnetic/50 px-3 py-2 text-[10px] uppercase tracking-[0.15em] text-bone hover:bg-magnetic/15">Abrir audioteca del proyecto</a>
+                <a href="https://open.spotify.com/search/geolog%C3%ADa%20podcast" target="_blank" rel="noopener noreferrer" class="mt-2 inline-block border border-white/30 px-3 py-2 text-[10px] uppercase tracking-[0.15em] text-bone hover:bg-white/10">Podcasts de geología en Spotify</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="info-card cut-panel-e" data-anim-in>
+            <h3 class="font-display text-4xl leading-none text-bone">Videoteca</h3>
+            <div class="media-slot cut-image-e mt-4 aspect-video border border-white/20 p-2">
+              <iframe class="h-full w-full border border-dashed border-magma/45" src="https://www.youtube.com/embed?listType=search&amp;list=estructura+interna+de+la+tierra+espanol" title="Videos en español sobre estructura interna de la Tierra" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <p class="mt-3 text-[11px] leading-relaxed text-ash">Referencia del recurso audiovisual: YouTube. Recuperado el 19 de abril de 2026, de <a href="https://www.youtube.com/results?search_query=estructura+interna+de+la+tierra+espanol" target="_blank" rel="noopener noreferrer" class="underline">búsqueda temática en español</a>.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer-shell">
+      <div class="cut-panel-i ash-frame border border-white/20 bg-zinc-900/45 p-5">
+        <p class="text-sm font-bold uppercase tracking-[0.2em] text-bone">GEOLOGÍA FÍSICA DE EL SALVADOR</p>
+        <p class="mt-2 text-xs leading-relaxed text-ash">Proyecto universitario sobre estructura interna de la Tierra, tiempo geológico y campos geofísicos.</p>
       </div>
-    </div>
-  </section>
+    </footer>
+  </div>
 
-  <!-- ── Índice Académico Interactivo ──────────────────────── -->
-  <section class="toc-section" id="indice" aria-labelledby="toc-title">
-    <div class="toc-inner">
-      <div class="toc-header">
-        <h2 class="toc-title" id="toc-title">Índice de Contenidos</h2>
-        <span class="toc-rule" aria-hidden="true"></span>
-        <p class="toc-subtitle">Geociencias: Estructura y Campos de la Tierra — Tabla de contenidos</p>
-      </div>
-
-      <div class="toc-grid">
-
-        <!-- 1 — Presentación -->
-        <div class="toc-item reveal" data-section="presentation">
-          <span class="toc-item__num" aria-hidden="true">I</span>
-          <a href="index.html#presentation">
-            <span class="toc-item__label">Sección 1</span>
-            <p class="toc-item__title">Presentación</p>
-            <p class="toc-item__desc">Misión, visión y delimitación del área de estudio: estructura interna, tiempo geológico y campos geofísicos.</p>
-            <span class="toc-item__link">Ver sección &nbsp;<i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
-          </a>
-        </div>
-
-        <!-- 2 — Blog -->
-        <div class="toc-item reveal">
-          <span class="toc-item__num" aria-hidden="true">II</span>
-          <a href="blog.html">
-            <span class="toc-item__label">Sección 2</span>
-            <p class="toc-item__title">Entradas de Blog</p>
-            <p class="toc-item__desc">Ocho artículos de investigación con formato académico: introducción, desarrollo, conclusión y referencias APA.</p>
-            <span class="toc-item__link">Ver sección &nbsp;<i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
-          </a>
-        </div>
-
-        <!-- 3 — Hemeroteca -->
-        <div class="toc-item reveal">
-          <span class="toc-item__num" aria-hidden="true">III</span>
-          <a href="hemeroteca.html">
-            <span class="toc-item__label">Sección 3</span>
-            <p class="toc-item__title">Hemeroteca</p>
-            <p class="toc-item__desc">Índice de diez publicaciones científicas de referencia: revistas, artículos clásicos e instituciones geofísicas.</p>
-            <span class="toc-item__link">Ver sección &nbsp;<i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
-          </a>
-        </div>
-
-        <!-- 4 — Recursos -->
-        <div class="toc-item reveal">
-          <span class="toc-item__num" aria-hidden="true">IV</span>
-          <a href="recursos.html">
-            <span class="toc-item__label">Sección 4</span>
-            <p class="toc-item__title">Recursos Educativos</p>
-            <p class="toc-item__desc">Herramientas interactivas (Genially, Kahoot, Nearpod) y resúmenes Wakelet sobre geofísica y tectónica.</p>
-            <span class="toc-item__link">Ver sección &nbsp;<i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
-          </a>
-        </div>
-
-        <!-- 5 — Audioteca -->
-        <div class="toc-item reveal">
-          <span class="toc-item__num" aria-hidden="true">V</span>
-          <a href="audioteca.html">
-            <span class="toc-item__label">Sección 5</span>
-            <p class="toc-item__title">Audioteca</p>
-            <p class="toc-item__desc">Cinco pistas de audio originales (4–7 min) sobre sismología, geomagnetismo, tectónica y tiempo geológico.</p>
-            <span class="toc-item__link">Ver sección &nbsp;<i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
-          </a>
-        </div>
-
-        <!-- 6 — Galería -->
-        <div class="toc-item reveal">
-          <span class="toc-item__num" aria-hidden="true">VI</span>
-          <a href="galeria.html">
-            <span class="toc-item__label">Sección 6</span>
-            <p class="toc-item__title">Galería Científica</p>
-            <p class="toc-item__desc">Colección de ilustraciones geológicas, diagramas geofísicos y visualizaciones del interior terrestre.</p>
-            <span class="toc-item__link">Ver sección &nbsp;<i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
-          </a>
-        </div>
-
-        <!-- 7 — Videoteca -->
-        <div class="toc-item reveal">
-          <span class="toc-item__num" aria-hidden="true">VII</span>
-          <a href="videoteca.html">
-            <span class="toc-item__label">Sección 7</span>
-            <p class="toc-item__title">Videoteca</p>
-            <p class="toc-item__desc">Ocho exposiciones estudiantiles en vídeo (5–8 min) organizadas por dimensión temática.</p>
-            <span class="toc-item__link">Ver sección &nbsp;<i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
-          </a>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ── Stats Section ─────────────────────────────────────── -->
-  <section class="stats-section" aria-label="Datos clave del proyecto">
-    <div class="stats-grid">
-      <div class="stat-item reveal">
-        <div class="stat-number" data-target="6371">0</div>
-        <div class="stat-unit">km</div>
-        <div class="stat-label">Radio terrestre</div>
-      </div>
-      <div class="stat-item reveal">
-        <div class="stat-number" data-target="4600">0</div>
-        <div class="stat-unit">Ma</div>
-        <div class="stat-label">Edad del planeta</div>
-      </div>
-      <div class="stat-item reveal">
-        <div class="stat-number" data-target="5000">0</div>
-        <div class="stat-unit">°C</div>
-        <div class="stat-label">Temperatura del núcleo</div>
-      </div>
-      <div class="stat-item reveal">
-        <div class="stat-number" data-target="12">0</div>
-        <div class="stat-unit"></div>
-        <div class="stat-label">Placas tectónicas mayores</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── Presentation / Scope Section ──────────────────────── -->
-  <section class="presentation-section" id="presentation" aria-labelledby="pres-title">
-    <div class="container">
-      <h2 class="section-heading" id="pres-title">Sobre Esta Investigación</h2>
-      <p style="color:var(--clr-text-muted);max-width:780px;margin-bottom:0;line-height:1.8;font-size:1.02rem;">
-        Esta investigación explora tres dimensiones fundamentales del sistema terrestre:
-        la estructura interna del planeta desde la corteza hasta el núcleo, la escala del
-        tiempo geológico que abarca 4 600 millones de años de historia, y los principales
-        campos geofísicos que revelan los procesos activos en el interior de la Tierra.
-      </p>
-
-      <div class="presentation-grid">
-        <div class="pres-card reveal">
-          <div class="pres-card__icon"><i class="fa-solid fa-layer-group"></i></div>
-          <h3>Delimitación</h3>
-          <p>
-            El estudio abarca la <strong>estructura interna de la Tierra</strong> —
-            corteza, manto y núcleo —, la <strong>escala del tiempo geológico</strong> desde el
-            Hadeano hasta el Cuaternario, y los principales <strong>campos geofísicos</strong>:
-            gravitacional, magnético y geotérmico.
-          </p>
-        </div>
-
-        <div class="pres-card reveal">
-          <div class="pres-card__icon"><i class="fa-solid fa-bullseye"></i></div>
-          <h3>Misión</h3>
-          <p>
-            Divulgar y documentar los procesos que ocurren en el interior del planeta a través
-            de contenidos rigurosos y accesibles. Conectar la investigación geofísica de frontera
-            con el público académico mediante formatos digitales interactivos y evidencia científica
-            actualizada, estimulando el pensamiento crítico sobre la dinámica terrestre.
-          </p>
-        </div>
-
-        <div class="pres-card reveal">
-          <div class="pres-card__icon"><i class="fa-solid fa-satellite-dish"></i></div>
-          <h3>Visión</h3>
-          <p>
-            Convertirse en una referencia digital de excelencia para el estudio de las geociencias
-            en español, integrando sismología global, geocronología radiométrica y los tres campos
-            geofísicos fundamentales — gravitacional, magnético y geotérmico — en un marco unificado
-            que conecta todas las dimensiones del planeta.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── Parallax Descent — Layers of the Earth ───────────── -->
-  <main class="parallax-wrapper" id="main-content">
-
-    <!-- ① Corteza / Surface -->
-    <section class="parallax-section parallax-section--surface" aria-labelledby="sec-surface">
-      <div class="parallax-bg"></div>
-      <div class="section-content">
-        <p class="depth-label">Profundidad: 0 – 30 km</p>
-        <div class="glass-card reveal" id="sec-surface">
-          <span class="layer-badge">Corteza</span>
-          <h2>La Superficie Terrestre</h2>
-          <h3>Corteza Continental y Oceánica</h3>
-          <p>
-            La corteza es la capa más externa y delgada de la Tierra.
-            La corteza <strong>continental</strong> tiene hasta 70 km de grosor
-            y está compuesta principalmente de granito; la corteza
-            <strong>oceánica</strong> es más delgada (~7 km) y densa,
-            formada mayoritariamente por basalto.
-          </p>
-          <p>
-            La discontinuidad de Mohorovičić (Moho) marca el límite
-            entre la corteza y el manto superior, identificada en 1909
-            a partir del análisis de ondas sísmicas regionales.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ② Manto Superior -->
-    <section class="parallax-section parallax-section--crust" aria-labelledby="sec-crust">
-      <div class="parallax-bg"></div>
-      <div class="section-content">
-        <p class="depth-label">Profundidad: 30 – 400 km</p>
-        <div class="glass-card reveal" id="sec-crust">
-          <span class="layer-badge">Manto Superior</span>
-          <h2>El Manto Superior</h2>
-          <h3>Litosfera y Astenosfera</h3>
-          <p>
-            El manto superior se divide en la <em>litosfera</em> rígida
-            — que incluye la corteza y la parte más fría del manto — y
-            la <em>astenosfera</em>, una zona parcialmente fundida
-            (plástica) que permite el movimiento de las placas tectónicas.
-          </p>
-          <p>
-            Las ondas sísmicas P y S cambian de velocidad al cruzar
-            estas zonas, revelando su composición y estado físico
-            con una precisión sin precedentes.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ③ Manto Inferior -->
-    <section class="parallax-section parallax-section--mantle" aria-labelledby="sec-mantle">
-      <div class="parallax-bg"></div>
-      <div class="section-content">
-        <p class="depth-label">Profundidad: 400 – 2 900 km</p>
-        <div class="glass-card reveal" id="sec-mantle">
-          <span class="layer-badge">Manto Inferior</span>
-          <h2>El Manto Inferior</h2>
-          <h3>Convección y Tiempo Geológico</h3>
-          <p>
-            A presiones de más de 100 GPa, los minerales se reorganizan
-            en fases de alta densidad como la <em>bridgmanita</em>
-            (perovskita de Mg–Si). Las corrientes de convección en este
-            manto son el motor de la tectónica de placas durante
-            <strong>millones de años</strong>.
-          </p>
-          <p>
-            La discontinuidad de Gutenberg (2 891 km) separa el manto
-            del núcleo externo y fue identificada gracias al análisis
-            de la zona de sombra sísmica descrita por Richard Oldham.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ④ Núcleo Externo -->
-    <section class="parallax-section parallax-section--outercore" aria-labelledby="sec-outercore">
-      <div class="parallax-bg"></div>
-      <div class="section-content">
-        <p class="depth-label">Profundidad: 2 900 – 5 150 km</p>
-        <div class="glass-card reveal" id="sec-outercore">
-          <span class="layer-badge">Núcleo Externo</span>
-          <h2>El Núcleo Externo</h2>
-          <h3>Hierro Líquido y Campo Geomagnético</h3>
-          <p>
-            Compuesto de hierro y níquel en estado <em>líquido</em>,
-            el núcleo externo es el origen del <strong>campo magnético
-            terrestre</strong>. La convección de este metal fundido actúa
-            como una dinamo que genera y mantiene dicho campo, protegiéndonos
-            de la radiación solar.
-          </p>
-          <p>
-            Las ondas sísmicas S no se propagan en este núcleo líquido,
-            hecho clave para su descubrimiento por Oldham en 1906 y
-            confirmado mediante tomografía sísmica global.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ⑤ Núcleo Interno -->
-    <section class="parallax-section parallax-section--innercore" aria-labelledby="sec-innercore">
-      <div class="parallax-bg"></div>
-      <div class="section-content">
-        <p class="depth-label">Profundidad: 5 150 – 6 371 km (centro)</p>
-        <div class="glass-card reveal" id="sec-innercore">
-          <span class="layer-badge">Núcleo Interno</span>
-          <h2>El Núcleo Interno</h2>
-          <h3>El Corazón Incandescente de la Tierra</h3>
-          <p>
-            A presiones de ~360 GPa y temperaturas superiores a
-            <strong>5 000 °C</strong>, el hierro se encuentra en estado
-            <em>sólido</em> pese a su temperatura extrema. Sus cristales
-            de hierro hexagonal presentan una anisotropía que orienta las
-            ondas sísmicas de polo a polo más rápido que en dirección
-            ecuatorial.
-          </p>
-          <p>
-            Descubierto por Inge Lehmann en 1936, el núcleo interno es
-            la cápsula del tiempo geológico más profunda que conocemos
-            y aún guarda secretos sobre la rotación diferencial de nuestro planeta.
-          </p>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- ── Footer ─────────────────────────────────────────────── -->
-  <footer class="site-footer">
-    <div class="site-footer__inner">
-      <div class="site-footer__logo"><i class="fa-solid fa-earth-americas"></i> Geociencias</div>
-      <ul class="site-footer__links">
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="hemeroteca.html">Hemeroteca</a></li>
-        <li><a href="recursos.html">Recursos</a></li>
-        <li><a href="audioteca.html">Audioteca</a></li>
-        <li><a href="galeria.html">Galería</a></li>
-        <li><a href="videoteca.html">Videoteca</a></li>
-      </ul>
-      <p>&copy; 2024 Geociencias: Estructura y Campos de la Tierra &mdash; Revista científica con fines educativos.</p>
-    </div>
-  </footer>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" integrity="sha512-z4PhNX7vuL3xVChQ1m2AB9Yg5AULVxXcg/SpIdNs6c5H0NE8XYXysP+DGNKHfuwvY7kxvUdBeoGlODJ6+SfaPg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="js/main.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles-engine"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles-basic"></script>
+  <script src="js/brutalist-theme.js"></script>
 </body>
 </html>
