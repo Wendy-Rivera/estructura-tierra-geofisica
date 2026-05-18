@@ -320,6 +320,65 @@ img {
   word-break: break-word;
 }
 
+/* ── Mobile hamburger button ─────────────────────────────────────────── */
+.nav-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 2.6rem;
+  height: 2.6rem;
+  flex-shrink: 0;
+  align-self: center;
+  background: rgba(51, 54, 61, 0.76);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  cursor: pointer;
+  padding: 0;
+  transition: border-color 0.25s ease, background-color 0.25s ease;
+}
+
+.nav-toggle:hover,
+.nav-toggle:focus-visible {
+  border-color: rgba(255, 107, 53, 0.95);
+  background: rgba(74, 78, 86, 0.9);
+  outline: none;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 1.15rem;
+  height: 2px;
+  background: var(--bone);
+  transition: transform 0.28s ease, opacity 0.2s ease;
+  transform-origin: center;
+}
+
+.nav-toggle[aria-expanded="true"] span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.nav-toggle[aria-expanded="true"] span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.nav-toggle[aria-expanded="true"] span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Hide nav menu on mobile by default */
+@media (max-width: 1023px) {
+  .nav-menu {
+    display: none;
+  }
+
+  .nav-menu.is-open {
+    display: grid;
+  }
+}
+
+/* ── Footer ──────────────────────────────────────────────────────────── */
 .footer-shell {
   padding: 0 0.75rem 1.5rem;
 }
