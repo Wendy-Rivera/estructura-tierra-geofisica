@@ -39,7 +39,7 @@ body {
 
 section[id],
 article[id] {
-  scroll-margin-top: 132px;
+  scroll-margin-top: 180px;
 }
 
 #tsparticles {
@@ -77,79 +77,83 @@ img {
 }
 
 .cut-nav {
-  clip-path: polygon(0 0, 100% 0, 99% 100%, 3% 96%);
+  clip-path: polygon(0 0, 100% 0, calc(100% - 8px) 100%, 12px calc(100% - 4px));
+}
+
+.cut-nav:has(.nav-menu.is-open) {
+  clip-path: none !important;
 }
 
 .cut-brand {
-  clip-path: polygon(0 0, 100% 4%, 96% 100%, 0 92%);
+  clip-path: polygon(0 0, 100% 6px, calc(100% - 10px) 100%, 0 calc(100% - 6px));
 }
 
 .cut-link {
-  clip-path: polygon(0 0, 100% 0, 94% 100%, 6% 100%);
+  clip-path: polygon(0 0, 100% 0, calc(100% - 6px) 100%, 6px 100%);
 }
 
 .cut-button {
-  clip-path: polygon(0 0, 100% 0, 96% 100%, 4% 96%);
+  clip-path: polygon(0 0, 100% 0, calc(100% - 6px) 100%, 6px calc(100% - 4px));
 }
 
 .cut-panel-a {
-  clip-path: polygon(0 0, 100% 2%, 98% 100%, 1% 97%);
+  clip-path: polygon(0 0, 100% 12px, calc(100% - 10px) 100%, 8px calc(100% - 15px));
 }
 
 .cut-panel-b {
-  clip-path: polygon(0 2%, 100% 0, 99% 96%, 2% 100%);
+  clip-path: polygon(0 15px, 100% 0, calc(100% - 8px) calc(100% - 15px), 12px 100%);
 }
 
 .cut-panel-c {
-  clip-path: polygon(0 0, 100% 0, 97% 94%, 2% 100%);
+  clip-path: polygon(0 0, 100% 0, calc(100% - 12px) calc(100% - 15px), 8px 100%);
 }
 
 .cut-panel-d {
-  clip-path: polygon(2% 0, 100% 2%, 98% 100%, 0 95%);
+  clip-path: polygon(10px 0, 100% 10px, calc(100% - 8px) 100%, 0 calc(100% - 15px));
 }
 
 .cut-panel-e {
-  clip-path: polygon(0 4%, 99% 0, 100% 100%, 2% 97%);
+  clip-path: polygon(0 15px, calc(100% - 8px) 0, 100% 100%, 10px calc(100% - 12px));
 }
 
 .cut-panel-f {
-  clip-path: polygon(0 0, 100% 3%, 98% 100%, 1% 98%);
+  clip-path: polygon(0 0, 100% 15px, calc(100% - 10px) 100%, 8px calc(100% - 10px));
 }
 
 .cut-panel-g {
-  clip-path: polygon(0 1%, 100% 0, 99% 99%, 0 96%);
+  clip-path: polygon(0 5px, 100% 0, calc(100% - 8px) calc(100% - 8px), 0 calc(100% - 12px));
 }
 
 .cut-panel-h {
-  clip-path: polygon(1% 0, 100% 1%, 97% 100%, 0 95%);
+  clip-path: polygon(8px 0, 100% 8px, calc(100% - 15px) 100%, 0 calc(100% - 15px));
 }
 
 .cut-panel-i {
-  clip-path: polygon(0 0, 99% 0, 100% 94%, 3% 100%);
+  clip-path: polygon(0 0, calc(100% - 5px) 0, 100% calc(100% - 12px), 15px 100%);
 }
 
 .cut-panel-team {
-  clip-path: polygon(0 2%, 99% 0, 100% 100%, 0 100%);
+  clip-path: polygon(0 10px, calc(100% - 6px) 0, 100% 100%, 0 100%);
 }
 
 .cut-image-a {
-  clip-path: polygon(0 0, 100% 6%, 92% 100%, 3% 96%);
+  clip-path: polygon(0 0, 100% 15px, calc(100% - 15px) 100%, 10px calc(100% - 10px));
 }
 
 .cut-image-b {
-  clip-path: polygon(4% 0, 100% 0, 99% 96%, 0 100%);
+  clip-path: polygon(15px 0, 100% 0, calc(100% - 8px) calc(100% - 12px), 0 100%);
 }
 
 .cut-image-c {
-  clip-path: polygon(0 3%, 96% 0, 100% 100%, 4% 98%);
+  clip-path: polygon(0 10px, calc(100% - 15px) 0, 100% 100%, 15px calc(100% - 8px));
 }
 
 .cut-image-d {
-  clip-path: polygon(0 0, 98% 3%, 96% 100%, 2% 97%);
+  clip-path: polygon(0 0, calc(100% - 8px) 10px, calc(100% - 12px) 100%, 8px calc(100% - 10px));
 }
 
 .cut-image-e {
-  clip-path: polygon(0 0, 100% 2%, 97% 100%, 3% 96%);
+  clip-path: polygon(0 0, 100% 8px, calc(100% - 12px) 100%, 12px calc(100% - 12px));
 }
 
 .ash-frame {
@@ -167,7 +171,7 @@ img {
   background: rgba(50, 53, 60, 0.55);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  padding: 1.3rem;
+  padding: 1.5rem 1.3rem; /* Increased top/bottom padding to prevent clipping */
 }
 
 @media (min-width: 640px) {
@@ -240,7 +244,7 @@ img {
   background: rgba(58, 61, 69, 0.58);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  padding: 1rem;
+  padding: 1.25rem 1rem; /* Increased top/bottom padding */
 }
 
 @media (min-width: 640px) {
@@ -305,6 +309,7 @@ img {
 
 .team-member-card {
   padding-bottom: 1.15rem;
+  padding-right: 1.25rem;
 }
 
 .team-member-id {
@@ -370,11 +375,23 @@ img {
 /* Hide nav menu on mobile by default */
 @media (max-width: 1023px) {
   .nav-menu {
-    display: none;
+    display: none !important;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin-top: 0.75rem;
+    background: rgba(43, 46, 53, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 1.5rem;
+    z-index: 50;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
   }
 
   .nav-menu.is-open {
-    display: grid;
+    display: grid !important;
   }
 }
 

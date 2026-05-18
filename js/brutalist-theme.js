@@ -1,6 +1,10 @@
 (function () {
   var lenis = null;
-  var headerOffset = 128;
+  function getHeaderOffset() {
+    var header = document.querySelector("header");
+    return header ? header.getBoundingClientRect().height + 20 : 128;
+  }
+
   var enableSmoothWheel = false;
 
   function safeScrollToElement(element, immediate) {
@@ -8,16 +12,18 @@
       return;
     }
 
+    var offset = getHeaderOffset();
+
     if (lenis) {
       lenis.scrollTo(element, {
-        offset: -headerOffset,
+        offset: -offset,
         immediate: !!immediate,
         duration: 0.65
       });
       return;
     }
 
-    var targetTop = element.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+    var targetTop = element.getBoundingClientRect().top + window.pageYOffset - offset;
     window.scrollTo({ top: targetTop, behavior: immediate ? "auto" : "smooth" });
   }
 
