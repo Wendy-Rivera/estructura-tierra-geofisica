@@ -21,12 +21,19 @@
     <header class="sticky top-0 z-40 px-3 pt-3 sm:px-6 lg:px-10">
       <nav class="cut-nav ash-frame bg-zinc-900/60 px-4 py-4 sm:px-6" aria-label="Navegación principal">
         <div class="grid gap-4 lg:grid-cols-[1.35fr_2fr] lg:items-center">
-          <div class="cut-brand border border-magma/50 bg-magma/10 p-4">
-            <p class="font-display text-2xl leading-none tracking-wide text-bone sm:text-3xl">GEOLOGÍA FÍSICA DE EL SALVADOR</p>
-            <p class="mt-2 text-[10px] uppercase tracking-[0.26em] text-bone/45 sm:text-xs">NP 02 / LIC. PEDRO ELIAS SALAZAR MENJIVAR</p>
+          <div class="flex items-start gap-3">
+            <div class="cut-brand border border-magma/50 bg-magma/10 p-4 flex-1">
+              <p class="font-display text-2xl leading-none tracking-wide text-bone sm:text-3xl">GEOLOGÍA FÍSICA DE EL SALVADOR</p>
+              <p class="mt-2 text-[10px] uppercase tracking-[0.26em] text-bone/45 sm:text-xs">NP 02 / LIC. PEDRO ELIAS SALAZAR MENJIVAR</p>
+            </div>
+            <button class="nav-toggle lg:hidden" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-menu">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
           </div>
 
-          <ul class="grid grid-cols-2 gap-2 sm:grid-cols-4">
+          <ul id="nav-menu" class="nav-menu grid grid-cols-2 gap-2 sm:grid-cols-4">
             <li><a href="index.html" class="site-link cut-link">Inicio</a></li>
             <li><a href="index.html#presentacion" class="site-link cut-link">Presentación</a></li>
             <li><a href="blog.html" class="site-link cut-link">Blog</a></li>
