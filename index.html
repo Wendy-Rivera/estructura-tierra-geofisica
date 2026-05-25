@@ -8,11 +8,12 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Space+Grotesk:wght@400;500;700&family=Unbounded:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <script src="js/tailwind-config.js"></script>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="css/brutalist-theme.css">
+  <link rel="preload" as="image" href="assets/img/Intro.jpg" fetchpriority="high">
 
   <style>
     .hero-cluster {
@@ -50,6 +51,21 @@
       opacity: 1;
       transition: opacity 0.8s ease, visibility 0.8s ease;
       will-change: transform, opacity;
+    }
+
+    @media (max-width: 767px) {
+      .warp-screen {
+        background:
+          linear-gradient(180deg, rgba(6, 8, 18, 0.34), rgba(2, 3, 9, 0.56)),
+          url("assets/img/Intro.jpg") center center / cover no-repeat;
+        animation-duration: 4.5s;
+      }
+
+      .warp-screen::before,
+      .warp-screen::after {
+        opacity: 0.7;
+        filter: blur(20px) saturate(125%);
+      }
     }
 
     .warp-screen::before,
@@ -312,18 +328,26 @@
     .intro-screen__hint {
       max-width: 22rem;
       text-align: center;
+      font-family: "Unbounded", sans-serif;
       text-transform: uppercase;
-      letter-spacing: 0.22em;
-      font-size: 0.72rem;
-      color: rgba(255, 247, 237, 0.9);
+      letter-spacing: 0.18em;
+      font-size: 0.66rem;
+      font-weight: 600;
+      color: rgba(255, 247, 237, 0.96);
+      text-shadow: 0 0 18px rgba(255, 214, 102, 0.18), 0 0 30px rgba(61, 165, 255, 0.12);
     }
 
     .intro-screen__subhint {
       max-width: 24rem;
       text-align: center;
-      font-size: 0.82rem;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1rem;
+      font-style: italic;
+      font-weight: 600;
       line-height: 1.6;
-      color: rgba(216, 220, 242, 0.82);
+      letter-spacing: 0.04em;
+      color: rgba(232, 236, 255, 0.9);
+      text-shadow: 0 0 22px rgba(22, 199, 154, 0.12);
     }
 
     .intro-screen__button:focus-visible .intro-screen__earth-wrap {
@@ -563,10 +587,7 @@
                 <iframe class="h-full w-full border border-dashed border-magma/45" src="https://www.youtube.com/embed/GnQyO-ctAoY" title="Hablando sobre la estructura de la Tierra" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
               </div>
               <div class="media-slot cut-image-a aspect-video border border-white/20 p-2">
-                <div class="flex h-full w-full flex-col justify-between border border-dashed border-magnetic/45 bg-zinc-950/45 p-4 text-left text-xs text-ash">
-                  <p class="leading-relaxed">Espacio reservado para el segundo video de la videoteca.</p>
-                  <span class="mt-3 inline-block border border-magnetic/50 px-3 py-2 text-[10px] uppercase tracking-[0.15em] text-bone">Video 2 pendiente</span>
-                </div>
+                <iframe class="h-full w-full border border-dashed border-magnetic/45" src="https://www.youtube.com/embed/xCzXJcMq_io" title="Segundo video de la videoteca" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
               </div>
               <div class="media-slot cut-image-b aspect-video border border-white/20 p-2">
                 <div class="flex h-full w-full flex-col justify-between border border-dashed border-magnetic/45 bg-zinc-950/45 p-4 text-left text-xs text-ash">
@@ -581,7 +602,7 @@
                 </div>
               </div>
             </div>
-            <p class="mt-3 text-[11px] leading-relaxed text-ash">Primer video de referencia: YouTube. Recuperado el 24 de mayo de 2026, de <a href="https://www.youtube.com/watch?v=GnQyO-ctAoY" target="_blank" rel="noopener noreferrer" class="underline">https://www.youtube.com/watch?v=GnQyO-ctAoY</a>.</p>
+            <p class="mt-3 text-[11px] leading-relaxed text-ash">Primer y segundo video de referencia: YouTube. Recuperado el 24 de mayo de 2026, de <a href="https://www.youtube.com/watch?v=GnQyO-ctAoY" target="_blank" rel="noopener noreferrer" class="underline">https://www.youtube.com/watch?v=GnQyO-ctAoY</a> y <a href="https://www.youtube.com/watch?v=xCzXJcMq_io" target="_blank" rel="noopener noreferrer" class="underline">https://www.youtube.com/watch?v=xCzXJcMq_io</a>.</p>
           </article>
         </div>
       </section>
