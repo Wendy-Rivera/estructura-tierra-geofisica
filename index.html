@@ -42,51 +42,48 @@
       z-index: 100;
       overflow: hidden;
       background:
-        radial-gradient(circle at center, rgba(255, 255, 255, 0.14) 0%, rgba(4, 7, 16, 0.9) 18%, rgba(1, 3, 8, 1) 60%),
-        linear-gradient(180deg, rgba(2, 4, 10, 0.98), rgba(1, 2, 6, 1));
+        linear-gradient(180deg, rgba(6, 8, 18, 0.52), rgba(2, 3, 9, 0.72)),
+        url("assets/img/Intro.jpg") center/cover no-repeat;
+      transform: scale(1);
+      transform-origin: center;
+      animation: warpSceneZoom 5s ease-out forwards;
       opacity: 1;
       transition: opacity 0.8s ease, visibility 0.8s ease;
+      will-change: transform, opacity;
+    }
+
+    .warp-screen::before,
+    .warp-screen::after {
+      content: "";
+      position: absolute;
+      inset: -20%;
+      pointer-events: none;
+    }
+
+    .warp-screen::before {
+      background:
+        radial-gradient(circle at 50% 48%, rgba(255, 214, 102, 0.18) 0%, rgba(255, 214, 102, 0) 20%),
+        radial-gradient(circle at 22% 28%, rgba(255, 77, 166, 0.16) 0%, rgba(255, 77, 166, 0) 26%),
+        radial-gradient(circle at 78% 26%, rgba(61, 165, 255, 0.18) 0%, rgba(61, 165, 255, 0) 24%),
+        radial-gradient(circle at 50% 74%, rgba(22, 199, 154, 0.14) 0%, rgba(22, 199, 154, 0) 28%);
+      filter: blur(26px) saturate(135%);
+      mix-blend-mode: screen;
+      animation: warpBreath 7s ease-in-out infinite;
+    }
+
+    .warp-screen::after {
+      background:
+        radial-gradient(circle at center, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0) 18%),
+        radial-gradient(circle at center, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0) 34%);
+      opacity: 0.8;
+      mix-blend-mode: screen;
+      animation: warpBreath 7s ease-in-out infinite;
     }
 
     .warp-screen.is-hidden {
       opacity: 0;
       visibility: hidden;
       pointer-events: none;
-    }
-
-    .warp-screen__stars {
-      position: absolute;
-      inset: 0;
-      overflow: hidden;
-    }
-
-    .warp-screen__star {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      width: var(--star-size, 2px);
-      height: calc(var(--star-size, 2px) * 12);
-      border-radius: 999px;
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0) 100%);
-      box-shadow: 0 0 14px rgba(255, 255, 255, 0.5);
-      opacity: 0;
-      transform: translate(-50%, -50%) scaleY(0.2);
-      animation: warpStar 5s linear forwards;
-      animation-delay: var(--star-delay, 0s);
-      will-change: transform, opacity;
-    }
-
-    .warp-screen__flare {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      width: min(26vw, 280px);
-      height: min(26vw, 280px);
-      border-radius: 50%;
-      transform: translate(-50%, -50%);
-      background: radial-gradient(circle, rgba(255, 255, 255, 0.28) 0%, rgba(22, 199, 154, 0.18) 24%, rgba(22, 199, 154, 0) 64%);
-      filter: blur(2px);
-      animation: warpPulse 1.6s ease-in-out infinite;
     }
 
     .intro-screen {
@@ -371,17 +368,27 @@
       }
     }
 
-    @keyframes warpStar {
-      0% {
-        opacity: 0;
-        transform: translate(-50%, -50%) scaleY(0.18);
+    @keyframes warpBreath {
+      0%, 100% {
+        opacity: 0.45;
       }
-      12% {
-        opacity: 1;
+      50% {
+        opacity: 0.85;
+      }
+    }
+
+    @keyframes warpSceneZoom {
+      0% {
+        transform: scale(1.02) translate3d(0, 0, 0);
+        filter: saturate(1.05) contrast(1.02) brightness(0.95);
+      }
+      60% {
+        transform: scale(1.12) translate3d(0, -1.5%, 0);
+        filter: saturate(1.14) contrast(1.06) brightness(1.01);
       }
       100% {
-        opacity: 0;
-        transform: translate(calc(-50% + var(--star-x, 0px)), calc(-50% + var(--star-y, 0px))) scaleY(1.65);
+        transform: scale(1.2) translate3d(0, -2.4%, 0);
+        filter: saturate(1.18) contrast(1.08) brightness(1.03);
       }
     }
 
@@ -396,8 +403,6 @@
   <div id="tsparticles" class="fixed inset-0 pointer-events-none z-0"></div>
 
   <div id="warp-screen" class="warp-screen" aria-hidden="true">
-    <div class="warp-screen__stars" data-warp-stars></div>
-    <div class="warp-screen__flare"></div>
   </div>
 
   <div id="intro-screen" class="intro-screen" role="dialog" aria-modal="true" aria-label="Pantalla introductoria de la Tierra">
@@ -600,26 +605,9 @@
       var warpScreen = document.getElementById("warp-screen");
       var screen = document.getElementById("intro-screen");
       var button = document.querySelector("[data-intro-enter]");
-      var starsHost = document.querySelector("[data-warp-stars]");
 
-      if (!warpScreen || !screen || !button || !starsHost) {
+      if (!warpScreen || !screen || !button) {
         return;
-      }
-
-      function createWarpStars() {
-        var starCount = 160;
-
-        for (var i = 0; i < starCount; i++) {
-          var star = document.createElement("span");
-          star.className = "warp-screen__star";
-          star.style.setProperty("--star-size", (Math.random() * 1.9 + 0.8).toFixed(2) + "px");
-          star.style.setProperty("--star-delay", (Math.random() * 0.18).toFixed(2) + "s");
-          star.style.setProperty("--star-x", (Math.random() * 2 - 1) * (window.innerWidth * 0.95) + "px");
-          star.style.setProperty("--star-y", (Math.random() * 2 - 1) * (window.innerHeight * 0.95) + "px");
-          star.style.opacity = String(0.4 + Math.random() * 0.6);
-          star.style.transform = "translate(-50%, -50%) scaleY(" + (0.2 + Math.random() * 0.5).toFixed(2) + ")";
-          starsHost.appendChild(star);
-        }
       }
 
       function revealIntro() {
@@ -637,7 +625,6 @@
       }
 
       document.body.classList.add("intro-locked");
-      createWarpStars();
 
       window.setTimeout(function () {
         revealIntro();
