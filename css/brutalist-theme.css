@@ -26,15 +26,20 @@ html {
 
 body {
   font-family: "Space Grotesk", sans-serif;
+  background-color: var(--bg);
   background-image:
+    linear-gradient(rgba(58, 61, 67, 0.62), rgba(58, 61, 67, 0.62)),
+    url("../assets/img/Background.jpg"),
     linear-gradient(124deg, rgba(255, 107, 53, 0.24) 0%, rgba(255, 107, 53, 0) 40%),
     linear-gradient(302deg, rgba(22, 199, 154, 0.2) 0%, rgba(22, 199, 154, 0) 45%),
     radial-gradient(circle at 17% 14%, rgba(255, 209, 102, 0.24) 0%, rgba(255, 209, 102, 0) 29%),
     radial-gradient(circle at 84% 78%, rgba(185, 190, 198, 0.2) 0%, rgba(185, 190, 198, 0) 37%),
     linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
-  background-size: auto, auto, auto, auto, 46px 46px, 46px 46px;
-  background-attachment: fixed;
+  background-size: auto, cover, auto, auto, auto, 46px 46px, 46px 46px;
+  background-position: center, center, center, center, center, center, center;
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, repeat, repeat;
+  background-attachment: fixed, fixed, fixed, fixed, fixed, fixed, fixed;
 }
 
 section[id],
