@@ -292,6 +292,8 @@ img {
   color: #edf3ff;
   font-size: 0.93rem;
   line-height: 1.75;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .apa-note {
